@@ -1,0 +1,22 @@
+alias: view-assist - p2000
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - sensor.rijnmond
+      - sensor.p2000
+conditions: []
+actions:
+  - action: browser_mod.navigate
+    metadata: {}
+    data:
+      browser_id:
+        - yourbrowserid
+      path: /dashboard-viewassist/p2000
+  - action: chime_tts.say
+    metadata: {}
+    data:
+      chime_path: chirp
+    target:
+      entity_id: media_player.tablet
+mode: single
