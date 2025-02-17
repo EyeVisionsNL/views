@@ -61,7 +61,7 @@ https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
 
 <h3>Ik heb wat verschillende dashboard gemaakt voor View-assist. de wijzigingen zijn als volgt:</h3>
 
-In elke linker boven hoek heb ik net als in de origeneele weather card dit bij alle andere toegepast. Door hierop te klikken of vast te houden ga je naar een ander dashboard.
+In elke linker boven hoek heb ik een  icon gemaakt net als in de origeneele weather card en dit bij alle andere toegepast behalve de p2000 dashboard. Door hierop te klikken of vast te houden ga je naar een ander dashboard.
 
 clock: transition veranderd deze gaat nu vloeiend naar nieuwe positie ipv ernaar te springen. Ook wijzigd de klok van kleur aan de hand van de KNMI geldende weer codes. Dit vergt KNMI hacs intergratie. 
 wat backshadows toegevoegd.  code geel
