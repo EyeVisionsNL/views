@@ -78,7 +78,7 @@ Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 
 
 P2000
-Hier komen de berichten van P2000 te staan vanje regio. Dit vergt P2000 van hacs.
+Hier komen de berichten van P2000 te staan vanje regio. Dit vergt P2000 van hacs. simpelauto erbi gedaan
 ![Screenshot_20250217-142212](https://github.com/user-attachments/assets/67b42502-e18a-4030-89a3-14d41c9034d1)
 
 
