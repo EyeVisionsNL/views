@@ -4,7 +4,7 @@
 
 
 
-<h2>**You need the view-assist template for all views! NO i am not on a Lenovo-thinksmart. I'm on a 10,1inch tablet Teclast P30T**</h2>
+<h2>**You need the view-assist template for all views! NO i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T**</h2>
 
 
 
@@ -55,7 +55,7 @@ hey miep wakeword https://files.fm/u/q7te576u9n
 
 <h1>#Dutch</h1>
 
-<h2>Je heb voor alle views de template nodig van view-assist!!
+<h2>Je heb voor alle views de template nodig van view-assist!!  Nee zit niet op lenovo-thinksmart TSV maar tablet 10.1inch teclast p30t
 
 https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
 
