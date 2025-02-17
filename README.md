@@ -34,7 +34,7 @@ thermostat
 Here I have placed mini graphs of the thermostat and a co2 meter. I personally use Apollo MSR-2.
 
 
-Lights:
+Activelights:
 This page shows the lights that are on. required piece of script in configuration.yaml
 
 
@@ -88,7 +88,7 @@ Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebr
 ![Screenshot_20250215-173628](https://github.com/user-attachments/assets/19452916-841b-47c9-8e61-00c423fc0839)
 
 
-Lichten:
+activelights:
 Deze pagina geeft de lampen weer die aan staan. benodigd stukje script in configuratie.yaml
 
 ![Screenshot_20250215-173559](https://github.com/user-attachments/assets/5d86e799-e342-49e0-9dff-78b4f91c0693)
