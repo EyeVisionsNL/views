@@ -1,5 +1,9 @@
-# views changes and made by eyevisions for view-assist
+# views changes made by eyevisions for view-assist
 #Englisch
+
+You need the view-assist template for all views!
+
+https://dinki.github.io/View-Assist/docs/viewassist-setup
 
 Made some different dashboard for View-assist. the changes are as follows:
 
@@ -27,6 +31,10 @@ Camera:
 2 cameras placed next to each other on 1 page.
 
 #Dutch
+
+Je heb voor alle views de template nodig van view-assist!!
+
+https://dinki.github.io/View-Assist/docs/viewassist-setup
 
 Wat verschillende dashboard gemaakt voor View-assist. de wijzigingen zijn als volgt:
 
