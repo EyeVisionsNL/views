@@ -48,6 +48,7 @@ Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 
 P2000
 Hier komen de berichten van P2000 te staan vanje regio. Dit vergt P2000 van hacs.
+https://cdn.discordapp.com/attachments/1241797221658394724/1341038493693906985/Screenshot_20250217-142212.png?ex=67b48aec&is=67b3396c&hm=8cf50cb228d12c0d4440f30ca59a5de10a840ba1fe74905a67ea73d45427ddfd&
 
 thermostaat
 Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
