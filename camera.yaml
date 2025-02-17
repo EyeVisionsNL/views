@@ -1,0 +1,108 @@
+type: custom:button-card
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"
+        "card1 card2"
+        "windspeed windspeed"
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 50% 50%
+  custom_fields:
+    title:
+      - align-self: start
+      - justify-self: start
+      - padding: 1px
+    card1:
+      - align-self: center
+      - justify-self: center
+      - height: auto
+      - display: flex
+    card2:
+      - align-self: center
+      - justify-self: center
+      - height: auto
+      - display: flex
+    floorplan:
+      - align-self: end
+      - justify-self: start
+      - padding: 5px
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: floorplan
+      styles:
+        card:
+          - background-color: transparent
+          - text-shadow: 1px 1px black
+          - font-weight: bold
+          - border-width: 0px
+          - width: 100%
+          - padding: 0px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-columns: min-content min-content
+        name:
+          - font-size: 6vh
+          - font-weight: bold
+          - color: white
+        icon:
+          - filter: drop-shadow(2px 2px 4px black)
+          - width: 12vh
+          - color: white
+  card1:
+    card:
+      type: picture-entity
+      title: achtertuin
+      entity: camera.camera_achtertuin
+      show_state: false
+      show_name: true
+      camera_view: live
+      camera_image: camera.camera_achtertuin
+    card_mod:
+      style:
+        .: |
+          .content {
+            transform: scale(1.1);
+          }
+        ha-icon-button:
+          $:
+            mwc-icon-button:
+              $:
+                button: |
+                  mwc-ripple {
+                    display: none;
+                  }
+  card2:
+    card:
+      type: picture-entity
+      title: voordeur
+      entity: camera.camera_voordeurbel
+      show_state: false
+      show_name: true
+      camera_view: live
+      camera_image: camera.camera_voordeurbel
+    card_mod:
+      style:
+        .: |
+          .content {
+            transform: scale(1.1);
+          }
+        ha-icon-button:
+          $:
+            mwc-icon-button:
+              $:
+                button: |
+                  mwc-ripple {
+                    display: none;
+                  }
