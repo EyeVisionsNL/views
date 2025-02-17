@@ -1,0 +1,10 @@
+alias: View Assist - windroos
+description: ""
+use_blueprint:
+  path: dinki/blueprint-showwebpage.yaml
+  input:
+    command: laat de wind zien | hoe is de wind
+    response: wooeeiiii!.....................hier komt de windroos
+    view: /dashboard-viewassist/windroos
+    url: "custom_components/chime_tts/mp3s/fanfare.mp3 "
+    hold_mode: false
