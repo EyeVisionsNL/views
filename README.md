@@ -7,7 +7,7 @@ https://dinki.github.io/View-Assist/docs/viewassist-setup
 
 Made some different dashboard for View-assist. the changes are as follows:
 
-clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI applicable weather codes. This requires KNMI hacs integration.
+clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(ducth weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration.
 
 Weather:
 added shadows to letters and set them to white. background changes with type to reflect what is there.
@@ -16,7 +16,7 @@ Compass rose:
 Compass rose card with everything in it. this requires WindRose card from hacs.
 
 P2000
-The messages from P2000 from your region will appear here. This will require P2000 from hacs.
+The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs.
 
 thermostat
 Here I have placed mini graphs of the thermostat and a co2 meter. I personally use Apollo MSR-2.
