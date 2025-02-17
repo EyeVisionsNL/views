@@ -1,0 +1,178 @@
+type: custom:button-card
+variables:
+  background: |
+    [[[ 
+      const weather = states['sensor.knmi_omschrijving'].state;
+      const backgrounds = {
+        "clear-night": "/local/viewassist/backgrounds/weather/clear-night.jpg",
+        "Onbewolkt": "/local/viewassist/backgrounds/weather/onbewolkt.jpg",
+        "Licht bewolkt": "/local/viewassist/backgrounds/weather/lichtbewolkt.jpg",
+        "Half bewolkt": "/local/viewassist/backgrounds/weather/halfbewolkt.jpg",        
+        "Zwaar bewolkt": "/local/viewassist/backgrounds/weather/zwaarbewolkt.jpg",
+        "Mist": "/local/viewassist/backgrounds/weather/mist.jpg",
+        "Hagel": "/local/viewassist/backgrounds/weather/hagel.jpg",
+        "Bliksem": "/local/viewassist/backgrounds/weather/lightning.jpg",
+        "Motregen": "/local/viewassist/backgrounds/weather/motregen.jpg",
+        "Lichte regen": "/local/viewassist/backgrounds/weather/Lichte-regen.jpg",        
+        "Motregen of motsneeuw": "/local/viewassist/backgrounds/weather/motsneeuw.jpg",
+        "Motsneeuw": "/local/viewassist/backgrounds/weather/motsneeuw.jpg",   
+        "Bewolkt": "/local/viewassist/backgrounds/weather/bewolkt.jpg",
+        "Regen": "/local/viewassist/backgrounds/weather/heavy-rain.jpg",
+        "Regenachtig": "/local/viewassist/backgrounds/weather/rain.jpg",
+        "Sneeuw": "/local/viewassist/backgrounds/weather/snow.jpg",
+        "snowy-rainy": "/local/viewassist/backgrounds/weather/snow-rain.jpg",
+        "Zonnig": "/local/viewassist/backgrounds/weather/sunny.jpg",
+        "Winderig": "/local/viewassist/backgrounds/weather/windy.jpg",
+        "Storm": "/local/viewassist/backgrounds/weather/windy-variant.jpg",
+        "exceptional": "/local/viewassist/backgrounds/weather/extreme.jpg"
+      };
+      return backgrounds[weather] || "/local/viewassist/backgrounds/weather/default.jpg";
+    ]]]
+  var_forecast_entity: sensor.knmi_omschrijving
+  var_forecast_type: daily
+  weathercardversion: 1.0.4
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"  
+        "message message"
+        "assist assist"        
+    - grid-template-rows: min-content max-content min-content
+    - grid-template-columns: 1fr 1fr
+  card:
+    - background: "[[[ return `center / cover no-repeat url(${variables.background})` ]]]"
+    - border-width: 0px
+    - border-radius: 0px
+    - font-weight: bold
+  custom_fields:
+    message:
+      - font-weight: bold
+      - position: relative
+      - height: 100vdh
+      - text-align: start
+      - text-wrap: wrap
+      - justify-content: center
+      - align-self: center
+      - padding: "-10%"
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:weather-windy
+      name: >
+        [[[ return
+        `${states['sensor.rotterdam_the_hague_airport_windsnelheid']?.state ||
+        'N/A'} Bft`; ]]]
+      tap_action:
+        action: navigate
+        navigation_path: windroos
+      hold_action:
+        action: navigate
+        navigation_path: vloerplan
+      styles:
+        card:
+          - font-weight: bold
+          - background-color: transparent
+          - border-width: 0px
+          - width: 100%
+          - padding: 0px
+          - color: white
+          - text-shadow: 2px 2px black
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-columns: min-content min-content
+        name:
+          - font-size: 6vh
+          - color: white
+          - text-shadow: 2px 2px black
+          - font-weight: bold
+        icon:
+          - filter: drop-shadow(1px 1px 1px black)
+          - width: 12vh
+          - color: white
+  card: ""
+  message:
+    card:
+      type: weather-forecast
+      entity: weather.knmi_thuis
+      forecast_type: "[[[ return variables.var_forecast_type ]]]"
+      card_mod:
+        style:
+          .: |
+            ha-card { background:  transparent}
+            ha-card.type-weather-forecast {
+              justify-content: start !important;
+            }
+            ha-card.type-weather-forecast>div.content {
+              div {
+                padding-right: 10px;
+              }
+            }
+            ha-card.type-weather-forecast>div.content {
+              display: flex;​
+            }
+          ha-card.type-weather-forecast>div.content: |
+            svg {
+              width: 15vw !important;
+              height: 15vh !important;
+              flex: unset !important;
+              text-shadow: 2px 2px black;
+              font-weight: bold;
+            }
+          ha-card.type-weather-forecast>div.forecast: |
+            div {
+              padding-top: 2vh;
+              font-weight: bold;
+              font-size: 6vh;
+              color: white;
+              text-shadow: 2px 2px black;
+              justify-content: space-evenly !important;
+            }
+          ha-card.type-weather-forecast>div.content>div.info:
+            .: |
+              div.name-state {
+                font-weight: bold;
+                display: flex;
+                flex-direction: column;
+                text-shadow: 2px 2px black;
+              }
+            div.name-state:
+              .: |
+                div.state {
+                  font-size: 10vh !important;
+                  color: white;
+                  text-shadow: 2px 2px black;
+                  font-weight: bold;
+                   }
+                div.name {
+                  display: none;
+                  max-height: 0px !important;
+                  color: white;
+                  text-shadow: 2px 2px black;
+                  font-weight: bold;
+                }
+            div.temp-attribute: |
+              .temp {
+                font-size: 8vh !important;
+                padding-bottom: 0px;
+                text-shadow: 2px 2px black;
+                color: white;
+              }
+              .attribute {
+                font-size: 5vh !important;
+                color:  white !important;
+                text-shadow: 2px 2px black;
+              }  
+              .temp span {
+                font-size: 7vh !important;
+                margin-left: -1vh;
+              }
+              .templow {
+                padding-top: 0px;
+                color: white !important;
+                text-shadow: 2px 2px black;
+                text-align: right;
+              }
