@@ -21,11 +21,11 @@ clock: transition changed, it now goes smoothly to new position instead of jumpi
 
 
 Weather:
-added shadows to letters and set them to white. background changes with type to reflect what is there.
+added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there.
 
 
 Compass rose:
-Compass rose card with everything in it. this requires WindRose card from hacs.
+Compass rose card with everything in it want you want to know about the wind. this requires WindRose card from hacs.
 
 
 P2000
