@@ -1,0 +1,69 @@
+type: custom:button-card
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"
+        "card card"
+        "windspeed windspeed"
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 1fr 1fr
+  custom_fields:
+    title:
+      - align-self: start
+      - justify-self: start
+      - padding: 1px
+    card:
+      - align-self: center
+      - justify-self: center
+      - width: auto
+      - height: auto
+      - max-width: auto
+      - transform: scale(2.1)
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:thermostat
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: thermostat
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: 100%
+          - padding: 0px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-columns: min-content min-content
+        name:
+          - font-size: 6vh
+          - color: white
+          - font-weight: bold
+        icon:
+          - filter: drop-shadow(2px 2px 4px black)
+          - width: 12vh
+          - color: white
+  card:
+    card:
+      type: vertical-stack
+      cards:
+        - type: custom:auto-entities
+          show_empty: false
+          card:
+            type: entities
+          filter:
+            include:
+              - domain: light
+                state: "on"
+                options:
+                  tap_action:
+                    action: toggle
+            exclude:
+              - entity_id: "*as.*"
+              - entity_id: "*tablet.*"
+              - entity_id: "*light.woonkamer_lampen*"
