@@ -38,29 +38,51 @@ https://dinki.github.io/View-Assist/docs/viewassist-setup
 
 Wat verschillende dashboard gemaakt voor View-assist. de wijzigingen zijn als volgt:
 
-clock: transition veranderd deze gaat nu vloeiend naar nieuwe positie ipv ernaar te springen. Ook wijzigd de klok van kleur aan de hand van de KNMI geldende weer codes. Dit vergt KNMI hacs intergratie.
+clock: transition veranderd deze gaat nu vloeiend naar nieuwe positie ipv ernaar te springen. Ook wijzigd de klok van kleur aan de hand van de KNMI geldende weer codes. Dit vergt KNMI hacs intergratie. 
+wat backshadows toegevoegd.  code geel
+
+![Screenshot_20250201-094019](https://github.com/user-attachments/assets/14add1de-846f-4ed1-b691-a08689f39032)
+
 
 Weather:
 schaduwen aangebracht letters en deze naar wit gezet. achtergrond verandert met type weer wat er dan is.
 
+![Screenshot_20250217-193341](https://github.com/user-attachments/assets/a9745e39-18bb-4eb9-aeb1-7bf68b831d48)
+
+
 Windroos:
 Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 
+![Screenshot_20250131-114940](https://github.com/user-attachments/assets/f7865cc3-cc3b-4f0f-9dfb-664b3f611d25)
+
+
 P2000
 Hier komen de berichten van P2000 te staan vanje regio. Dit vergt P2000 van hacs.
-https://cdn.discordapp.com/attachments/1241797221658394724/1341038493693906985/Screenshot_20250217-142212.png?ex=67b48aec&is=67b3396c&hm=8cf50cb228d12c0d4440f30ca59a5de10a840ba1fe74905a67ea73d45427ddfd&
+![Screenshot_20250217-142212](https://github.com/user-attachments/assets/67b42502-e18a-4030-89a3-14d41c9034d1)
+
 
 thermostaat
 Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
 
+![Screenshot_20250215-173628](https://github.com/user-attachments/assets/19452916-841b-47c9-8e61-00c423fc0839)
+
+
 Lichten:
 Deze pagina geeft de lampen weer die aan staan. benodigd stukje script in configuratie.yaml
+
+![Screenshot_20250215-173559](https://github.com/user-attachments/assets/5d86e799-e342-49e0-9dff-78b4f91c0693)
+
 
 Floorplan:
 Gewoon vloerplan in layout/template view-assist
 
+![Screenshot_20250208-213045](https://github.com/user-attachments/assets/75dd974d-bf43-4fd9-b406-57c280a26337)
+
+
 Camera:
 2 camera's op 1 pagina gezet naast elkaar.
+
+
 
 files: weatherpictures https://files.fm/u/krd4gzxmwr
 hey miep wakeword https://files.fm/u/q7te576u9n
