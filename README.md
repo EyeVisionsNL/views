@@ -52,3 +52,6 @@ Gewoon vloerplan in layout/template view-assist
 
 Camera:
 2 camera's op 1 pagina gezet naast elkaar.
+
+files: weatherpictures https://files.fm/u/krd4gzxmwr
+hey miep wakeword https://files.fm/u/q7te576u9n
