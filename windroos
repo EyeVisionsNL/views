@@ -1,0 +1,169 @@
+type: custom:button-card
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"
+        "card card"
+        "windspeed windspeed"
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 1fr 1fr
+  custom_fields:
+    title:
+      - align-self: start
+      - justify-self: start
+      - padding: 1px
+      - text-shadow: 1px 1px black
+      - font-weight: bold
+    card:
+      - font-weight: bold
+      - align-self: center
+      - justify-self: center
+      - width: auto
+      - height: auto
+      - max-width: auto
+      - transform: scale(200%)
+    windspeed:
+      - font-weight: bold
+      - align-self: end
+      - justify-self: start
+      - padding: 10px
+      - font-weight: bold
+      - text-shadow: 1px 1px Black
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:lightbulb-on
+      gap: 5px
+      name: >
+        [[[ return `${states[ 
+        'sensor.rotterdam_the_hague_airport_windsnelheid']?.state || 'N/A'}
+        Bft`; ]]]
+      tap_action:
+        action: navigate
+        navigation_path: lichten
+      hold_action:
+        action: navigate
+        navigation_path: vloerplan
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: 100%
+          - padding: 1px
+          - text-shadow: 1px 1px black
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-columns: min-content min-content
+        name:
+          - font-size: 6vh
+          - color: white
+          - text-shadow: 1px 1px black
+        icon:
+          - filter: drop-shadow(1px 1px 1px black)
+          - width: 10vh
+          - color: white
+  card:
+    card:
+      type: custom:windrose-card
+      title: Windroos
+      shadow: 1px 1px black
+      data_period:
+        hours_to_show: 200
+      refresh_interval: 300
+      windspeed_bar_location: bottom
+      windspeed_bar_full: false
+      wind_direction_entity:
+        entity: sensor.windrichting_azimut
+        use_statistics: false
+        direction_compensation: 0
+      windspeed_entities:
+        - entity: sensor.windsnelheid
+          name: windsnelheid
+          shadow: 1px 1px black
+          font-weight: bold
+          speed_unit: kph
+          use_statistics: true
+        - entity: sensor.windsnelheid
+          name: windvlaag
+          font-weight: bold
+          speed_unit: kph
+          use_statistics: true
+          windspeed_bar_full: false
+          output_speed_unit: knots
+          speed_range_beaufort: false
+          speed_ranges:
+            - from_value: 0
+              color: rgb(0,255,0)
+            - from_value: 2
+              color: yellow
+            - from_value: 5
+              color: hsl(200, 100%, 60%)
+            - from_value: 10
+              color: orange
+            - from_value: 15
+              color: red
+      output_speed_unit: mps
+      speed_range_beaufort: true
+      windrose_draw_north_offset: 0
+      current_direction:
+        show_arrow: true
+        arrow_size: 150
+        center_circle_size: 10
+      compass_direction:
+        auto_rotate: false
+      corner_info:
+        top_left:
+          label: windvlaag
+          unit: " Knots"
+          entity: sensor.windsnelheid
+          label_text_size: 50
+          value_text_size: 50
+          input_unit: kph
+          output_unit: knots
+          color: DodgerBlue
+        top_right:
+          label: Windrichting
+          unit: null
+          color: DodgerBlue
+          entity: sensor.windrichting_azimut
+          input_unit: degrees
+          output_unit: letters
+          direction_letters: NOZWX
+      direction_labels:
+        cardinal_direction_letters: NOZW
+        show_cardinal_directions: true
+        show_intercardinal_directions: true
+        show_secondary_intercardinal_directions: true
+        cardinal_directions_text_size: 50
+        intercardinal_directions_text_size: 40
+        secondary_intercardinal_directions_text_size: 20
+        custom_labels:
+          "n": Noord
+          e: Oost
+          s: Zuid
+          w: West
+          ne: "no"
+          se: zo
+          sw: zw
+          nw: nw
+      show_intercardinal_directions: true
+      show_secondary_intercardinal_directions: true
+      matching_strategy: full-time
+      center_calm_percentage: false
+      colors:
+        rose_lines: rgb(200,200,255)
+        rose_cardinal_direction_labels: white
+        rose_intercardinal_direction_labels: white
+        rose_secondary_intercardinal_direction_labels: lightgray
+        rose_center_percentage: red
+        rose_percentages: grey
+        rose_current_direction_arrow: yellow
+        bar_border: hsl(200, 100%, 60%)
+        bar_unit_name: white
+        bar_name: white
+        bar_unit_values: white
+        bar_percentages: auto
