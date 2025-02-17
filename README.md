@@ -14,7 +14,7 @@
 
 <h3>Made some different dashboard for View-assist. the changes are as follows:</h3>
 
-In each top left corner I have applied this to all the others, just like in the original weather card. Clicking or holding on this will take you to another dashboard
+In each top left corner there is a icon. I have applied this to all the other dashboards, just like in the original weather card. Clicking or holding on this will take you to another dashboard
 
 
 clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(ducth weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. 
