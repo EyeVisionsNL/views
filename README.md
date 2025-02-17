@@ -4,15 +4,15 @@
 
 
 
-You need the view-assist template for all views! NO i am not on a Lenovo-thinksmart. I'm on a 10,1inch tablet Teclast P30T
+<h2>**You need the view-assist template for all views! NO i am not on a Lenovo-thinksmart. I'm on a 10,1inch tablet Teclast P30T**</h2>
 
 
 
 
 
-https://dinki.github.io/View-Assist/docs/viewassist-setup
+<h2>https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
 
-Made some different dashboard for View-assist. the changes are as follows:
+<h3>Made some different dashboard for View-assist. the changes are as follows:</h3>
 
 
 clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(ducth weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration.
@@ -53,11 +53,11 @@ hey miep wakeword https://files.fm/u/q7te576u9n
 
 #Dutch
 
-Je heb voor alle views de template nodig van view-assist!!
+<h2>Je heb voor alle views de template nodig van view-assist!!
 
-https://dinki.github.io/View-Assist/docs/viewassist-setup
+https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
 
-Wat verschillende dashboard gemaakt voor View-assist. de wijzigingen zijn als volgt:
+<h3>Ik heb wat verschillende dashboard gemaakt voor View-assist. de wijzigingen zijn als volgt:</h3>
 
 clock: transition veranderd deze gaat nu vloeiend naar nieuwe positie ipv ernaar te springen. Ook wijzigd de klok van kleur aan de hand van de KNMI geldende weer codes. Dit vergt KNMI hacs intergratie. 
 wat backshadows toegevoegd.  code geel
