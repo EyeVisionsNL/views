@@ -1,0 +1,308 @@
+type: custom:button-card
+variables:
+  floorplanversion: 1.0.1
+template:
+  - variable_template
+  - body_template
+styles:
+  card:
+    - background-color: "#1c1c1c"
+    - background-size: cover
+  custom_fields:
+    message:
+      - font-size: "[[[ return variables.var_font_size ]]]"
+      - position: relative
+      - padding: 10px
+      - border-radius: 10px
+      - width: 100%
+      - text-align: start
+      - text-wrap: wrap
+      - justify-content: center
+      - align-self: center
+      - padding: 2%
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: 40%
+          - padding: 0px;
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+        name:
+          - font-size: 8vh
+          - color: white
+        icon:
+          - width: 60vh
+          - color: white
+  card:
+    card:
+      type: picture-elements
+      image: /local/tmp/newhuislicht.png
+      dark_mode_image: /local/tmp/newhuisdonker.png
+      styles:
+        card:
+          - width: 180%
+          - height: 180%
+          - transform: scale(2.1)
+          - overflow: hidden
+      elements:
+        - type: conditional
+          title: wc
+          conditions:
+            - condition: state
+              entity: light.wc_lamp
+              state: "on"
+          elements:
+            - type: image
+              image: /local/tmp/newwc.png
+              style:
+                left: 50%
+                top: 50%
+                width: 100%
+        - type: conditional
+          title: woonkamer
+          conditions:
+            - condition: state
+              entity: light.woonkamer_lampen
+              state: "on"
+          elements:
+            - type: image
+              image: /local/tmp/newwoonkamer.png
+              style:
+                left: 50%
+                top: 50%
+                width: 100%
+        - type: conditional
+          title: keuken
+          conditions:
+            - condition: state
+              entity: light.keukenlamp_2
+              state: "on"
+          elements:
+            - type: image
+              image: /local/tmp/newkeuken.png
+              style:
+                left: 50%
+                top: 50%
+                width: 100%
+        - type: conditional
+          title: gang
+          conditions:
+            - condition: state
+              entity: light.lamp_gang_beneden
+              state: "on"
+          elements:
+            - type: image
+              image: /local/tmp/newgang.png
+              style:
+                left: 50%
+                top: 50%
+                width: 100%
+        - type: state-icon
+          entity: light.woonkamer_lampen
+          tap_action:
+            action: toggle
+          hold_action:
+            action: toggle
+          icon: phu:aqara-wirelessbutton
+          state_color: true
+          style:
+            left: 55%
+            top: 41%
+        - type: state-icon
+          entity: light.keukenlamp_2
+          icon: phu:ceiling-round
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+          style:
+            left: 38%
+            top: 68%
+        - type: state-icon
+          icon: phu:ceiling-fair
+          tap_action:
+            action: toggle
+          entity: light.wc_lamp
+          style:
+            left: 30%
+            top: 30%
+          hold_action:
+            action: more-info
+        - type: state-icon
+          icon: phu:recessed-ceiling
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+          style:
+            left: 34%
+            top: 42%
+          entity: light.lamp_gang_beneden
+        - type: state-icon
+          entity: light.tuin_lampen
+          icon: phu:ceiling-buratto-three
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+          style:
+            left: 80%
+            top: 70%
+        - type: state-icon
+          entity: light.vloerlamp_2
+          icon: phu:signe-gradient-floor
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          style:
+            left: 59%
+            top: 28%
+        - type: state-icon
+          entity: climate.thermostaat
+          tap_action:
+            action: navigate
+            navigation_path: /dashboard-viewassist/thermostat
+          hold_action:
+            action: more-info
+          style:
+            left: 44%
+            top: 50%
+        - type: state-icon
+          tap_action:
+            action: toggle
+          hold_action:
+            action: toggle
+          style:
+            left: 47%
+            top: 28%
+          icon: mdi:desk-lamp-on
+          entity: light.lamp_tv
+        - type: state-icon
+          entity: light.vloerlamp_1
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+          style:
+            left: 50%
+            top: 28%
+          icon: phu:signe-gradient-floor
+        - type: state-icon
+          entity: light.led_strip_woonkamer_2
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+          style:
+            left: 68%
+            top: 48%
+        - type: state-icon
+          style:
+            left: 48%
+            top: 63%
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+          entity: light.lamp_pop
+        - type: state-icon
+          style:
+            left: 26%
+            top: 40%
+          entity: lock.voordeurslot
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+        - type: state-icon
+          entity: camera.camera_achtertuin
+          style:
+            left: 75%
+            top: 50%
+          title: camera achtertuin
+          icon: mdi:cctv
+          tap_action:
+            action: navigate
+            navigation_path: /dashboard-viewassist/achtertuincamera
+        - type: state-icon
+          entity: camera.camera_voordeurbel
+          icon: mdi:cctv
+          tap_action:
+            action: navigate
+            navigation_path: /dashboard-viewassist/cameravoordeur
+          title: Voordeurbel
+          style:
+            left: 20%
+            top: 45%
+        - type: state-icon
+          style:
+            left: 50%
+            top: 50%
+          entity: light.plafond_ventilator_lamp
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+        - type: state-icon
+          style:
+            left: 54%
+            top: 50%
+          entity: fan.plafond_ventilator_fan
+          tap_action:
+            action: toggle
+          hold_action:
+            action: more-info
+        - type: state-icon
+          style:
+            left: 40%
+            top: 15%
+          entity: input_boolean.kat_thuis
+          tap_action:
+            action: toggle
+          title: kat
+        - type: state-icon
+          entity: input_boolean.gast
+          icon: phu:rooms-mancave
+          tap_action:
+            action: toggle
+          style:
+            left: 45%
+            top: 15%
+          title: gast
+        - type: state-label
+          style:
+            left: 85%
+            top: 55%
+          entity: binary_sensor.tuindeur_contact
+          prefix: "tuindeur "
+        - type: icon
+          icon: mdi:door-closed
+          entity: binary_sensor.tuindeur_contact
+          tap_action:
+            action: more-info
+          style:
+            left: 85%
+            top: 60%
+        - type: state-icon
+          icon: mdi:volume-medium
+          style:
+            left: 60%
+            top: 15%
+          hold_action:
+            action: toggle
+          tap_action:
+            action: navigate
+            navigation_path: /dashboard-viewassist/music
+          entity: media_player.woonkamer_2
