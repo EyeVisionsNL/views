@@ -1,0 +1,36 @@
+type: custom:button-card
+variables:
+  background: /local/viewassist/p2000.png
+  infocardversion: 1.0.
+  p2000_entity: sensor.rijnmond
+  var_font_size: 50px
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"  
+        "message message"
+        "assist assist"        
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 1fr 1fr
+  card:
+    - background: "[[[ return `center / cover no-repeat url(${variables.background})` ]]]"
+    - background-size: cover
+  custom_fields:
+    message:
+      - font-size: "[[[ return variables.var_font_size ]]]"
+      - position: relative
+      - padding: 10px
+      - border-radius: 10px
+      - width: 95%
+      - text-align: start
+      - text-wrap: wrap
+      - justify-content: center
+      - align-self: center
+      - padding: 2%
+      - font-weight: bold
+      - text-shadow: 2px 2px black
+custom_fields:
+  message: "[[[ return states[variables.p2000_entity].state; ]]]"
