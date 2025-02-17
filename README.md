@@ -1,5 +1,6 @@
-# views
+# views changes and made by eyevisions for view-assist
 #Englisch
+
 Made some different dashboard for View-assist. the changes are as follows:
 
 clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI applicable weather codes. This requires KNMI hacs integration.
