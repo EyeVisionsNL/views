@@ -4,7 +4,9 @@
 
 
 
-<h2>**You need the view-assist template for all views! NO i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T**</h2>
+<h2>**!!!!You need the view-assist template for all views!!!!**
+  
+  No i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T**</h2>
 
 
 
