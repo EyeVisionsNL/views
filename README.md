@@ -23,6 +23,7 @@ clock: transition changed, it now goes smoothly to new position instead of jumpi
 Weather:
 added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there.
 
+https://cdn.discordapp.com/attachments/1334150957516460045/1341814321092493352/VID20250219174741.mp4?ex=67b75d77&is=67b60bf7&hm=0814e0f98a486ffcd0ca153af9fa6a79b61bde377c2694c494d0766f174251df&
 
 Compass rose:
 Compass rose card with everything in it want you want to know about the wind. this requires WindRose card from hacs.
