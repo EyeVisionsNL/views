@@ -20,7 +20,7 @@
 In each top left corner there is a icon. I have applied this to all the other dashboards, just like in the original weather card. Clicking or holding on this will take you to another dashboard
 
 
-clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(ducth weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. need automationsknmi.yaml
+clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(ducth weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. 
 
 Weather:
 added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there.
@@ -68,7 +68,7 @@ hey miep wakeword https://files.fm/u/q7te576u9n
 In elke linker boven hoek heb ik een  icon gemaakt net als in de origeneele weather card en dit bij alle andere toegepast behalve de p2000 dashboard. Door hierop te klikken of vast te houden ga je naar een ander dashboard.
 
 clock: transition veranderd deze gaat nu vloeiend naar nieuwe positie ipv ernaar te springen. Ook wijzigd de klok van kleur aan de hand van de KNMI geldende weer codes. Dit vergt KNMI hacs intergratie. 
-wat backshadows toegevoegd.  code geel   benodigd automationsknmi.yaml
+wat backshadows toegevoegd.  code geel
 
 ![Screenshot_20250201-094019](https://github.com/user-attachments/assets/14add1de-846f-4ed1-b691-a08689f39032)
 
