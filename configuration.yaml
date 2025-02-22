@@ -1,6 +1,6 @@
 platform
   - sensor:
-      - name: "# lampen aan"
+      - name: "# light on"
         unique_id: count_lights_on
         icon: "{{ 'mdi:lightbulb' if this.state | int(0) > 0 else 'mdi:lightbulb-off' }}"
         unit_of_measurement: "lampen"
