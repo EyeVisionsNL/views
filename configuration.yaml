@@ -7,4 +7,4 @@ platform
         state: >
           {{ states.light | rejectattr('attributes.entity_id', 'defined') | selectattr('state', 'eq', 'on') | list | count }}
   
-//// for lichten.yaml
+//// for activelights.yaml
