@@ -31,7 +31,8 @@ Compass rose card with everything in it want you want to know about the wind. th
 
 
 P2000
-The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs.
+The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs. It show the messages for 15 sec and then go to map view to the location.
+The automation uses a chime.
 
 
 thermostat
