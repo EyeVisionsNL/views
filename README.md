@@ -86,10 +86,11 @@ Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 
 
 P2000
-Hier komen de berichten van P2000 te staan van je regio. Dit vergt P2000 van hacs. simpelautomation erbij gedaan. stap 1 berciht wordt getoont voor 15 sec  Stap 2 wordt naar map dashboard met de locatie gestuurd voor 15 sec.
-![Screenshot_20250217-142212](https://github.com/user-attachments/assets/67b42502-e18a-4030-89a3-14d41c9034d1)
-![Screenshot_20250223-192459](https://github.com/user-attachments/assets/5f530de7-ffd0-4cdf-911d-22650d316b06)
+Hier komen de berichten van P2000 te staan van je regio. Dit vergt P2000 van hacs. simpelautomation erbij gedaan. stap 1 berciht wordt getoont voor 15 sec  Stap 2 wordt naar map dashboard met de locatie gestuurd.
 
+![Screenshot_20250224-171655](https://github.com/user-attachments/assets/800cdb9f-c63f-4f79-80a4-b5f0e80247c8)
+
+![Screenshot_20250224-171752](https://github.com/user-attachments/assets/4d2e3075-d8c4-4193-bfa6-ed52ab431f51)
 
 thermostaat
 Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
