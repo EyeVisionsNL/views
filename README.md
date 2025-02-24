@@ -55,7 +55,7 @@ files: weatherpictures https://files.fm/u/krd4gzxmwr
 
 Made a dutch wake word "Hey Miep"for those dutch people out there! want to make your own? https://colab.research.google.com/drive/1q1oe2zOyZp7UsB3jJiQ1IFn8z5YfjwEb?usp=sharing#scrollTo=1cbqBebHXjFD
 
-files: hey miep wakeword. https://files.fm/u/krd4gzxmwr 
+files: hey miep wakeword.
 
 
 
@@ -122,4 +122,5 @@ Camera:
 files: weatherpictures https://files.fm/u/krd4gzxmwr
 
 Heb een nederlands wake word gemaakt Hey_Miep gemaakt met Open the wake word training environment. https://colab.research.google.com/drive/1q1oe2zOyZp7UsB3jJiQ1IFn8z5YfjwEb?usp=sharing#scrollTo=1cbqBebHXjFD
-hey miep wakeword https://files.fm/u/q7te576u9n
+
+files: hey miep wakeword 
