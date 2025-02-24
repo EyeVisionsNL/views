@@ -1,0 +1,9 @@
+type: map
+entities:
+  - entity: sensor.p2000
+marker_cluster:
+  max_zoom: 10
+  icon: /local/viewassist/p2000map1.png
+default_zoom: 16
+icon_color: red
+theme_mode: light
