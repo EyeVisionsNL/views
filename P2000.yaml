@@ -1,22 +1,22 @@
 type: custom:button-card
 variables:
   background: /local/viewassist/p2000.png
-  infocardversion: 1.0.
-  p2000_entity: sensor.rijnmond
-  var_font_size: 50px
+  p2000cardversion: 1.0.1
+  p2000_entity: sensor.p2000
+  var_font_size: 35px
 template:
   - variable_template
   - body_template
 styles:
   grid:
     - grid-template-areas: |
-        "title status"  
+        "title title"
         "message message"
-        "assist assist"        
+        "card card"
     - grid-template-rows: min-content 4fr min-content
     - grid-template-columns: 1fr 1fr
   card:
-    - background: "[[[ return `center / cover no-repeat url(${variables.background})` ]]]"
+    - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
     - background-size: cover
   custom_fields:
     message:
@@ -25,12 +25,35 @@ styles:
       - padding: 10px
       - border-radius: 10px
       - width: 95%
-      - text-align: start
-      - text-wrap: wrap
-      - justify-content: center
+      - text-align: center
       - align-self: center
+      - justify-self: center
       - padding: 2%
       - font-weight: bold
       - text-shadow: 2px 2px black
 custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: /viewassist/clock
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: auto
+          - padding: 5px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+        name:
+          - font-size: 6vh
+          - font-weight: bold
+          - color: white
+        icon:
+          - width: 12vh
+          - color: white
   message: "[[[ return states[variables.p2000_entity].state; ]]]"
