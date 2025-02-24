@@ -72,13 +72,13 @@ files: hey miep wakeword.
 In elke linker boven hoek heb ik een  icon gemaakt net als in de origeneele weather card en dit bij alle andere toegepast. Door hierop te klikken of vast te houden ga je naar een ander dashboard.
 
 clock: transition veranderd deze gaat nu vloeiend naar nieuwe positie ipv ernaar te springen. Ook wijzigd de klok van kleur aan de hand van de KNMI geldende weer codes. Dit vergt KNMI hacs intergratie. 
-wat backshadows toegevoegd.  code geel
+wat backshadows toegevoegd. je kan formaat van bewegen aanpassen als de clock buiten je scherm gaat. simpel met de procenten spelen dan moet het lukken.  code geel
 
 ![Screenshot_20250201-094019](https://github.com/user-attachments/assets/14add1de-846f-4ed1-b691-a08689f39032)
 
 
 Weather:
-schaduwen aangebracht letters en deze naar wit gezet. achtergrond verandert met type weer wat er dan is. je kan formaat van bewegen aanpassen als de clock buiten je scherm gaat. simpel met de procenten spelen dan moet het lukken.
+schaduwen aangebracht aan de letters en deze naar wit gezet. achtergrond verandert mee met type weer wat er dan is hiervoor zip file met de plaatjes gemaakt weather.zip 
 
 ![Screenshot_20250217-193341](https://github.com/user-attachments/assets/a9745e39-18bb-4eb9-aeb1-7bf68b831d48)
 
