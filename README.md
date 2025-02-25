@@ -5,6 +5,8 @@
 
 
 <h2>**!!!!You need the view-assist template for all views!!!!**</h2>
+
+<h2>###Feel free to use parts or pieces of scripts.###</h2>
   
    
 ***No i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T***
@@ -70,7 +72,12 @@ files: hey miep wakeword.
 
 <h2>Je heb voor alle views de template nodig van view-assist!! </h2>
 
+<h2>
+Voel je vrij om delen of stukken van scripts te gebruiken.
+</h2>
+
 ****Nee zit niet op lenovo-thinksmart TSV maar tablet 10.1inch teclast p30t***
+
 
 <h2>https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
 
