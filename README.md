@@ -17,13 +17,20 @@
 
 <h3>Made some different dashboard for View-assist. the changes are as follows:</h3>
 
-In each top left corner there is a icon. I have applied this to all the other dashboards, just like in the original weather card. Clicking or holding on this will take you to another dashboard
+In each top left corner there is a icon. I have applied this to all the other dashboards, just like in the original weather card. Clicking or holding on this will take you to another dashboard. Here are some examples.
 
+info
+
+![Screenshot_20250225-184650](https://github.com/user-attachments/assets/57f544ef-3757-48a4-9cd5-4be2c4556e89)
+
+mediaplayer dashboard
+
+![Screenshot_20250225-191552](https://github.com/user-attachments/assets/392f098a-85a4-4b36-94d0-968885fe7d29)
 
 clock: transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(ducth weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. 
 
 Weather:
-added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there.
+added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there. versie 1.03
 
 
 Compass rose:
