@@ -29,6 +29,11 @@ mediaplayer dashboard
 
 ![Screenshot_20250225-191552](https://github.com/user-attachments/assets/392f098a-85a4-4b36-94d0-968885fe7d29)
 
+intent:
+
+![Screenshot_20250225-203627](https://github.com/user-attachments/assets/57eed1c6-d236-4172-81b3-2498269fb865)
+
+
 <b>clock:</b>
 
 transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(dutch weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. NO KNMI simple delete the peace of code and put color to the letters.
