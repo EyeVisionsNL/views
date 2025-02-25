@@ -70,11 +70,9 @@ files: hey miep wakeword.
 
 <h1>#Dutch</h1>
 
-<h2>Je heb voor alle views de template nodig van view-assist!! </h2>
+<h2>***Je heb voor alle views de template nodig van view-assist!!*** </h2>
 
-<h2>
-Voel je vrij om delen of stukken van scripts te gebruiken.
-</h2>
+<h2>###Voel je vrij om delen of stukken van scripts te gebruiken.###</h2>
 
 ****Nee zit niet op lenovo-thinksmart TSV maar tablet 10.1inch teclast p30t***
 
