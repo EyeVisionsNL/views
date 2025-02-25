@@ -1,6 +1,6 @@
 type: custom:button-card
 variables:
-  musiccardversion: 1.1.1
+  musiccardversion: 1.1.2
   var_musicplayer_device: |-
     [[[
       var assistbid = hass.states[variables.assist_group].attributes.entity_id
