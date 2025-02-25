@@ -29,34 +29,35 @@ mediaplayer dashboard
 
 ![Screenshot_20250225-191552](https://github.com/user-attachments/assets/392f098a-85a4-4b36-94d0-968885fe7d29)
 
-<b>clock:</b> transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(dutch weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. NO KNMI simple delete the peace of code and put color to the letters.
+<b>clock:</b>
+transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(dutch weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. NO KNMI simple delete the peace of code and put color to the letters.
 
-Weather:
+<b>Weather:</b>
 added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there. versie 1.03
 
 
-Compass rose:
+<b>Compass rose:</b.
 Compass rose card with everything in it want you want to know about the wind. this requires WindRose card from hacs.
 
 
-P2000
+<b>P2000</b>
 The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs. It show the messages for 15 sec and then go to map view to the location.
 The automation uses a chime.
 
 
-thermostat
+<b>thermostat:</b>
 Here I have placed mini graphs of the thermostat and a co2 meter. I personally use Apollo MSR-2.
 
 
-Activelights:
+<b>Activelights:</b>
 This page shows the lights that are on. required piece of script in configuration.yaml
 
 
-Floor plan:
+<b>Floor plan:</b>
 Plain floor plan in layout/template view-assist
 
 
-Camera:
+<b>Camera:</b>
 2 cameras placed next to each other on 1 page.
 
 
