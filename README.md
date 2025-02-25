@@ -30,22 +30,27 @@ mediaplayer dashboard
 ![Screenshot_20250225-191552](https://github.com/user-attachments/assets/392f098a-85a4-4b36-94d0-968885fe7d29)
 
 <b>clock:</b>
+
 transition changed, it now goes smoothly to new position instead of jumping to it. The clock also changes color based on the KNMI(dutch weather station that give weather color codes)applicable weather codes. This requires KNMI hacs integration. you can adjust the size of the movement if the clock goes outside your screen. Simply play with the percentages and it should work. NO KNMI simple delete the peace of code and put color to the letters.
 
 <b>Weather:</b>
+
 added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there. versie 1.03
 
 
-<b>Compass rose:</b.
+<b>Compass rose:</b>
+
 Compass rose card with everything in it want you want to know about the wind. this requires WindRose card from hacs.
 
 
-<b>P2000</b>
+<b>P2000:</b>
+
 The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs. It show the messages for 15 sec and then go to map view to the location.
 The automation uses a chime.
 
 
 <b>thermostat:</b>
+
 Here I have placed mini graphs of the thermostat and a co2 meter. I personally use Apollo MSR-2.
 
 
@@ -54,10 +59,12 @@ This page shows the lights that are on. required piece of script in configuratio
 
 
 <b>Floor plan:</b>
+
 Plain floor plan in layout/template view-assist
 
 
 <b>Camera:</b>
+
 2 cameras placed next to each other on 1 page.
 
 
@@ -90,19 +97,22 @@ wat backshadows toegevoegd. je kan formaat van bewegen aanpassen als de clock bu
 ![Screenshot_20250201-094019](https://github.com/user-attachments/assets/14add1de-846f-4ed1-b691-a08689f39032)
 
 
-Weather:
+<b>Weather:</b>
+
 schaduwen aangebracht aan de letters en deze naar wit gezet. achtergrond verandert mee met type weer wat er dan is hiervoor zip file met de plaatjes gemaakt weather.zip 
 
 ![Screenshot_20250217-193341](https://github.com/user-attachments/assets/a9745e39-18bb-4eb9-aeb1-7bf68b831d48)
 
 
-Windroos:
+<b>Windroos:</b>
+
 Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 
 ![Screenshot_20250131-114940](https://github.com/user-attachments/assets/f7865cc3-cc3b-4f0f-9dfb-664b3f611d25)
 
 
-P2000
+<b>P2000</b>
+
 Hier komen de berichten van P2000 te staan van je regio of woonplaats Dit vergt P2000 van hacs. Ik heb een helper gemaakt die schakeld tussen de 2 p2000 sensoren
 lokaal en regio. Neem aan dat dit zelf wel gaat lukken. Zelf ChimeTTS geluid erbij dedaan die je toch al geisntalleerd had voor view-assist
 
@@ -111,31 +121,35 @@ lokaal en regio. Neem aan dat dit zelf wel gaat lukken. Zelf ChimeTTS geluid erb
 
 ![Screenshot_20250224-171752](https://github.com/user-attachments/assets/4d2e3075-d8c4-4193-bfa6-ed52ab431f51)
 
-thermostaat
+<b>thermostaat</b>
+
 Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
 
 ![Screenshot_20250215-173628](https://github.com/user-attachments/assets/19452916-841b-47c9-8e61-00c423fc0839)
 
 
-activelights:
+<b>activelights:</b>
+
 Deze pagina geeft de lampen weer die aan staan. benodigd stukje script in configuratie.yaml
 
 ![Screenshot_20250215-173559](https://github.com/user-attachments/assets/5d86e799-e342-49e0-9dff-78b4f91c0693)
 
 
-Floorplan:
+<b>Floorplan:</b>
+
 Gewoon vloerplan in layout/template view-assist
 
 ![Screenshot_20250208-213045](https://github.com/user-attachments/assets/75dd974d-bf43-4fd9-b406-57c280a26337)
 
 
-Camera:
+,b>Camera:</b>
+
 2 camera's op 1 pagina gezet naast elkaar.
 
 
 
-files: weatherpictures https://files.fm/u/krd4gzxmwr
+<b>files: weatherpictures https://files.fm/u/krd4gzxmwr
 
 Heb een nederlands wake word gemaakt Hey_Miep gemaakt met Open the wake word training environment. https://colab.research.google.com/drive/1q1oe2zOyZp7UsB3jJiQ1IFn8z5YfjwEb?usp=sharing#scrollTo=1cbqBebHXjFD
 
-files: hey miep wakeword 
+files: hey miep wakeword </b>
