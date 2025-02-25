@@ -60,6 +60,7 @@ Here I have placed mini graphs of the thermostat and a co2 meter. I personally u
 
 
 <b>Activelights:</b>
+
 This page shows the lights that are on. required piece of script in configuration.yaml
 
 
