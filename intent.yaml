@@ -1,0 +1,49 @@
+type: custom:button-card
+template:
+  - variable_template
+  - body_template
+styles:
+  card:
+    - background-color: "#000000"
+    - border-width: 0px
+    - border-radius: 0px
+  custom_fields:
+    message:
+      - position: relative
+      - width: 100%
+      - align-self: middle
+      - justify-self: center
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:floor-plan
+      tap_action:
+        action: navigate
+        navigation_path: vloerplan
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: 50%
+          - padding: 0px;
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+        name:
+          - font-size: 14vh
+          - color: white
+        icon:
+          - width: 15vw
+          - color: white
+  card: ""
+  message:
+    card:
+      type: custom:layout-card
+      layout_type: custom:masonry-layout
+      layout:
+        max_cols: 3
+      cards: >-
+        [[[ try {return
+        hass.states[variables.var_assistsat_entity].attributes.intent_entities}
+        catch { return ""}]]]
