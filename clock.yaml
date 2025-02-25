@@ -3,10 +3,10 @@ template:
   - variable_template
   - body_template
 variables:
-  clockaltcardversion: 1.0.2
+  clockaltcardversion: 1.0.1
   var_enable_movement: true
   var_stop_position:
-    top: 120%
+    top: 100%
     left: 100%
   var_background: |-
     [[[ 
@@ -20,24 +20,38 @@ variables:
   var_positions:
     - top: "-250%"
       left: 5%
-    - top: "-250%"
-      left: 68%
-    - top: "-150%"
+    - top: "-230%"
+      left: 15%
+    - top: "-210%"
+      left: 25%
+    - top: "-200%"
+      left: 35%
+    - top: "-180%"
       left: 45%
+    - top: "-160%"
+      left: 55%
     - top: "-150%"
       left: 65%
-    - top: "-85%"
-      left: 10%
-    - top: "-55%"
-      left: 35%
-    - top: "-65%"
-      left: 68%
+    - top: "-130%"
+      left: 60%
     - top: "-110%"
-      left: 45%
-    - top: "-85%"
+      left: 50%
+    - top: "-90%"
+      left: 40%
+    - top: "-80%"
+      left: 30%
+    - top: "-70%"
       left: 20%
+    - top: "-60%"
+      left: 10%
+    - top: "-40%"
+      left: 60%
+    - top: "-55%"
+      left: 5%
+    - top: "-85%"
+      left: 45%
     - top: "-95%"
-      left: 55%
+      left: 65%
   var_random_position: |-
     [[[ 
       if (variables.var_enable_movement) {
@@ -50,7 +64,7 @@ variables:
             window.randomPosition = 'translate(' + randomPosition.left + ', ' + randomPosition.top + ')';
             
             /* Wacht 30 seconden voor de volgende beweging */
-            window.movementTimer = setTimeout(moveClock, 30000); 
+            window.movementTimer = setTimeout(moveClock, 20000); 
           };
 
           moveClock(); // Start de beweging
@@ -118,7 +132,7 @@ custom_fields:
                 navigation_path: weather
               hold_action:
                 action: navigate
-                navigation_path: /dashboard-tablet/home
+                navigation_path: music
               styles:
                 card:
                   - background-color: transparent
