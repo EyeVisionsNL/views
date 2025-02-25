@@ -1,9 +1,9 @@
 type: custom:button-card
 variables:
   background: /local/viewassist/p2000.png
-  p2000cardversion: 1.0.1
+  infocardversion: 1.0.2
   p2000_entity: sensor.p2000
-  var_font_size: 35px
+  var_font_size: 45px
 template:
   - variable_template
   - body_template
@@ -13,8 +13,6 @@ styles:
         "title title"
         "message message"
         "card card"
-    - grid-template-rows: min-content 4fr min-content
-    - grid-template-columns: 1fr 1fr
   card:
     - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
     - background-size: cover
@@ -24,8 +22,9 @@ styles:
       - position: relative
       - padding: 10px
       - border-radius: 10px
-      - width: 95%
-      - text-align: center
+      - max-width: 95%
+      - text-align: start
+      - text-wrap: wrap
       - align-self: center
       - justify-self: center
       - padding: 2%
@@ -35,11 +34,18 @@ custom_fields:
   title:
     card:
       type: custom:button-card
-      icon: mdi:clock
-      name: "[[[ return variables.var_current_time ]]]"
+      icon: mdi:fire-truck
+      name: |
+        [[[
+          if (states['input_boolean.p2000'].state === 'on') {
+            return 'Rijnmond';
+          } else {
+            return 'Vlaardingen';
+          }
+        ]]]
       tap_action:
-        action: navigate
-        navigation_path: /viewassist/clock
+        action: toggle
+        entity: input_boolean.p2000
       styles:
         card:
           - background-color: transparent
@@ -49,11 +55,14 @@ custom_fields:
         grid:
           - grid-template-areas: "\"i n\""
           - grid-template-rows: min-content min-content
+          - grid-template-columns: 165px auto
         name:
-          - font-size: 6vh
+          - font-size: 8vh
           - font-weight: bold
           - color: white
+          - text-shadow: 2px 2px black
         icon:
-          - width: 12vh
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 18vh
           - color: white
   message: "[[[ return states[variables.p2000_entity].state; ]]]"
