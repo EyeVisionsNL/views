@@ -97,9 +97,11 @@ Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 
 
 P2000
-Hier komen de berichten van P2000 te staan van je regio. Dit vergt P2000 van hacs. simpelautomation erbij gedaan. stap 1 berciht wordt getoont voor 15 sec  Stap 2 wordt naar map dashboard met de locatie gestuurd.
+Hier komen de berichten van P2000 te staan van je regio of woonplaats Dit vergt P2000 van hacs. Ik heb een helper gemaakt die schakeld tussen de 2 p2000 sensoren
+lokaal en regio. Neem aan dat dit zelf wel gaat lukken. Zelf ChimeTTS geluid erbij dedaan die je toch al geisntalleerd had voor view-assist
 
-![Screenshot_20250224-171655](https://github.com/user-attachments/assets/800cdb9f-c63f-4f79-80a4-b5f0e80247c8)
+![Screenshot_20250225-192227](https://github.com/user-attachments/assets/c85c5393-a8c5-443f-97a6-04230da67105)
+
 
 ![Screenshot_20250224-171752](https://github.com/user-attachments/assets/4d2e3075-d8c4-4193-bfa6-ed52ab431f51)
 
