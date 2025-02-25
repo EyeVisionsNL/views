@@ -142,7 +142,7 @@ Gewoon vloerplan in layout/template view-assist
 ![Screenshot_20250208-213045](https://github.com/user-attachments/assets/75dd974d-bf43-4fd9-b406-57c280a26337)
 
 
-,b>Camera:</b>
+<b>Camera:</b>
 
 2 camera's op 1 pagina gezet naast elkaar.
 
