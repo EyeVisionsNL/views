@@ -1,7 +1,7 @@
 type: custom:button-card
 variables:
   background: /local/viewassist/announcebird.jpg
-  infopiccardversion: 1.0.1
+  infopiccardversion: 1.0.2
 template:
   - variable_template
   - body_template
