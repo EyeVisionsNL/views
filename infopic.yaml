@@ -1,20 +1,18 @@
 type: custom:button-card
 variables:
   background: /local/viewassist/announcebird.jpg
-  infopiccardversion: 1.0.2 beta
+  infocardversion: 1.0.2
 template:
   - variable_template
   - body_template
 styles:
   grid:
     - grid-template-areas: |
-        "title status"  
+        "title status" 
         "image message"
-        "assist assist"       
-    - grid-template-rows: min-content 4fr min-content
-    - grid-template-columns: 1fr 2fr
+        "card assist"
   card:
-    - background: "[[[ return `center / cover no-repeat url(${variables.background})` ]]]"
+    - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
     - background-size: cover
   custom_fields:
     image:
@@ -34,6 +32,33 @@ styles:
       - align-self: center
       - padding: 2%
 custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: toggle
+        entity: input_boolean.p2000
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: auto
+          - padding: 5px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+          - grid-template-columns: 100px auto
+        name:
+          - font-size: 8vh
+          - font-weight: bold
+          - color: white
+          - text-shadow: 2px 2px black
+        icon:
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 12vh
+          - color: white
   image:
     card:
       type: picture
