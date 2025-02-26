@@ -61,7 +61,7 @@ Here I have placed mini graphs of the thermostat and a co2 meter. I personally u
 
 <b>Activelights:</b>
 
-This page shows the lights that are on. required piece of script in configuration.yaml
+This page shows the lights that are on. required custom:auto-entities
 
 
 <b>Floor plan:</b>
@@ -136,7 +136,7 @@ Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebr
 
 <b>activelights:</b>
 
-Deze pagina geeft de lampen weer die aan staan. benodigd stukje script in configuratie.yaml
+Deze pagina geeft de lampen weer die aan staan. benodigd custom:auto-entities
 
 ![Screenshot_20250215-173559](https://github.com/user-attachments/assets/5d86e799-e342-49e0-9dff-78b4f91c0693)
 
