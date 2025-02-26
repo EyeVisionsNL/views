@@ -1,7 +1,7 @@
 type: custom:button-card
 variables:
   background: /local/viewassist/p2000.png
-  infocardversion: 1.0.2
+  p2000cardversion: 1.0.1
   p2000_entity: sensor.p2000
   var_font_size: 45px
 template:
@@ -34,7 +34,14 @@ custom_fields:
   title:
     card:
       type: custom:button-card
-      icon: mdi:fire-truck
+      icon: |
+        [[[
+          if (states['input_boolean.p2000'].state === 'on') {
+            return 'mdi:car-emergency'; // Icoon voor Rijnmond
+          } else {
+            return 'mdi:fire-truck'; // Icoon voor Vlaardingen
+          }
+        ]]]
       name: |
         [[[
           if (states['input_boolean.p2000'].state === 'on') {
