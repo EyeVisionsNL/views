@@ -124,8 +124,8 @@ lokaal en regio. Neem aan dat dit zelf wel gaat lukken. Zelf ChimeTTS geluid erb
 
 ![Screenshot_20250225-192227](https://github.com/user-attachments/assets/c85c5393-a8c5-443f-97a6-04230da67105)
 
+![Screenshot_20250226-191451](https://github.com/user-attachments/assets/38a46366-cbd5-4266-8ead-04d152f73f2c)
 
-![Screenshot_20250224-171752](https://github.com/user-attachments/assets/4d2e3075-d8c4-4193-bfa6-ed52ab431f51)
 
 <b>thermostaat</b>
 
