@@ -1,0 +1,51 @@
+alias: View-assist P2000 - Vlaardingen
+description: ""
+triggers:
+  - entity_id: sensor.vlaardingen
+    trigger: state
+conditions:
+  - condition: state
+    entity_id: input_boolean.p2000
+    state: "off"
+  - condition: template
+    value_template: |
+      {{ 'GRIP' in states('sensor.vlaardingen') or
+         'Vlaardingen' in states('sensor.vlaardingen') or
+         'Schiedam' in states('sensor.vlaardingen') or
+         'Maasland' in states('sensor.vlaardingen') or
+         'Maassluis' in states('sensor.vlaardingen') }}
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: sensor.oneplus12_charger_type
+        state: wireless
+actions:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ 'GRIP' in states('sensor.vlaardingen') }}"
+        sequence:
+          - data:
+              chime_path: hail
+            target:
+              entity_id: media_player.tablet
+            action: chime_tts.say
+      - conditions: []
+        sequence:
+          - data:
+              chime_path: chirp
+            target:
+              entity_id: media_player.tablet
+            action: chime_tts.say
+  - data:
+      browser_id:
+        - 0041739398d895e9040c07be4dc364d8
+      path: /dashboard-viewassist/p2000
+    action: browser_mod.navigate
+  - delay: "00:00:15"
+  - data:
+      browser_id:
+        - 0041739398d895e9040c07be4dc364d8
+      path: /dashboard-viewassist/map2
+    action: browser_mod.navigate
+mode: single
