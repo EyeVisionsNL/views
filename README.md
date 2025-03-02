@@ -40,7 +40,7 @@ transition changed, it now goes smoothly to new position instead of jumping to i
 
 <b>Weather:</b>
 
-added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there. versie 1.03
+added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there. You can find this card on the orginal view-assist wiki page this one is litlle updated. versie 1.03
 
 
 <b>Compass rose:</b>
