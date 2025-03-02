@@ -120,7 +120,8 @@ Windroos kaart met alles erin. dit vergt WindRose card van hacs.
 <b>P2000</b>
 
 Hier komen de berichten van P2000 te staan van je regio of woonplaats Dit vergt P2000 van hacs. Ik heb een helper gemaakt die schakeld tussen de 2 p2000 sensoren
-lokaal en regio. Neem aan dat dit zelf wel gaat lukken. Zelf ChimeTTS geluid erbij dedaan die je toch al geisntalleerd had voor view-assist
+lokaal en regio. Neem aan dat dit zelf wel gaat lukken. Zelf ChimeTTS geluid erbij dedaan die je toch al geinstalleerd had voor view-assist. 
+Automatsering kiest ander geluid voor GRIP meldingen en zoomt map in net als bij lokale meldingen
 
 ![Screenshot_20250225-192227](https://github.com/user-attachments/assets/c85c5393-a8c5-443f-97a6-04230da67105)
 
