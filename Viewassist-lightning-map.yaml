@@ -1,0 +1,41 @@
+alias: View-assist - View lightning/map
+description: ""
+triggers:
+  - trigger: state
+    entity_id:
+      - sensor.blitzortung_lightning_distance
+      - sensor.blitzortung_lightning_counter
+conditions:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: sensor.oneplus_watch_charger_type
+        state: wireless
+  - condition: state
+    entity_id: input_boolean.bliksem
+    state: "on"
+actions:
+  - action: chime_tts.say
+    metadata: {}
+    data:
+      chime_path: dun_dun_dun
+    target:
+      device_id: 0041739398d895e9040c07be4dc364d8
+  - action: browser_mod.console
+    metadata: {}
+    data:
+      browser_id:
+        - 0041739398d895e9040c07be4dc364d8
+      message: /dashboard-viewassist/bliksem2
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - action: browser_mod.navigate
+    metadata: {}
+    data:
+      browser_id:
+        - 0041739398d895e9040c07be4dc364d8
+      path: /dashboard-viewassist/bliksem
+mode: single
