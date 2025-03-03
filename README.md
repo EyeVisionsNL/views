@@ -154,6 +154,16 @@ Gewoon vloerplan in layout/template view-assist
 2 camera's op 1 pagina gezet naast elkaar.
 
 
+BETA:
+
+<b>Agenda</b>
+
+![Screenshot_20250303-220720](https://github.com/user-attachments/assets/13d6ebb9-e84c-4d88-ae10-5f97b3d94bcd)
+
+<b>Bliksem</b>
+
+![Screenshot_20250303-190523](https://github.com/user-attachments/assets/f0e25934-f406-4ebe-a584-91274291149e)
+
 
 <b>files: weatherpictures https://files.fm/u/krd4gzxmwr
 
