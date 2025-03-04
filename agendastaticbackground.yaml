@@ -1,0 +1,91 @@
+type: custom:button-card
+variables:
+  agendacardversion: 1.0.0
+  var_font_size: 19px
+  var_background: /local/viewassist/announcebird.jpg
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title title" 
+        "message message"
+    - grid-template-rows: min-content auto
+  card:
+    - background: |-
+        [[[ 
+          return 'center / cover no-repeat url(' + variables.var_background + ')';
+        ]]]
+  custom_fields:
+    message:
+      - font-size: "[[[ return variables.var_font_size ]]]"
+      - align-self: center
+      - justify-self: center
+      - width: 100%
+      - height: 100%
+      - position: relative
+      - display: flex
+      - flex-direction: column
+      - justify-content: center
+      - text-align: center
+      - text-shadow: 1px 1px black
+      - font-weight: bold
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: vloerplan
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: auto
+          - padding: 5px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+          - grid-template-columns: 80px auto
+        name:
+          - font-size: 8vh
+          - font-weight: bold
+          - color: white
+          - text-shadow: 2px 2px black
+        icon:
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 12vh
+          - color: white
+  message:
+    card:
+      type: custom:week-planner-card
+      calendars:
+        - entity: calendar.keyhunternl_gmail_com
+          color: "#e6c229"
+          icon: mdi:github
+        - entity: calendar.feestdagen_in_nederland
+          color: "#1a8fe3"
+          icon: mdi:party-popper
+      weather:
+        entity: weather.knmi_thuis
+        showTemperature: true
+        showLowTemperature: true
+      days: 10
+      hideDaysWithoutEvents: false
+      compact: false
+      showLegend: false
+      noCardBackground: true
+      eventBackground: rgba(0, 0, 255, .40)
+      locationLink: https://www.openstreetmap.org/search?query=
+      locale: nl
+      texts:
+        noEvents: Geen activiteiten
+        fullDay: Hele dag
+        today: Vandaag
+        tomorrow: Morgen
