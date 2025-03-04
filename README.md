@@ -164,6 +164,11 @@ BETA:
 
 ![Screenshot_20250303-190523](https://github.com/user-attachments/assets/f0e25934-f406-4ebe-a584-91274291149e)
 
+<b>Pollenradar</b>
+
+![Screenshot_20250304-153819](https://github.com/user-attachments/assets/a8b52fce-c2c6-47d3-a7e3-33649015fc2b)
+
+
 
 <b>files: weatherpictures https://files.fm/u/krd4gzxmwr
 
