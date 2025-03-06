@@ -62,52 +62,59 @@ custom_fields:
           - color: white
   card_pollen:
     card:
-      type: vertical-stack
-      cards:
-        - type: entities
-          entities:
-            - entity: sensor.hoogste_pollenbron_gras
-              state: "[[[ return states['sensor.hoogste_pollenbron_gras'].state ]]]"
-              icon: mdi:grass
-              styles:
-                icon:
-                  color: |
-                    [[[
-                      let value = states['sensor.hoogste_pollenwaarde_gras'].state;
-                      console.log("Pollenwaarde gras: ", value);
-                      if (value < 16) return 'green !important';
-                      if (value < 20) return 'yellow !important';
-                      if (value < 24) return 'orange !important';
-                      return 'red !important';
-                    ]]]
-            - entity: sensor.hoogste_pollenbron_kruiden
-              state: "[[[ return states['sensor.hoogste_pollenbron_kruiden'].state ]]]"
-              icon: mdi:sprout
-              styles:
-                icon:
-                  color: |
-                    [[[
-                      let value = states['sensor.hoogste_pollenwaarde_bomen'].state;
-                      console.log("Pollenwaarde bomen: ", value);
-                      if (value < 45) return 'green !important';
-                      if (value < 60) return 'yellow !important';
-                      if (value < 80) return 'orange !important';
-                      return 'red !important';
-                    ]]]
-            - entity: sensor.hoogste_pollenbron_bomen
-              state: "[[[ return states['sensor.hoogste_pollenbron_bomen'].state ]]]"
-              icon: mdi:tree
-              styles:
-                icon:
-                  color: |
-                    [[[
-                      let value = states['sensor.hoogste_pollenwaarde_kruiden'].state;
-                      console.log("Pollenwaarde kruiden: ", value);
-                      if (value < 40) return 'green !important';
-                      if (value < 50) return 'yellow !important';
-                      if (value < 65) return 'orange !important';
-                      return 'red !important';
-                    ]]]
+      type: entities
+      entities:
+        - entity: sensor.hoogste_pollenbron_gras
+          state: "[[[ return states['sensor.hoogste_pollenbron_gras'].state ]]]"
+          icon: mdi:grass
+          card_mod:
+            style: |
+              :host {
+                {% set value = states('sensor.hoogste_pollenwaarde_gras') | int(0) %}
+                {% if value < 16 %}
+                  --paper-item-icon-color: green;
+                {% elif value < 20 %}
+                  --paper-item-icon-color: yellow;
+                {% elif value < 24 %}
+                  --paper-item-icon-color: orange;
+                {% else %}
+                  --paper-item-icon-color: red;
+                {% endif %}
+              }
+        - entity: sensor.hoogste_pollenbron_kruiden
+          state: "[[[ return states['sensor.hoogste_pollenbron_kruiden'].state ]]]"
+          icon: mdi:sprout
+          card_mod:
+            style: |
+              :host {
+                {% set value = states('sensor.hoogste_pollenwaarde_kruiden') | int(0) %}
+                {% if value < 45 %}
+                  --paper-item-icon-color: green;
+                {% elif value < 60 %}
+                  --paper-item-icon-color: yellow;
+                {% elif value < 80 %}
+                  --paper-item-icon-color: orange;
+                {% else %}
+                  --paper-item-icon-color: red;
+                {% endif %}
+              }
+        - entity: sensor.hoogste_pollenbron_bomen
+          state: "[[[ return states['sensor.hoogste_pollenbron_bomen'].state ]]]"
+          icon: mdi:tree
+          card_mod:
+            style: |
+              :host {
+                {% set value = states('sensor.hoogste_pollenwaarde_bomen') | int(0) %}
+                {% if value < 40 %}
+                  --paper-item-icon-color: green;
+                {% elif value < 50 %}
+                  --paper-item-icon-color: yellow;
+                {% elif value < 65 %}
+                  --paper-item-icon-color: orange;
+                {% else %}
+                  --paper-item-icon-color: red;
+                {% endif %}
+              }
   card_graphs:
     card:
       type: horizontal-stack
