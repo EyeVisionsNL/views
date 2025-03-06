@@ -75,6 +75,15 @@ Plain floor plan in layout/template view-assist
 
 2 cameras placed next to each other on 1 page.
 
+<b>made some new views like,
+
+Agenda, Pollen radar, Lightning radar,
+
+more pictures of this in the Dutch section</b>
+
+
+![Screenshot_20250306-172344](https://github.com/user-attachments/assets/493cc443-b93b-4f05-a319-82bd625312e6)
+
 
 files: weatherpictures https://files.fm/u/krd4gzxmwr
 
