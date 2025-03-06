@@ -46,7 +46,6 @@ custom_fields:
         card:
           - background-color: transparent
           - text-shadow: 1px 1px black
-          - font-weight: bold
           - border-width: 0px
           - width: 100%
           - padding: 0px
@@ -58,7 +57,7 @@ custom_fields:
           - font-weight: bold
           - color: white
         icon:
-          - filter: drop-shadow(2px 2px 4px black)
+          - filter: drop-shadow(2px 2px 2px black)
           - width: 10vh
           - color: white
   card_pollen:
@@ -66,43 +65,48 @@ custom_fields:
       type: vertical-stack
       cards:
         - type: entities
-          title: pollen-radar
           entities:
-            - entity: sensor.hoogste_pollenbron_bomen
-              name: Boom met hoogste waarde
-              icon: mdi:tree
-              styles:
-                icon:
-                  color: |
-                    [[[
-                      if (states['sensor.kleenex_pollen_radar_pollen_bomen'].state < 450) return 'green';
-                      if (states['sensor.kleenex_pollen_radar_pollen_bomen'].state < 600) return 'yellow';
-                      if (states['sensor.kleenex_pollen_radar_pollen_bomen'].state < 800) return 'orange';
-                      return 'red';
-                    ]]]
             - entity: sensor.hoogste_pollenbron_gras
-              name: Gras met hoogste waarde
+              state: "[[[ return states['sensor.hoogste_pollenbron_gras'].state ]]]"
               icon: mdi:grass
               styles:
                 icon:
                   color: |
                     [[[
-                      if (states['sensor.kleenex_pollen_radar_pollen_gras'].state < 16) return 'green';
-                      if (states['sensor.kleenex_pollen_radar_pollen_gras'].state < 20) return 'yellow';
-                      if (states['sensor.kleenex_pollen_radar_pollen_gras'].state < 24) return 'orange';
-                      return 'red';
+                      let value = states['sensor.hoogste_pollenwaarde_gras'].state;
+                      console.log("Pollenwaarde gras: ", value);
+                      if (value < 16) return 'green !important';
+                      if (value < 20) return 'yellow !important';
+                      if (value < 24) return 'orange !important';
+                      return 'red !important';
                     ]]]
             - entity: sensor.hoogste_pollenbron_kruiden
-              name: Kruiden met hoogste waarde
-              icon: mdi:flower
+              state: "[[[ return states['sensor.hoogste_pollenbron_kruiden'].state ]]]"
+              icon: mdi:sprout
               styles:
                 icon:
                   color: |
                     [[[
-                      if (states['sensor.kleenex_pollen_radar_pollen_kruiden'].state < 40) return 'green';
-                      if (states['sensor.kleenex_pollen_radar_pollen_kruiden'].state < 50) return 'yellow';
-                      if (states['sensor.kleenex_pollen_radar_pollen_kruiden'].state < 65) return 'orange';
-                      return 'red';
+                      let value = states['sensor.hoogste_pollenwaarde_bomen'].state;
+                      console.log("Pollenwaarde bomen: ", value);
+                      if (value < 45) return 'green !important';
+                      if (value < 60) return 'yellow !important';
+                      if (value < 80) return 'orange !important';
+                      return 'red !important';
+                    ]]]
+            - entity: sensor.hoogste_pollenbron_bomen
+              state: "[[[ return states['sensor.hoogste_pollenbron_bomen'].state ]]]"
+              icon: mdi:tree
+              styles:
+                icon:
+                  color: |
+                    [[[
+                      let value = states['sensor.hoogste_pollenwaarde_kruiden'].state;
+                      console.log("Pollenwaarde kruiden: ", value);
+                      if (value < 40) return 'green !important';
+                      if (value < 50) return 'yellow !important';
+                      if (value < 65) return 'orange !important';
+                      return 'red !important';
                     ]]]
   card_graphs:
     card:
