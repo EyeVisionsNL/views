@@ -8,7 +8,7 @@ styles:
         "title status"
         "card1 card2"
         "card3 card4"
-    - grid-template-rows: min-content 4fr min-content
+    - grid-template-rows: min-content 4fr 4fr
     - grid-template-columns: 50% 50%
   custom_fields:
     title:
