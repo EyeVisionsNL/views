@@ -167,13 +167,18 @@ BETA:
 
 ![Screenshot_20250303-220720](https://github.com/user-attachments/assets/13d6ebb9-e84c-4d88-ae10-5f97b3d94bcd)
 
+
 <b>Bliksem</b>
 
 ![Screenshot_20250303-190523](https://github.com/user-attachments/assets/f0e25934-f406-4ebe-a584-91274291149e)
 
+
+
 <b>Pollenradar</b>
 
-![Screenshot_20250306-172344](https://github.com/user-attachments/assets/6cb3e70f-7c62-4eb0-b741-2e94766a55a7)
+
+
+![Screenshot_20250306-183108](https://github.com/user-attachments/assets/fdfa4f19-7cc1-4d0f-9e8d-5f675d13d565)
 
 
 
