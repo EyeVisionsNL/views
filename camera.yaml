@@ -7,7 +7,7 @@ styles:
     - grid-template-areas: |
         "title status"
         "card1 card2"
-        "windspeed windspeed"
+        "card3 card4"
     - grid-template-rows: min-content 4fr min-content
     - grid-template-columns: 50% 50%
   custom_fields:
@@ -25,10 +25,6 @@ styles:
       - justify-self: center
       - height: auto
       - display: flex
-    floorplan:
-      - align-self: end
-      - justify-self: start
-      - padding: 5px
 custom_fields:
   title:
     card:
@@ -40,7 +36,7 @@ custom_fields:
         navigation_path: clock
       hold_action:
         action: navigate
-        navigation_path: floorplan
+        navigation_path: clock
       styles:
         card:
           - background-color: transparent
@@ -57,8 +53,8 @@ custom_fields:
           - font-weight: bold
           - color: white
         icon:
-          - filter: drop-shadow(2px 2px 4px black)
-          - width: 12vh
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 10vh
           - color: white
   card1:
     card:
