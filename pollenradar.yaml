@@ -6,8 +6,8 @@ styles:
   grid:
     - grid-template-areas: |
         "title status"
-        "card card"
-        "windspeed assist"
+        "card_pollen card_pollen"
+        "card_graphs card_graphs"
     - grid-template-rows: min-content 4fr min-content
     - grid-template-columns: 1fr 1fr
   custom_fields:
@@ -17,7 +17,15 @@ styles:
       - padding: 1px
       - text-shadow: 1px 1px black
       - font-weight: bold
-    card:
+    card_pollen:
+      - align-self: center
+      - font-weight: bold
+      - justify-self: center
+      - width: auto
+      - height: auto
+      - max-width: auto
+      - transform: scale(130%)
+    card_graphs:
       - align-self: center
       - font-weight: bold
       - justify-self: center
@@ -53,7 +61,7 @@ custom_fields:
           - filter: drop-shadow(2px 2px 4px black)
           - width: 10vh
           - color: white
-  card:
+  card_pollen:
     card:
       type: vertical-stack
       cards:
@@ -62,108 +70,131 @@ custom_fields:
           entities:
             - entity: sensor.hoogste_pollenbron_bomen
               name: Boom met hoogste waarde
+              icon: mdi:tree
+              styles:
+                icon:
+                  color: |
+                    [[[
+                      if (states['sensor.kleenex_pollen_radar_pollen_bomen'].state < 450) return 'green';
+                      if (states['sensor.kleenex_pollen_radar_pollen_bomen'].state < 600) return 'yellow';
+                      if (states['sensor.kleenex_pollen_radar_pollen_bomen'].state < 800) return 'orange';
+                      return 'red';
+                    ]]]
             - entity: sensor.hoogste_pollenbron_gras
               name: Gras met hoogste waarde
-            - entity: sensor.hoogste_pollenwaarde_kruiden
+              icon: mdi:grass
+              styles:
+                icon:
+                  color: |
+                    [[[
+                      if (states['sensor.kleenex_pollen_radar_pollen_gras'].state < 16) return 'green';
+                      if (states['sensor.kleenex_pollen_radar_pollen_gras'].state < 20) return 'yellow';
+                      if (states['sensor.kleenex_pollen_radar_pollen_gras'].state < 24) return 'orange';
+                      return 'red';
+                    ]]]
+            - entity: sensor.hoogste_pollenbron_kruiden
               name: Kruiden met hoogste waarde
-              show:
-                icon: false
-              title: Pollen in de lucht
-        - type: horizontal-stack
-          cards:
-            - type: custom:mini-graph-card
-              entities:
-                - sensor.kleenex_pollen_radar_pollen_gras
-              show:
-                icon: true
-                name: true
-              name: Gras
-              color_thresholds:
-                - value: 16
-                  color: "#36cff5"
-                - value: 18
-                  color: "#36cff5"
-                - value: 19
-                  color: "#1ab1d6"
-                - value: 20
-                  color: "#14f71f"
-                - value: 21
-                  color: "#78fa28"
-                - value: 22
-                  color: "#fabb28"
-                - value: 23
-                  color: "#fa5228"
-                - value: 24
-                  color: "#e31a0b"
-              line_width: 2
-              font_size: 80
-              font-weight: bold
-              hours_to_show: 24
-            - type: custom:mini-graph-card
-              entities:
-                - sensor.kleenex_pollen_radar_pollen_kruiden
-              show:
-                icon: true
-                name: true
-              name: Kruiden
-              color_thresholds:
-                - value: 65
-                  color: "#333dff"
-                - value: 62
-                  color: "#33aaff"
-                - value: 59
-                  color: "#33e0ff"
-                - value: 56
-                  color: "#33ffd6"
-                - value: 53
-                  color: "#33ff8f"
-                - value: 50
-                  color: "#05f240"
-                - value: 47
-                  color: "#c5ff33"
-                - value: 45
-                  color: "#f1ff33"
-                - value: 40
-                  color: "#ffbb33"
-                - value: 37
-                  color: "#ff5533"
-              line_width: 2
-              font_size: 80
-              font-weight: bold
-              hours_to_show: 24
-            - type: custom:mini-graph-card
-              entities:
-                - sensor.kleenex_pollen_radar_pollen_bomen
-              show:
-                icon: true
-                name: true
-              name: Bomen
-              color_thresholds:
-                - value: 450
-                  color: "#36cff5"
-                - value: 500
-                  color: "#36cff5"
-                - value: 550
-                  color: "#1ab1d6"
-                - value: 600
-                  color: "#14f71f"
-                - value: 650
-                  color: "#78fa28"
-                - value: 700
-                  color: "#fabb28"
-                - value: 750
-                  color: "#fc9c1e"
-                - value: 800
-                  color: "#fc771e"
-                - value: 900
-                  color: "#fa6f11"
-                - value: 1000
-                  color: "#fa6f11"
-                - value: 1100
-                  color: "#fa6f11"
-                - value: 1200
-                  color: "#fa4411"
-              line_width: 2
-              font_size: 80
-              font-weight: bold
-              hours_to_show: 24
+              icon: mdi:flower
+              styles:
+                icon:
+                  color: |
+                    [[[
+                      if (states['sensor.kleenex_pollen_radar_pollen_kruiden'].state < 40) return 'green';
+                      if (states['sensor.kleenex_pollen_radar_pollen_kruiden'].state < 50) return 'yellow';
+                      if (states['sensor.kleenex_pollen_radar_pollen_kruiden'].state < 65) return 'orange';
+                      return 'red';
+                    ]]]
+  card_graphs:
+    card:
+      type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - sensor.kleenex_pollen_radar_pollen_gras
+          show:
+            icon: true
+            name: true
+          name: Gras
+          color_thresholds:
+            - value: 16
+              color: "#36cff5"
+            - value: 18
+              color: "#36cff5"
+            - value: 19
+              color: "#1ab1d6"
+            - value: 20
+              color: "#14f71f"
+            - value: 21
+              color: "#78fa28"
+            - value: 22
+              color: "#fabb28"
+            - value: 23
+              color: "#fa5228"
+            - value: 24
+              color: "#e31a0b"
+          line_width: 2
+          font_size: 80
+          font-weight: bold
+          hours_to_show: 24
+        - type: custom:mini-graph-card
+          entities:
+            - sensor.kleenex_pollen_radar_pollen_kruiden
+          show:
+            icon: true
+            name: true
+          name: Kruiden
+          color_thresholds:
+            - value: 65
+              color: "#333dff"
+            - value: 62
+              color: "#33aaff"
+            - value: 59
+              color: "#33e0ff"
+            - value: 56
+              color: "#33ffd6"
+            - value: 53
+              color: "#33ff8f"
+            - value: 50
+              color: "#05f240"
+            - value: 47
+              color: "#c5ff33"
+            - value: 45
+              color: "#f1ff33"
+            - value: 40
+              color: "#ffbb33"
+            - value: 37
+              color: "#ff5533"
+          line_width: 2
+          font_size: 80
+          font-weight: bold
+          hours_to_show: 24
+        - type: custom:mini-graph-card
+          entities:
+            - sensor.kleenex_pollen_radar_pollen_bomen
+          show:
+            icon: true
+            name: true
+          name: Bomen
+          color_thresholds:
+            - value: 450
+              color: "#36cff5"
+            - value: 500
+              color: "#36cff5"
+            - value: 550
+              color: "#1ab1d6"
+            - value: 600
+              color: "#14f71f"
+            - value: 650
+              color: "#78fa28"
+            - value: 700
+              color: "#fabb28"
+            - value: 750
+              color: "#fc9c1e"
+            - value: 800
+              color: "#fc771e"
+            - value: 900
+              color: "#fa6f11"
+          line_width: 2
+          font_size: 80
+          font-weight: bold
+          hours_to_show: 24
