@@ -58,6 +58,8 @@ The automation uses a chime.
 
 Here I have placed mini graphs of the thermostat and a co2 meter. I personally use Apollo MSR-2.
 
+![Screenshot_20250306-161519](https://github.com/user-attachments/assets/cda3e512-13fa-4e33-beda-e65e0442dbff)
+
 
 <b>Activelights:</b>
 
@@ -132,8 +134,6 @@ Automatsering kiest ander geluid voor GRIP meldingen en zoomt map in net als bij
 
 Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
 
-![Screenshot_20250215-173628](https://github.com/user-attachments/assets/19452916-841b-47c9-8e61-00c423fc0839)
-
 
 <b>activelights:</b>
 
@@ -166,8 +166,7 @@ BETA:
 
 <b>Pollenradar</b>
 
-![Screenshot_20250304-153819](https://github.com/user-attachments/assets/a8b52fce-c2c6-47d3-a7e3-33649015fc2b)
-
+![Screenshot_20250306-161602](https://github.com/user-attachments/assets/384800f9-88db-4669-aa71-828d23f259e0)
 
 
 <b>files: weatherpictures https://files.fm/u/krd4gzxmwr
