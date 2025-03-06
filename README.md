@@ -181,8 +181,7 @@ BETA:
 <b>Pollenradar</b>
 
 
-
-![Screenshot_20250306-183108](https://github.com/user-attachments/assets/fdfa4f19-7cc1-4d0f-9e8d-5f675d13d565)
+![Screenshot_20250306-204236](https://github.com/user-attachments/assets/0fc164d7-d46d-4327-bdb4-8e60ece196a9)
 
 
 
