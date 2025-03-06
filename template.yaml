@@ -537,7 +537,6 @@ button_card_templates:
     type: custom:button-card
     template: icon_template
     icon: mdi:microphone-off
-    filter: drop-shadow(2px 2px 2px black)
     tap_action:
       action: call-service
       service: homeassistant.turn_on
@@ -547,7 +546,6 @@ button_card_templates:
     type: custom:button-card
     template: icon_template
     icon: mdi:hand-back-left
-    filter: drop-shadow(3px 3px 3px black)
     tap_action:
       action: call-service
       service: python_script.set_state
@@ -557,7 +555,6 @@ button_card_templates:
   dnd:
     type: custom:button-card
     template: icon_template
-    filter: drop-shadow(2px 2px 2px black)
     icon: mdi:minus-circle
     tap_action:
       action: call-service
@@ -568,7 +565,6 @@ button_card_templates:
   weather:
     type: custom:button-card
     template: icon_template
-    filter: drop-shadow(2px 2px 2px black)
     icon: mdi:weather-sunny
     tap_action:
       action: navigate
