@@ -20,18 +20,14 @@ styles:
     card_pollen:
       - align-self: center
       - font-weight: bold
+      - text-shadow: 0.5px 0.5px grey
       - justify-self: center
-      - width: auto
-      - height: auto
-      - max-width: auto
-      - transform: scale(130%)
+      - transform: scale(190%)
     card_graphs:
       - align-self: center
       - font-weight: bold
+      - text-shadow: 1px 1px black
       - justify-self: center
-      - width: auto
-      - height: auto
-      - max-width: auto
       - transform: scale(130%)
 custom_fields:
   title:
@@ -39,15 +35,11 @@ custom_fields:
       type: custom:button-card
       icon: mdi:clock
       name: "[[[ return variables.var_current_time ]]]"
-      tap_action:
-        action: navigate
-        navigation_path: camera
       styles:
         card:
           - background-color: transparent
           - text-shadow: 1px 1px black
           - border-width: 0px
-          - width: 100%
           - padding: 0px
         grid:
           - grid-template-areas: "\"i n\""
@@ -65,54 +57,93 @@ custom_fields:
       type: entities
       entities:
         - entity: sensor.hoogste_pollenbron_gras
-          state: "[[[ return states['sensor.hoogste_pollenbron_gras'].state ]]]"
+          name: >-
+            [[[ return "hoogste pollen waarde grassen " +
+            states['sensor.hoogste_pollenwaarde_gras'].state + ' ppm' + ' ' ]]]
           icon: mdi:grass
+          text: Hoogste pollen waarde
           card_mod:
             style: |
               :host {
                 {% set value = states('sensor.hoogste_pollenwaarde_gras') | int(0) %}
-                {% if value < 16 %}
+                {% if value < 25 %}
+                  --paper-item-icon-color: white;
+                  color: white !important;
+                {% elif value < 50 %}
                   --paper-item-icon-color: green;
-                {% elif value < 20 %}
+                  color: green !important;
+                {% elif value < 75 %}
                   --paper-item-icon-color: yellow;
-                {% elif value < 24 %}
+                  color: yellow !important;
+                {% elif value < 100 %}
                   --paper-item-icon-color: orange;
-                {% else %}
+                  color: orange !important;
+                {% elif value < 125 %}
                   --paper-item-icon-color: red;
+                  color: red !important;
+                {% else %}
+                  --paper-item-icon-color: magenta;
+                  color: magenta !important;
                 {% endif %}
               }
         - entity: sensor.hoogste_pollenbron_kruiden
-          state: "[[[ return states['sensor.hoogste_pollenbron_kruiden'].state ]]]"
+          name: >-
+            [[[ return "hoogste pollen waarde kruiden " +
+            states['sensor.hoogste_pollenwaarde_kruiden'].state + '' + ' ppm' +
+            ' ']]]
           icon: mdi:sprout
           card_mod:
             style: |
               :host {
                 {% set value = states('sensor.hoogste_pollenwaarde_kruiden') | int(0) %}
-                {% if value < 45 %}
+                {% if value < 25 %}
+                  --paper-item-icon-color: white;
+                  color: white !important;
+                {% elif value < 50 %}
                   --paper-item-icon-color: green;
-                {% elif value < 60 %}
+                  color: green !important;
+                {% elif value < 75 %}
                   --paper-item-icon-color: yellow;
-                {% elif value < 80 %}
+                  color: yellow !important;
+                {% elif value < 100 %}
                   --paper-item-icon-color: orange;
-                {% else %}
+                  color: orange !important;
+                {% elif value < 125 %}
                   --paper-item-icon-color: red;
+                  color: red !important;
+                {% else %}
+                  --paper-item-icon-color: magenta;
+                  color: magenta !important;
                 {% endif %}
               }
         - entity: sensor.hoogste_pollenbron_bomen
-          state: "[[[ return states['sensor.hoogste_pollenbron_bomen'].state ]]]"
+          name: >-
+            [[[ return "hoogste pollen waarde bomen " +
+            states['sensor.hoogste_pollenwaarde_bomen'].state + ''+' ppm'+' ']]]
           icon: mdi:tree
+          secondary_info: none
           card_mod:
             style: |
               :host {
                 {% set value = states('sensor.hoogste_pollenwaarde_bomen') | int(0) %}
-                {% if value < 40 %}
-                  --paper-item-icon-color: green;
+                {% if value < 25 %}
+                  --paper-item-icon-color: white;
+                  color: white !important;
                 {% elif value < 50 %}
+                  --paper-item-icon-color: green;
+                  color: green !important;
+                {% elif value < 75 %}
                   --paper-item-icon-color: yellow;
-                {% elif value < 65 %}
+                  color: yellow !important;
+                {% elif value < 100 %}
                   --paper-item-icon-color: orange;
-                {% else %}
+                  color: orange !important;
+                {% elif value < 125 %}
                   --paper-item-icon-color: red;
+                  color: red !important;
+                {% else %}
+                  --paper-item-icon-color: magenta;
+                  color: magenta !important;
                 {% endif %}
               }
   card_graphs:
@@ -127,26 +158,52 @@ custom_fields:
             name: true
           name: Gras
           color_thresholds:
-            - value: 16
-              color: "#36cff5"
-            - value: 18
-              color: "#36cff5"
-            - value: 19
-              color: "#1ab1d6"
-            - value: 20
-              color: "#14f71f"
-            - value: 21
-              color: "#78fa28"
-            - value: 22
-              color: "#fabb28"
-            - value: 23
-              color: "#fa5228"
-            - value: 24
-              color: "#e31a0b"
+            - value: 0
+              color: white
+            - value: 50
+              color: "#e0ffe0"
+            - value: 100
+              color: "#c0ffc0"
+            - value: 150
+              color: "#a0ffa0"
+            - value: 200
+              color: "#80ff80"
+            - value: 250
+              color: "#60ff60"
+            - value: 300
+              color: "#40ff40"
+            - value: 350
+              color: "#20ff20"
+            - value: 400
+              color: green
+            - value: 450
+              color: "#ffff80"
+            - value: 500
+              color: "#ffff60"
+            - value: 550
+              color: "#ffff40"
+            - value: 600
+              color: yellow
+            - value: 650
+              color: "#ffc040"
+            - value: 700
+              color: "#ffa020"
+            - value: 750
+              color: orange
+            - value: 800
+              color: "#ff8080"
+            - value: 850
+              color: "#ff6060"
+            - value: 900
+              color: red
+            - value: 950
+              color: magenta
+            - value: 1000
+              color: magenta
           line_width: 2
           font_size: 80
           font-weight: bold
-          hours_to_show: 24
+          hours_to_show: 48
         - type: custom:mini-graph-card
           entities:
             - sensor.kleenex_pollen_radar_pollen_kruiden
@@ -155,30 +212,52 @@ custom_fields:
             name: true
           name: Kruiden
           color_thresholds:
-            - value: 65
-              color: "#333dff"
-            - value: 62
-              color: "#33aaff"
-            - value: 59
-              color: "#33e0ff"
-            - value: 56
-              color: "#33ffd6"
-            - value: 53
-              color: "#33ff8f"
+            - value: 0
+              color: white
             - value: 50
-              color: "#05f240"
-            - value: 47
-              color: "#c5ff33"
-            - value: 45
-              color: "#f1ff33"
-            - value: 40
-              color: "#ffbb33"
-            - value: 37
-              color: "#ff5533"
+              color: "#e0ffe0"
+            - value: 100
+              color: "#c0ffc0"
+            - value: 150
+              color: "#a0ffa0"
+            - value: 200
+              color: "#80ff80"
+            - value: 250
+              color: "#60ff60"
+            - value: 300
+              color: "#40ff40"
+            - value: 350
+              color: "#20ff20"
+            - value: 400
+              color: green
+            - value: 450
+              color: "#ffff80"
+            - value: 500
+              color: "#ffff60"
+            - value: 550
+              color: "#ffff40"
+            - value: 600
+              color: yellow
+            - value: 650
+              color: "#ffc040"
+            - value: 700
+              color: "#ffa020"
+            - value: 750
+              color: orange
+            - value: 800
+              color: "#ff8080"
+            - value: 850
+              color: "#ff6060"
+            - value: 900
+              color: red
+            - value: 950
+              color: magenta
+            - value: 1000
+              color: magenta
           line_width: 2
           font_size: 80
           font-weight: bold
-          hours_to_show: 24
+          hours_to_show: 48
         - type: custom:mini-graph-card
           entities:
             - sensor.kleenex_pollen_radar_pollen_bomen
@@ -187,25 +266,49 @@ custom_fields:
             name: true
           name: Bomen
           color_thresholds:
+            - value: 0
+              color: white
+            - value: 50
+              color: "#e0ffe0"
+            - value: 100
+              color: "#c0ffc0"
+            - value: 150
+              color: "#a0ffa0"
+            - value: 200
+              color: "#80ff80"
+            - value: 250
+              color: "#60ff60"
+            - value: 300
+              color: "#40ff40"
+            - value: 350
+              color: "#20ff20"
+            - value: 400
+              color: green
             - value: 450
-              color: "#36cff5"
+              color: "#ffff80"
             - value: 500
-              color: "#36cff5"
+              color: "#ffff60"
             - value: 550
-              color: "#1ab1d6"
+              color: "#ffff40"
             - value: 600
-              color: "#14f71f"
+              color: yellow
             - value: 650
-              color: "#78fa28"
+              color: "#ffc040"
             - value: 700
-              color: "#fabb28"
+              color: "#ffa020"
             - value: 750
-              color: "#fc9c1e"
+              color: orange
             - value: 800
-              color: "#fc771e"
+              color: "#ff8080"
+            - value: 850
+              color: "#ff6060"
             - value: 900
-              color: "#fa6f11"
+              color: red
+            - value: 950
+              color: magenta
+            - value: 1000
+              color: magenta
           line_width: 2
           font_size: 80
           font-weight: bold
-          hours_to_show: 24
+          hours_to_show: 48
