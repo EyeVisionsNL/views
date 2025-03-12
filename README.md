@@ -23,6 +23,7 @@ add back shadows to icons and letters in all the dashboards and template. And sw
 Here are some examples:
 
 ### Template
+- Requires **Home Assistant Swipe Navigation** from HACS.
 ```javascript
 swipe_nav:
   wrap: true
