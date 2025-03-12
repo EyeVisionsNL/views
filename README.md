@@ -1,7 +1,7 @@
 # $${\color{red}Views\space changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{View-assist\space dashboards}}$$
 
 
-<h1><center> $${\color{lightblue}Englisch}$$ </center> </h1>
+<h1><center> $${\color{green}Englisch}$$ </center> </h1>
 
 
 
