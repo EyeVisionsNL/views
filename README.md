@@ -98,7 +98,7 @@ files: hey miep wakeword.
 
 
 
-<h1> $${\color{lightblue}#Dutch}$$ </h1>
+<h1><center> $${\color{lightgreen}Dutch}$$ </center> </h1>
 
 <h2>***Je heb voor alle views de template nodig van view-assist!!*** </h2>
 
