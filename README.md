@@ -1,12 +1,7 @@
 # $${\color{red}views\space changes\space made \space \color{white}by\space eyevisions\space for\space \color{blue}{view-assist\space dashboards}}$$
 
 
-$${\color{Red}eyev}$$
-$${\color{White}viso}$$
-
 <h1> $${\color{Blue}Englisch}$$ </h1>
-
-<h1>Englisch</h1>
 
 
 
