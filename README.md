@@ -208,12 +208,14 @@ naar een map view waarop je de bliksem op een kaart kan zien.
 
 Het bekende kleenex pollenradar handig om je hooikoorts in de gaten te houden. Nodig pollenradar hacs kleenex.
 
-![Screenshot_20250306-204236](https://github.com/user-attachments/assets/0fc164d7-d46d-4327-bdb4-8e60ece196a9)
 
+![Screenshot_20250312-193854](https://github.com/user-attachments/assets/e547f99a-372b-408c-bd89-8cc421d4aaff)
 
 
 <b>files: weatherpictures https://files.fm/u/krd4gzxmwr
 
+
 Heb een nederlands wake word gemaakt Hey_Miep gemaakt met Open the wake word training environment. https://colab.research.google.com/drive/1q1oe2zOyZp7UsB3jJiQ1IFn8z5YfjwEb?usp=sharing#scrollTo=1cbqBebHXjFD
+
 
 files: hey miep wakeword </b>
