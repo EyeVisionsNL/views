@@ -1,5 +1,5 @@
 # <color><red>views changes made by eyevisions in view-assist dashboards</color>
-$${\color{red}Red}$$views changes made by eyevisions in view-assist dashboards
+$${\color{red}Red}$$ "views changes made by eyevisions in view-assist dashboards"
 <h1>Englisch</h1>
 
 
