@@ -174,6 +174,7 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 ## 📂 Download Links
 - **Weerafbeeldingen**: [weatherpictures.zip](https://files.fm/u/scc8pg78pk)
 - **Nederlands Wake Word - "Hey Miep"**: [Train je eigen wake word](https://colab.research.google.com/drive/1q1oe2zOyZp7UsB3jJiQ1IFn8z5YfjwEb?usp=sharing#scrollTo=1cbqBebHXjFD)
+- **wil je miep proberen die staat er bij als zip file**
 
 ---
 
