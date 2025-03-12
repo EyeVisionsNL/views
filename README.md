@@ -1,4 +1,4 @@
-# $${\color{red}Views\space changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{Viewassist\space dashboards}}$$
+# $${\color{red}Views\space changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{ViewAssist\space dashboards}}$$
 
 
 <h1><center> $${\color{green}Englisch}$$ </center> </h1>
@@ -6,7 +6,7 @@
 
 
 
-<h2>$${\color{red}**!!!!\space You\space need\space the\space view-assist\space template\space for\space all\space views\space!!!!**}$$</h2>
+<h2>$${\color{red}**!!!!\space You\space need\space the\space ViewAssist\space template\space for\space all\space views\space!!!!**}$$</h2>
 
 
 <h1>https://dinki.github.io/View-Assist/docs/viewassist-setup</h1>
