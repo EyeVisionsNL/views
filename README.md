@@ -86,6 +86,8 @@ swipe_nav:
 ![Screenshot](https://github.com/user-attachments/assets/4e3be7ae-4142-4ec7-9123-930e29f74411)
 
 ### 📅 Agenda
+- 2 made 1 static background other dynamic like the clock background.
+- Requires **Week planner card** from HACS. 
 ![Screenshot](https://github.com/user-attachments/assets/13d6ebb9-e84c-4d88-ae10-5f97b3d94bcd)
 
 ### ⚡ Lightning Radar
