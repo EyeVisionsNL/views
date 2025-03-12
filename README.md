@@ -1,6 +1,5 @@
 # $${\color{red}Views\space changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{ViewAssist\space dashboards}}$$
 
-# Views changes made by EyeVisionsNL for ViewAssist Dashboards
 
 ![Version](https://img.shields.io/badge/version-1.03-blue)
 ![HACS](https://img.shields.io/badge/HACS-Required-red)
