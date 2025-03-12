@@ -54,6 +54,7 @@ Each top-left corner now has an icon, just like the original weather card. Click
 - Requires **P2000 HACS integration**.
 - Messages show for **15 seconds**, then switch to a map view of the location.
 - Includes a chime sound for alerts.
+- Requires **P2000-sensor** from HACS.
 
 ### 💡 Active Lights
 - Shows currently active lights.
@@ -76,6 +77,7 @@ Each top-left corner now has an icon, just like the original weather card. Click
 - Alerts when lightning is **within 30 km**.
 - Switches to a map view for better visualization.
 - Dynamic message updates based on distance:
+- Requires **Blitzortung.org Lightning_Detector** from HACS.
 
 ```javascript
 if (strikes > 0) {
