@@ -43,17 +43,6 @@ transition changed, it now goes smoothly to new position instead of jumping to i
 added shadows to letters and set them to white. background changes with type to reflect what kind of weather is out is there. You can find this card on the orginal view-assist wiki page this one is litlle updated. versie 1.03
 
 
-<b>Compass rose:</b>
-
-Compass rose card with everything in it want you want to know about the wind. this requires WindRose card from hacs.
-
-
-<b>P2000:</b>
-
-The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs. It show the messages for 15 sec and then go to map view to the location.
-The automation uses a chime.
-
-
 <b>thermostat:</b>
 
 Here I have placed mini graphs of the thermostat and a co2 meter. I personally use Apollo MSR-2.
@@ -61,14 +50,26 @@ Here I have placed mini graphs of the thermostat and a co2 meter. I personally u
 ![Screenshot_20250306-161519](https://github.com/user-attachments/assets/cda3e512-13fa-4e33-beda-e65e0442dbff)
 
 
+<h2>New views not in the orginal view-assist</h2>
+
+<b>Compass rose:</b>
+
+Compass rose card with everything in it want you want to know about the wind. this requires WindRose card from hacs.  (screen shot dutch section)
+
+
+<b>P2000:</b>
+
+The messages from P2000(dutch police,ambulance,fire codes) from your region will appear here. This will require P2000 from hacs. It show the messages for 15 sec and then go to map view to the location.
+The automation uses a chime.  (screen shot dutch section)
+
 <b>Activelights:</b>
 
-This page shows the lights that are on. required custom:auto-entities
+This page shows the lights that are on. required custom:auto-entities card from hacs  (screen shot dutch section)
 
 
 <b>Floor plan:</b>
 
-Plain floor plan in layout/template view-assist
+Plain floor plan in layout/template view-assist. (screen shot dutche section)
 
 
 <b>Camera:</b>
@@ -123,6 +124,12 @@ schaduwen aangebracht aan de letters en deze naar wit gezet. achtergrond verande
 ![Screenshot_20250217-193341](https://github.com/user-attachments/assets/a9745e39-18bb-4eb9-aeb1-7bf68b831d48)
 
 
+<b>thermostaat</b>
+
+Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
+
+<h2>Niewe views staan niet in view-assist orgineel</h2>
+
 <b>Windroos:</b>
 
 Windroos kaart met alles erin. dit vergt WindRose card van hacs.
@@ -139,11 +146,6 @@ Automatsering kiest ander geluid voor GRIP meldingen en zoomt map in net als bij
 ![Screenshot_20250225-192227](https://github.com/user-attachments/assets/c85c5393-a8c5-443f-97a6-04230da67105)
 
 ![Screenshot_20250226-191451](https://github.com/user-attachments/assets/38a46366-cbd5-4266-8ead-04d152f73f2c)
-
-
-<b>thermostaat</b>
-
-Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
 
 
 <b>activelights:</b>
