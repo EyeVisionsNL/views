@@ -6,7 +6,7 @@
 
 
 
-<h3>$${\color{red}**!!!!You need the view-assist template for all views!!!!**}$$</h3>
+<h2>$${\color{red}**!!!!You\space need\space the\space view-assist\space template\space for\space all\space views!!!!**}$$</h2>
 
 <h3>###Feel free to use parts or pieces of scripts.###</h3>
   
