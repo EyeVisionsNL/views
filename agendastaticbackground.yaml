@@ -1,6 +1,6 @@
 type: custom:button-card
 variables:
-  agendacardversion: 1.0.0
+  agendacardversion: 1.0.2
   var_font_size: 19px
   var_background: /local/viewassist/announcebird.jpg
 template:
@@ -66,10 +66,10 @@ custom_fields:
     card:
       type: custom:week-planner-card
       calendars:
-        - entity: calendar.keyhunternl_gmail_com
+        - entity: calendar.yourcalenderhere
           color: "#e6c229"
           icon: mdi:github
-        - entity: calendar.feestdagen_in_nederland
+        - entity: calendar.celebrationsdayshere
           color: "#1a8fe3"
           icon: mdi:party-popper
       weather:
