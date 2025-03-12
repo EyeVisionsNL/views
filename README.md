@@ -64,8 +64,9 @@ The automation uses a chime.  (screen shot dutch section)
 
 <b>Activelights:</b>
 
-This page shows the lights that are on. required custom:auto-entities card from hacs  (screen shot dutch section)
+This page shows the lights that are on. required custom:auto-entities card from hacs
 
+![Screenshot_20250215-173559](https://github.com/user-attachments/assets/5d86e799-e342-49e0-9dff-78b4f91c0693)
 
 <b>Floor plan:</b>
 
