@@ -24,7 +24,7 @@ Here are some examples:
 
 ### 📏 dashboard.yaml
 - all changes back shadows are in template.yaml
-- Requires **Home Assistant Swipe Navigation** from HACS.
+- Requires **Home Assistant Swipe Navigation** from HACS. If you want to use swiping between dashboards
 ```javascript
 swipe_nav:
   wrap: true
