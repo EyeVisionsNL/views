@@ -165,7 +165,7 @@ Gewoon vloerplan in layout/template view-assist
 2 camera's op 1 pagina gezet naast elkaar.
 
 
-BETA:
+<h3>New/Nieuw:</h3>
 
 <b>Agenda</b>
 
