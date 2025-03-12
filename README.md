@@ -6,15 +6,16 @@
 
 
 
-<h2>$${\color{red}**!!!!\space You\space need\space the\space view-assist\space template\space for\space all\space views\space!!!!**}$$</h2>
-
-<h2>https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
+<h2>$${\color{red}**!!!!\space You\space need\space the\space view-assist\space template\space for\space all\space views\space!!!!**}$$
 
 
-<h3>###Feel free to use parts or pieces of scripts.###</h3>
+https://dinki.github.io/View-Assist/docs/viewassist-setup</h2>
+
+
+<h3>###Feel free to use parts or pieces of scripts.###
   
    
-***No i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T***
+***No i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T***</h3>
 
 
 <h3>Made some different dashboard for View-assist. the changes are as follows:</h3>
