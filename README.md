@@ -1,5 +1,5 @@
 # <color><red>views changes made by eyevisions in view-assist dashboards</color>
-$${\color{eyev}Red}$$$${\color{viso}White}$$$${\color{ions}Blue}$$ 
+$${\color{Red}eyev}$$$${\color{White}viso}$$$${\color{Blue}ions}$$ 
 <h1>Englisch</h1>
 
 
