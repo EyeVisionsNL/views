@@ -1,14 +1,14 @@
 # $${\color{red}Views\space changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{View-assist\space dashboards}}$$
 
 
-<h1> $${\color{Blue}Englisch}$$ </h1>
+<h1> $${\color{lightblue}Englisch}$$ </h1>
 
 
 
 
-<h2>**!!!!You need the view-assist template for all views!!!!**</h2>
+<h3>**!!!!You need the view-assist template for all views!!!!**</h3>
 
-<h2>###Feel free to use parts or pieces of scripts.###</h2>
+<h3>###Feel free to use parts or pieces of scripts.###</h3>
   
    
 ***No i am not on a Lenovo-thinksmart TSV. I'm on a 10,1inch tablet Teclast P30T***
