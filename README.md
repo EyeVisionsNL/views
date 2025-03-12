@@ -158,5 +158,4 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 
 ---
 
-Deze README is nu gestructureerder, beter leesbaar en aantrekkelijker 🎨🚀.
 
