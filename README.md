@@ -1,5 +1,5 @@
 # <color><red>views changes made by eyevisions in view-assist dashboards</color>
-<code style="color : red">views changes made by eyevisions in view-assist dashboards</code>
+$${\color{red}Red}$$views changes made by eyevisions in view-assist dashboards
 <h1>Englisch</h1>
 
 
