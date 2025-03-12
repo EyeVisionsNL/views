@@ -22,7 +22,7 @@ Each top-left corner now has an icon, just like the original weather card. Click
 add back shadows to icons and letters in all the dashboards and template. And swipe to navigate!
 Here are some examples:
 
-### Template
+### 📏 Template
 - Requires **Home Assistant Swipe Navigation** from HACS.
 ```javascript
 swipe_nav:
