@@ -178,12 +178,19 @@ Gewoon vloerplan in layout/template view-assist
 
 <b>Bliksem</b>
 
+Als de bliksem in de buurt komt 30 km komen er berichten het icon en bericht veranderen als het onweer dichterbij komt. Ook schakeld het dashboard
+naar een map view waarop je de bliksem op een kaart kan zien.
+
 ![Screenshot_20250303-190523](https://github.com/user-attachments/assets/f0e25934-f406-4ebe-a584-91274291149e)
 
+<b>bliksemmap</b>
+
+![Screenshot_20250312-175753](https://github.com/user-attachments/assets/ca891a29-0c04-4e24-9149-b6fbbe3db9de)
 
 
 <b>Pollenradar</b>
 
+Het bekende kleenex pollenradar handig om je hooikoorts in de gaten te houden. Nodig pollenradar hacs kleenex.
 
 ![Screenshot_20250306-204236](https://github.com/user-attachments/assets/0fc164d7-d46d-4327-bdb4-8e60ece196a9)
 
