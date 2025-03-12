@@ -142,7 +142,7 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 
 ### ⚡ Bliksemwaarschuwingen
 - Meldingen bij **bliksem binnen 30 km**.
-- Kaartweergave met inslagen en waarschuwingen.
+- Kaartweergave met inslagen en waarschuwingen en detectoren in beeld.
 
 ![Screenshot](https://github.com/user-attachments/assets/ca891a29-0c04-4e24-9149-b6fbbe3db9de)
 
