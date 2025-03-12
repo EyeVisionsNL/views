@@ -8,7 +8,7 @@
 
 # English
 
-## 📌 Important: You need the ViewAssist template for all views!
+## 📌 Important: You need the ViewAssist dashboard.yaml for all views!
 
 🔗 **[ViewAssist Setup Guide](https://dinki.github.io/View-Assist/docs/viewassist-setup)**
 
@@ -22,7 +22,7 @@ Each top-left corner now has an icon, just like the original weather card. Click
 add back shadows to icons and letters in all the dashboards and template. And swipe to navigate!
 Here are some examples:
 
-### 📏 Template
+### 📏 dashboard.yaml
 - all changes back shadows are in template.yaml
 - Requires **Home Assistant Swipe Navigation** from HACS.
 ```javascript
