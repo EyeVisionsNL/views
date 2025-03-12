@@ -18,7 +18,10 @@
 
 ## 🏠 Dashboard Changes
 
-Each top-left corner now has an icon, just like the original weather card. Clicking or holding this icon navigates to another dashboard. Here are some examples:
+Each top-left corner now has an icon, just like the original weather card. Clicking or holding this icon navigates to another dashboard.
+add back shadows to icons and letters in all the dashboards and template. And swipe to navigate!
+Here are some examples:
+
 
 ### 📊 Info View
 ![Screenshot](https://github.com/user-attachments/assets/57f544ef-3757-48a4-9cd5-4be2c4556e89)
