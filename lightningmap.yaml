@@ -1,6 +1,7 @@
+////change the geo to yours in the url///
 type: custom:button-card
 variables:
-  musiccardversion: 1.1.1
+  lightningmap: 1.1.1
 template:
   - variable_template
   - body_template
@@ -25,6 +26,7 @@ styles:
       - flex-direction: column
       - justify-content: center
       - text-align: center
+      - transform: scale(140%)
 custom_fields:
   title:
     card:
@@ -58,14 +60,7 @@ custom_fields:
           - color: white
   message:
     card:
-      type: map
-      name: Bliksem
-      entities:
-        - entity: sensor.blitzortung_lightning_counter
-        - entity: sensor.blitzortung_lightning_distance
-      default_zoom: 9
-      aspect_ratio: "22:9"
-      theme_mode: dark
-      marker_cluster:
-        max_zoom: 14
-        icon: /local/viewassist/p2000map.png
+      type: iframe
+      url: >-
+        https://map.blitzortung.org/index.php?interactive=0&NavigationControl=1&FullScreenControl=0&Cookies=0&InfoDiv=0&MenuButtonDiv=1&ScaleControl=1&LinksCheckboxChecked=1&LinksRangeValue=10&MapStyle=0&MapStyleRangeValue=0&AudioCheckboxChecked=1&DetectorsCheckboxChecked=1&Advertisment=#10/51.908710/4.35252
+      aspect_ratio: 50%
