@@ -128,7 +128,7 @@ schaduwen aangebracht aan de letters en deze naar wit gezet. achtergrond verande
 
 Hier heb ik mini graphs van de thermostaat en een co2 meter neergezet. Zelf gebruik ik apollo msr-2.
 
-<h2>Niewe views staan niet in view-assist orgineel</h2>
+<h2>***Nieuwe views staan niet in view-assist orgineel***</h2>
 
 <b>Windroos:</b>
 
