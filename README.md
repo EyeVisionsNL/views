@@ -181,6 +181,28 @@ Gewoon vloerplan in layout/template view-assist
 Als de bliksem in de buurt komt 30 km komen er berichten het icon en bericht veranderen als het onweer dichterbij komt. Ook schakeld het dashboard
 naar een map view waarop je de bliksem op een kaart kan zien.
 
+<code>[[[ 
+      let distance = states[variables.bliksem_entity].state;
+      let strikes = states["sensor.blitzortung_lightning_counter"].state;
+      
+      let message = "";
+
+      if (strikes > 0) {
+        message = `⚡️ ${strikes} inslagen op ${distance} km afstand.`;
+      } else {
+        message = "✅ Geen bliksem gedetecteerd.";
+      }
+
+      if (distance <= 10 && strikes > 0) {
+        message += " ⚠️ Bliksem is dichtbij. Sluit ramen en deuren!";
+      } else if (distance <= 30 && strikes > 0) {
+        message += " 🌩️ Bliksem in de buurt. Wees voorzichtig!";
+      }
+
+      return message;
+    ]]]
+</code>
+
 ![Screenshot_20250303-190523](https://github.com/user-attachments/assets/f0e25934-f406-4ebe-a584-91274291149e)
 
 <b>bliksemmap</b>
