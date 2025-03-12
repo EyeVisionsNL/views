@@ -1,7 +1,9 @@
 # views changes made by eyevisions in view-assist dashboards
 $${\color{Red}eyev}$$
 $${\color{White}viso}$$
-$${\color{Blue}<h1>Englisch</h1>}$$ 
+
+<h1> $${\color{Blue}Englisch}$$ </h1>
+
 <h1>Englisch</h1>
 
 
