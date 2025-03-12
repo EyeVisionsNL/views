@@ -179,7 +179,7 @@ Gewoon vloerplan in layout/template view-assist
 <b>Bliksem</b>
 
 Als de bliksem in de buurt komt 30 km komen er berichten het icon en bericht veranderen als het onweer dichterbij komt. Ook schakeld het dashboard
-naar een map view waarop je de bliksem op een kaart kan zien.
+naar een map view waarop je de bliksem op een kaart kan zien met geluid enz. Dit kan je uit of aanzetten in de url.
 
 <code>
 
