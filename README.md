@@ -1,4 +1,6 @@
-# views changes made by eyevisions in view-assist dashboards
+# $${\color{red}views changes made \space \color{lightblue}by eyevisions for  \space \color{lightgreen}{view-assist dashboards}}$$
+
+
 $${\color{Red}eyev}$$
 $${\color{White}viso}$$
 
