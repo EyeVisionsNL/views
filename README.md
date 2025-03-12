@@ -22,6 +22,16 @@ Each top-left corner now has an icon, just like the original weather card. Click
 add back shadows to icons and letters in all the dashboards and template. And swipe to navigate!
 Here are some examples:
 
+### Template
+```javascript
+swipe_nav:
+  wrap: true
+  enable_mouse_swipe: true
+  enable_on_subviews: true
+  animate: flip
+  prevent_default: true
+  swipe_amount: 10
+```
 
 ### 📊 Info View
 ![Screenshot](https://github.com/user-attachments/assets/57f544ef-3757-48a4-9cd5-4be2c4556e89)
