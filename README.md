@@ -8,7 +8,7 @@
 
 # English
 
-## 📌 Important: You need the ViewAssist dashboard.yaml for all views!
+## 📌 Important: You need the ViewAssist dashboard.yaml for all views from ViewAssist!
 
 🔗 **[ViewAssist Setup Guide](https://dinki.github.io/View-Assist/docs/viewassist-setup)**
 
@@ -140,7 +140,7 @@ if (distance <= 10 && strikes > 0) {
 
 # Dutch (Nederlands)
 
-## 📌 Belangrijk: Je hebt de ViewAssist-template nodig voor alle views!
+## 📌 Belangrijk: Je hebt de dedashboard.yaml nodig voor alle views van ViewAssist!
 
 🔗 **[ViewAssist Installatiegids](https://dinki.github.io/View-Assist/docs/viewassist-setup)**
 
