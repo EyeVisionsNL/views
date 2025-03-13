@@ -35,6 +35,12 @@ custom_fields:
       type: custom:button-card
       icon: mdi:clock
       name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: floorplan
       styles:
         card:
           - background-color: transparent
@@ -119,7 +125,8 @@ custom_fields:
         - entity: sensor.hoogste_pollenbron_bomen
           name: >-
             [[[ return "hoogste pollen waarde bomen " +
-            states['sensor.hoogste_pollenwaarde_bomen'].state + ''+' ppm'+' ']]]
+            states['sensor.hoogste_pollenwaarde_bomen'].state + ''+' ppm
+            de'+'']]]
           icon: mdi:tree
           secondary_info: none
           card_mod:
