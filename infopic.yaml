@@ -38,8 +38,11 @@ custom_fields:
       icon: mdi:clock
       name: "[[[ return variables.var_current_time ]]]"
       tap_action:
-        action: toggle
-        entity: input_boolean.p2000
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: floorplan
       styles:
         card:
           - background-color: transparent
