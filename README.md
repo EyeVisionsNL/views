@@ -184,7 +184,8 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 - Laat de status zien van je voertuig.
 - Vereist **Ultra Vehicle Card** van HACS.
 
-![Screenshot_20250313-152133](https://github.com/user-attachments/assets/56cffcf7-c4ba-47da-b486-ed69653e3c48)
+
+![Screenshot_20250313-172654](https://github.com/user-attachments/assets/0c372a5d-bf21-4ad5-b203-3566ae60d08c)
 
 ---
 
