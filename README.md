@@ -159,6 +159,13 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 
 ![Screenshot](https://github.com/user-attachments/assets/14add1de-846f-4ed1-b691-a08689f39032)
 
+### 📅 Agenda
+- 2 made 1 static background other dynamic like the clock background.
+- Vereist **Week planner card** van HACS.
+- 
+ ![Screenshot_20250306-172344](https://github.com/user-attachments/assets/eb602e1e-b3eb-4995-9c51-621af41b737a)
+
+
 ### 🌡️ Thermostaat
 - Mini-grafieken voor thermostaat en CO₂-meter.
 - Persoonlijk getest met **Apollo MSR-2**.
