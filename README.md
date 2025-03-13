@@ -51,6 +51,9 @@ swipe_nav:
 - Added shadows to letters and set them to white.
 - Background changes dynamically to reflect the current weather.
 - You can find this updated version (**1.03**) on the original ViewAssist wiki.
+  
+![Screenshot_20250313-084106](https://github.com/user-attachments/assets/353cc437-f4cd-46cf-909e-7ecbc8958c60)
+
 
 ### 🌡️ Thermostat
 - Added **mini graphs** for the thermostat and a CO₂ meter.
