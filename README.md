@@ -124,7 +124,8 @@ if (distance <= 10 && strikes > 0) {
 - Displays the status of your vehicle.
 - Requires **Ultra Vehicle Card** from HACS.
 
-![Screenshot_20250313-152133](https://github.com/user-attachments/assets/56cffcf7-c4ba-47da-b486-ed69653e3c48)
+
+![Screenshot_20250313-172654](https://github.com/user-attachments/assets/fa2ee55a-ab7f-422f-9ef8-9879aafe8f6f)
 
 
 ---
