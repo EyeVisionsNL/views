@@ -1,4 +1,4 @@
-# $${\color{red}Views\space changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{ViewAssist\space dashboards}}$$
+# $${\color{red}Changes\space made \space \color{white}by\space EyeVisionsNL\space for\space \color{blue}{ViewAssist\space dashboards}}$$
 
 
 ![Version](https://img.shields.io/badge/version-1.03-blue)
