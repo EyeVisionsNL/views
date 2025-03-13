@@ -1,7 +1,7 @@
 type: custom:button-card
 variables:
   background: black
-  infocardversion: 1.0.1
+  vehicleversion: 1.0.1
 template:
   - variable_template
   - body_template
@@ -10,7 +10,6 @@ styles:
     - grid-template-areas: |
         "title status" 
         "message message"
-        "card assist"
   card:
     - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
     - background-size: cover
@@ -19,10 +18,10 @@ styles:
       - align-self: center
       - font-weight: bold
       - justify-self: center
-      - width: 100%
-      - height: 90%
+      - width: 60%
+      - height: auto
       - max-width: auto
-      - transform: scale(100%)
+      - transform: scale(160%)
 custom_fields:
   title:
     card:
@@ -49,7 +48,7 @@ custom_fields:
           - text-shadow: 2px 2px black
         icon:
           - filter: drop-shadow(2px 2px 2px black)
-          - width: 12vh
+          - width: 11vh
           - color: white
   message:
     card:
@@ -71,11 +70,23 @@ custom_fields:
       show_mileage: true
       show_car_state: true
       show_charge_limit: true
-      icon_grid_entities: []
-      custom_icons: {}
-      icon_interactions: {}
+      icon_grid_entities:
+        - row-separator
+        - lock.skoda_octavia_combi_deurvergrendeling
+      custom_icons:
+        lock.skoda_octavia_combi_deurvergrendeling:
+          inactiveState: default
+          activeState: default
+          inactive: mdi:car-door-lock
+          active: mdi:car-door-lock-open
+          inactiveColor: "#f70202"
+          activeColor: "#15f505"
+      icon_interactions:
+        lock.skoda_octavia_combi_deurvergrendeling:
+          type: more-info
       icon_styles: {}
-      icon_labels: {}
+      icon_labels:
+        lock.skoda_octavia_combi_deurvergrendeling: left
       hybrid_display_order: fuel_first
       car_state_entity: image.skoda_octavia_combi_voertuigstatus
       charge_limit_entity: ""
@@ -89,26 +100,32 @@ custom_fields:
       engine_on_entity: ""
       row_separator_color: Default
       row_separator_height: 1
-      row_separators: {}
+      row_separators:
+        "0":
+          color: transparent
+          height: 1
+          icon_gap: 20
+          horizontalAlignment: center
+          verticalAlignment: middle
       iconActiveColor: var(--primary-color)
       iconInactiveColor: var(--primary-text-color)
       useFormattedEntities: true
-      mainImageHeight: 400px
+      mainImageHeight: 200px
       chargingImageHeight: 140px
       showTitle: true
       layoutType: single
       useBarGradient: false
       barGradientStops:
         - percentage: 0
-          color: "#ff0000"
+          color: "#FF0000"
         - percentage: 100
-          color: "#00ff00"
+          color: "#00FF00"
       cardTitleColor: var(--primary-text-color)
       cardBackgroundColor: "var(--ha-card-background, var(--card-background-color, #fff))"
-      barBackgroundColor: var(--secondary-text-color)
-      barBorderColor: "var(--ha-card-background, var(--card-background-color, #fff))"
-      barFillColor: var(--primary-color)
-      limitIndicatorColor: var(--primary-text-color)
+      barBackgroundColor: "#0cec09"
+      barBorderColor: "#f5f5f5"
+      barFillColor: "#023ef2"
+      limitIndicatorColor: "#ed0202"
       infoTextColor: var(--secondary-text-color)
       show_engine_animation: true
       show_charging_animation: true
