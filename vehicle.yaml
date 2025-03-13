@@ -1,0 +1,128 @@
+type: custom:button-card
+variables:
+  background: black
+  infocardversion: 1.0.1
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status" 
+        "message message"
+        "card assist"
+  card:
+    - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
+    - background-size: cover
+  custom_fields:
+    message:
+      - align-self: center
+      - font-weight: bold
+      - justify-self: center
+      - width: 100%
+      - height: 90%
+      - max-width: auto
+      - transform: scale(100%)
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigath
+        entity: input_boolean.p2000
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: auto
+          - padding: 5px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+          - grid-template-columns: 100px auto
+        name:
+          - font-size: 8vh
+          - font-weight: bold
+          - color: white
+          - text-shadow: 2px 2px black
+        icon:
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 12vh
+          - color: white
+  message:
+    card:
+      title: Skoda Octavia
+      image_url: ""
+      charging_image_url: ""
+      image_url_type: entity
+      charging_image_url_type: none
+      vehicle_type: Fuel
+      unit_type: mi
+      level_entity: ""
+      range_entity: ""
+      charging_status_entity: ""
+      location_entity: device_tracker.skoda_octavia_combi_positie
+      mileage_entity: sensor.skoda_octavia_combi_kilometerstand
+      show_level: true
+      show_range: true
+      show_location: true
+      show_mileage: true
+      show_car_state: true
+      show_charge_limit: true
+      icon_grid_entities: []
+      custom_icons: {}
+      icon_interactions: {}
+      icon_styles: {}
+      icon_labels: {}
+      hybrid_display_order: fuel_first
+      car_state_entity: image.skoda_octavia_combi_voertuigstatus
+      charge_limit_entity: ""
+      icon_size: 24
+      icon_gap: 12
+      showEntityInformation: true
+      carStateTextColor: var(--primary-text-color)
+      rangeTextColor: var(--primary-text-color)
+      percentageTextColor: var(--primary-text-color)
+      icon_sizes: {}
+      engine_on_entity: ""
+      row_separator_color: Default
+      row_separator_height: 1
+      row_separators: {}
+      iconActiveColor: var(--primary-color)
+      iconInactiveColor: var(--primary-text-color)
+      useFormattedEntities: true
+      mainImageHeight: 400px
+      chargingImageHeight: 140px
+      showTitle: true
+      layoutType: single
+      useBarGradient: false
+      barGradientStops:
+        - percentage: 0
+          color: "#ff0000"
+        - percentage: 100
+          color: "#00ff00"
+      cardTitleColor: var(--primary-text-color)
+      cardBackgroundColor: "var(--ha-card-background, var(--card-background-color, #fff))"
+      barBackgroundColor: var(--secondary-text-color)
+      barBorderColor: "var(--ha-card-background, var(--card-background-color, #fff))"
+      barFillColor: var(--primary-color)
+      limitIndicatorColor: var(--primary-text-color)
+      infoTextColor: var(--secondary-text-color)
+      show_engine_animation: true
+      show_charging_animation: true
+      show_charging_status: true
+      show_engine_on: true
+      engine_on_image_url_type: none
+      type: custom:ultra-vehicle-card
+      battery_level_entity: ""
+      battery_range_entity: ""
+      fuel_level_entity: sensor.skoda_octavia_combi_brandstof_niveau
+      fuel_range_entity: sensor.skoda_octavia_combi_actieradius
+      show_battery: true
+      show_battery_range: true
+      show_fuel: true
+      show_fuel_range: true
+      custom_labels: {}
+      image_entity: image.skoda_octavia_combi_voertuigstatus
