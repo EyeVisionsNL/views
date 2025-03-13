@@ -1,26 +1,30 @@
 type: custom:button-card
 variables:
-  background: black
-  vehicleversion: 1.0.1
+  vehicleversion: 1.0.2
 template:
   - variable_template
   - body_template
 styles:
   grid:
     - grid-template-areas: |
-        "title status" 
-        "message message"
-  card:
-    - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
-    - background-size: cover
+        "title status"
+        "vehicle vehicle"
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 1fr 1fr
   custom_fields:
-    message:
+    title:
+      - align-self: start
+      - justify-self: start
+      - padding: 1px
+      - text-shadow: 1px 1px black
+      - font-weight: bold
+    vehicle:
       - align-self: center
       - font-weight: bold
-      - justify-self: center
       - width: 60%
       - height: auto
-      - max-width: auto
+      - text-shadow: 1px 1px black
+      - justify-self: center
       - transform: scale(160%)
 custom_fields:
   title:
@@ -28,29 +32,24 @@ custom_fields:
       type: custom:button-card
       icon: mdi:clock
       name: "[[[ return variables.var_current_time ]]]"
-      tap_action:
-        action: navigath
-        entity: input_boolean.p2000
       styles:
         card:
           - background-color: transparent
+          - text-shadow: 1px 1px black
           - border-width: 0px
-          - width: auto
-          - padding: 5px
+          - padding: 0px
         grid:
           - grid-template-areas: "\"i n\""
-          - grid-template-rows: min-content min-content
-          - grid-template-columns: 100px auto
+          - grid-template-columns: min-content min-content
         name:
-          - font-size: 8vh
+          - font-size: 6vh
           - font-weight: bold
           - color: white
-          - text-shadow: 2px 2px black
         icon:
           - filter: drop-shadow(2px 2px 2px black)
-          - width: 11vh
+          - width: 10vh
           - color: white
-  message:
+  vehicle:
     card:
       title: Skoda Octavia
       image_url: ""
