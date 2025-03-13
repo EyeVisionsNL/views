@@ -88,6 +88,9 @@ swipe_nav:
 ### 🏠 Floor Plan
 - Simple floor plan layout in ViewAssist.
 
+![Screenshot_20250208-213045](https://github.com/user-attachments/assets/793ba5be-cb51-4384-9d1d-ef78c1e0c980)
+
+
 ### 🎥 Camera View
 - Displays **two cameras** side by side.
 
