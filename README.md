@@ -179,6 +179,12 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 
 ![Screenshot](https://github.com/user-attachments/assets/e547f99a-372b-408c-bd89-8cc421d4aaff)
 
+### 🚗💨 Vehicle dashboard
+- Laat de status zien van je voertuig.
+- Vereist **Ultra Vehicle Card** van HACS.
+
+![Screenshot_20250313-152133](https://github.com/user-attachments/assets/56cffcf7-c4ba-47da-b486-ed69653e3c48)
+
 ---
 
 ## 📂 Download Links
