@@ -26,6 +26,11 @@ Here are some examples:
 - all changes back shadows are in template.yaml
 - Requires **Home Assistant Swipe Navigation** from HACS. If you want to use swiping between dashboards
 ```javascript
+add on row 525
+        - filter: drop-shadow(2px 2px 2px black)
+
+
+
 swipe_nav:
   wrap: true
   enable_mouse_swipe: true
