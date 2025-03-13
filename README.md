@@ -23,7 +23,7 @@ add back shadows to icons and letters in all the dashboards and template. And sw
 Here are some examples:
 
 ### 📏 dashboard.yaml
-- all changes back shadows are in template.yaml
+- all changes back shadows are in template.yaml below are the changes.
 - Requires **Home Assistant Swipe Navigation** from HACS. If you want to use swiping between dashboards
 ```javascript
 add on row 525
