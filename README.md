@@ -142,7 +142,7 @@ if (distance <= 10 && strikes > 0) {
 
 # Dutch (Nederlands)
 
-## 📌 Belangrijk: Je hebt de dedashboard.yaml nodig voor alle views van ViewAssist!
+## 📌 Belangrijk: Je hebt de dashboard.yaml nodig voor alle views van ViewAssist!
 
 🔗 **[ViewAssist Installatiegids](https://dinki.github.io/View-Assist/docs/viewassist-setup)**
 
