@@ -8,7 +8,7 @@ template:
           {% set gras = {'details': [{'name': 'Gras', 'value': states('sensor.kleenex_pollen_radar_pollen_gras') | int }]} %}
           {% set hoogste = gras.details | sort(attribute='value', reverse=True) | first %}
           {{ hoogste.value }}
-        unit_of_measurement: "Pollen"
+        unit_of_measurement: "ppm"
 
       - name: "Hoogste pollenbron Gras"
         unique_id: hoogste_pollenbron_gras
@@ -23,7 +23,7 @@ template:
           {% set kruiden = {'details': [{'name': 'Kruiden', 'value': states('sensor.kleenex_pollen_radar_pollen_kruiden') | int }]} %}
           {% set hoogste = kruiden.details | sort(attribute='value', reverse=True) | first %}
           {{ hoogste.value }}
-        unit_of_measurement: "Pollen"
+        unit_of_measurement: "ppm"
 
       - name: "Hoogste pollenbron Kruiden"
         unique_id: hoogste_pollenbron_kruiden
@@ -38,7 +38,7 @@ template:
           {% set bomen = state_attr('sensor.kleenex_pollen_radar_pollen_bomen', 'current')['details'] %}
           {% set hoogste = bomen | sort(attribute='value', reverse=True) | first %}
           {{ hoogste.value }}
-        unit_of_measurement: "Pollen"
+        unit_of_measurement: "ppm"
 
       - name: "Hoogste pollenbron Bomen"
         unique_id: hoogste_pollenbron_bomen
