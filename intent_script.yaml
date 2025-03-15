@@ -1,0 +1,97 @@
+MakeAppointment:
+  sequence:
+    - alias: "Add appointment to Google Calendar"
+      service: calendar.create_event
+      target:
+        entity_id: calendar.keyhunternl_gmail_com
+      data:
+        summary: "{{ description }}"
+        start_date_time: "{{ date }} {{ time }}:00"
+        end_date_time: "{{ date }} {{ (time | int + 1) | string }}:00"
+    - alias: "Confirm appointment"
+      service: tts.cloud_say
+      data:
+        entity_id: media_player.assistant
+        message: "Appointment added: '{{ description }}' on {{ date }} at {{ time }} o'clock."
+
+DeleteAppointment:
+  sequence:
+    - alias: "Find the appointment in the calendar"
+      service: calendar.get_events
+      target:
+        entity_id: calendar.keyhunternl_gmail_com
+      data:
+        start_date_time: "{{ date }}T00:00:00+01:00"
+        end_date_time: "{{ date }}T23:59:59+01:00"
+      response_variable: appointments
+
+    - alias: "Check if the appointment exists"
+      choose:
+        - conditions:
+            - condition: template
+              value_template: >-
+                {{ appointments | selectattr('summary', 'equalto', description) | list | length > 0 }}
+          sequence:
+            - alias: "Delete the appointment"
+              service: calendar.delete_event
+              target:
+                entity_id: calendar.keyhunternl_gmail_com
+              data:
+                event_id: >-
+                  {{ (appointments | selectattr('summary', 'equalto', description) | list)[0].id }}
+
+            - alias: "Provide confirmation"
+              service: tts.cloud_say
+              data:
+                entity_id: media_player.assistant
+                message: "The appointment '{{ description }}' on {{ date }} has been deleted."
+
+        default:
+          - alias: "No appointment found"
+            service: tts.cloud_say
+            data:
+              entity_id: media_player.assistant
+              message: "I could not find an appointment with the description '{{ description }}' on {{ date }}."
+
+MoveAppointment:
+  sequence:
+    - alias: "Find the appointment in the calendar"
+      service: calendar.get_events
+      target:
+        entity_id: calendar.keyhunternl_gmail_com
+      data:
+        start_date_time: "{{ old_date }}T00:00:00+01:00"
+        end_date_time: "{{ old_date }}T23:59:59+01:00"
+      response_variable: appointments
+
+    - alias: "Check if the appointment exists"
+      choose:
+        - conditions:
+            - condition: template
+              value_template: >-
+                {{ appointments | selectattr('summary', 'equalto', description) | list | length > 0 }}
+          sequence:
+            - alias: "Move the appointment"
+              service: calendar.modify_event
+              target:
+                entity_id: calendar.keyhunternl_gmail_com
+              data:
+                event_id: >-
+                  {{ (appointments | selectattr('summary', 'equalto', description) | list)[0].id }}
+                start:
+                  start_date_time: "{{ new_date }}T{{ new_time }}:00+01:00"
+                end:
+                  end_date_time:: "{{ new_date }}T{{ (new_time | int + 1) | string }}:00+01:00"
+
+            - alias: "Provide confirmation"
+              service: tts.cloud_say
+              data:
+                entity_id: media_player.assistant
+                message: "The appointment '{{ description }}' has been moved to {{ new_date }} at {{ new_time }} o'clock."
+
+        default:
+          - alias: "No appointment found"
+            service: tts.cloud_say
+            data:
+              entity_id: media_player.assistant
+              message: "I could not find an appointment with the description '{{ description }}' on {{ old_date }}."
