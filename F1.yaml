@@ -1,0 +1,72 @@
+type: custom:button-card
+variables:
+  vehicleversion: 1.0.2
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"
+        "vehicle vehicle"
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 1fr 1fr
+  custom_fields:
+    title:
+      - align-self: start
+      - justify-self: start
+      - padding: 1px
+      - text-shadow: 1px 1px black
+      - font-weight: bold
+    vehicle:
+      - align-self: center
+      - font-weight: bold
+      - width: 55%
+      - height: 110%
+      - text-shadow: 1px 1px black
+      - justify-self: center
+      - transform: scale(100%)
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: floorplan
+      styles:
+        card:
+          - background-color: transparent
+          - text-shadow: 1px 1px black
+          - border-width: 0px
+          - padding: 0px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-columns: min-content min-content
+        name:
+          - font-size: 6vh
+          - font-weight: bold
+          - color: white
+        icon:
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 10vh
+          - color: white
+  vehicle:
+    card:
+      type: custom:formulaone-card
+      card_type: next_race
+      show_raceinfo: true
+      actions:
+        tap_action:
+          action: navigate
+          navigation_path: clock
+      show_weather: true
+      weather_options:
+        color: white
+        unit: metric
+        api_key:
+          - FCVVGQCF55UR3CZ6EBLVVM7U4
