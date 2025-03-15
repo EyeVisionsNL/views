@@ -3,7 +3,7 @@ MakeAppointment:
     - alias: "Add appointment to Google Calendar"
       service: calendar.create_event
       target:
-        entity_id: calendar.keyhunternl_gmail_com
+        entity_id: calendar.yourcalender.com
       data:
         summary: "{{ description }}"
         start_date_time: "{{ date }} {{ time }}:00"
@@ -19,7 +19,7 @@ DeleteAppointment:
     - alias: "Find the appointment in the calendar"
       service: calendar.get_events
       target:
-        entity_id: calendar.keyhunternl_gmail_com
+        entity_id: calendar.yourcalender.com
       data:
         start_date_time: "{{ date }}T00:00:00+01:00"
         end_date_time: "{{ date }}T23:59:59+01:00"
@@ -35,7 +35,7 @@ DeleteAppointment:
             - alias: "Delete the appointment"
               service: calendar.delete_event
               target:
-                entity_id: calendar.keyhunternl_gmail_com
+                entity_id: calendar.yourcalender.com
               data:
                 event_id: >-
                   {{ (appointments | selectattr('summary', 'equalto', description) | list)[0].id }}
@@ -58,7 +58,7 @@ MoveAppointment:
     - alias: "Find the appointment in the calendar"
       service: calendar.get_events
       target:
-        entity_id: calendar.keyhunternl_gmail_com
+        entity_id: calendar.yourcalender.com
       data:
         start_date_time: "{{ old_date }}T00:00:00+01:00"
         end_date_time: "{{ old_date }}T23:59:59+01:00"
@@ -74,7 +74,7 @@ MoveAppointment:
             - alias: "Move the appointment"
               service: calendar.modify_event
               target:
-                entity_id: calendar.keyhunternl_gmail_com
+                entity_id: calendar.yourcalender.com
               data:
                 event_id: >-
                   {{ (appointments | selectattr('summary', 'equalto', description) | list)[0].id }}
