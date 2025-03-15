@@ -1,97 +1,97 @@
-MakeAppointment:
+MaakEenAfspraak:
   sequence:
-    - alias: "Add appointment to Google Calendar"
+    - alias: "Voeg afspraak toe in Google Agenda"
       service: calendar.create_event
       target:
-        entity_id: calendar.yourcalender.com
+        entity_id: calendar.keyhunternl_gmail_com
       data:
-        summary: "{{ description }}"
-        start_date_time: "{{ date }} {{ time }}:00"
-        end_date_time: "{{ date }} {{ (time | int + 1) | string }}:00"
-    - alias: "Confirm appointment"
+        summary: "{{ beschrijving }}"
+        start_date_time: "{{ datum }} {{ tijd }}"
+        end_date_time: "{{ datum }}T{{ (tijd | regex_replace(find=':.*$', replace='') | int + 1) | string }}:00"
+    - alias: "Bevestig afspraak"
       service: tts.cloud_say
       data:
         entity_id: media_player.assistant
-        message: "Appointment added: '{{ description }}' on {{ date }} at {{ time }} o'clock."
+        message: "Afspraak toegevoegd: '{{ beschrijving }}' op {{ datum }} om {{ tijd }} uur."
 
-DeleteAppointment:
+VerwijderAfspraak:
   sequence:
-    - alias: "Find the appointment in the calendar"
+    - alias: "Zoek de afspraak in de agenda"
       service: calendar.get_events
       target:
-        entity_id: calendar.yourcalender.com
+        entity_id: calendar.keyhunternl_gmail_com
       data:
-        start_date_time: "{{ date }}T00:00:00+01:00"
-        end_date_time: "{{ date }}T23:59:59+01:00"
-      response_variable: appointments
+        start_date_time: "{{ datum }} {{ tijd }}"
+        end_date_time: "{{ datum }}T{{ (tijd | int + 1) | string }}:00+01:00"
+      response_variable: afspraken
 
-    - alias: "Check if the appointment exists"
+    - alias: "Controleer of de afspraak bestaat"
       choose:
         - conditions:
             - condition: template
               value_template: >-
-                {{ appointments | selectattr('summary', 'equalto', description) | list | length > 0 }}
+                {{ afspraken | selectattr('summary', 'equalto', beschrijving) | list | length > 0 }}
           sequence:
-            - alias: "Delete the appointment"
+            - alias: "Verwijder de afspraak"
               service: calendar.delete_event
               target:
-                entity_id: calendar.yourcalender.com
+                entity_id: calendar.keyhunternl_gmail_com
               data:
                 event_id: >-
-                  {{ (appointments | selectattr('summary', 'equalto', description) | list)[0].id }}
+                  {{ (afspraken | selectattr('summary', 'equalto', beschrijving) | list)[0].id }}
 
-            - alias: "Provide confirmation"
+            - alias: "Bevestiging geven"
               service: tts.cloud_say
               data:
                 entity_id: media_player.assistant
-                message: "The appointment '{{ description }}' on {{ date }} has been deleted."
+                message: "De afspraak '{{ beschrijving }}' op {{ datum }} is verwijderd."
 
-        default:
-          - alias: "No appointment found"
-            service: tts.cloud_say
-            data:
-              entity_id: media_player.assistant
-              message: "I could not find an appointment with the description '{{ description }}' on {{ date }}."
+      default:
+        - alias: "Geen afspraak gevonden"
+          service: tts.cloud_say
+          data:
+            entity_id: media_player.assistant
+            message: "Ik kon geen afspraak met de beschrijving '{{ beschrijving }}' vinden op {{ datum }}."
 
-MoveAppointment:
+VerplaatsAfspraak:
   sequence:
-    - alias: "Find the appointment in the calendar"
+    - alias: "Zoek de afspraak in de agenda"
       service: calendar.get_events
       target:
-        entity_id: calendar.yourcalender.com
+        entity_id: calendar.keyhunternl_gmail_com
       data:
-        start_date_time: "{{ old_date }}T00:00:00+01:00"
-        end_date_time: "{{ old_date }}T23:59:59+01:00"
-      response_variable: appointments
+        start_date_time: "{{ datum }} {{ tijd }}"
+        end_date_time: "{{ oude_datum }}T23:59:59+01:00"
+      response_variable: afspraken
 
-    - alias: "Check if the appointment exists"
+    - alias: "Controleer of de afspraak bestaat"
       choose:
         - conditions:
             - condition: template
               value_template: >-
-                {{ appointments | selectattr('summary', 'equalto', description) | list | length > 0 }}
+                {{ afspraken | selectattr('summary', 'equalto', beschrijving) | list | length > 0 }}
           sequence:
-            - alias: "Move the appointment"
+            - alias: "Verplaats de afspraak"
               service: calendar.modify_event
               target:
-                entity_id: calendar.yourcalender.com
+                entity_id: calendar.keyhunternl_gmail_com
               data:
                 event_id: >-
-                  {{ (appointments | selectattr('summary', 'equalto', description) | list)[0].id }}
+                  {{ (afspraken | selectattr('summary', 'equalto', beschrijving) | list)[0].id }}
                 start:
-                  start_date_time: "{{ new_date }}T{{ new_time }}:00+01:00"
+                  start_date_time: "{{ nieuwe_datum }}T{{ nieuwe_tijd }}:00+01:00"
                 end:
-                  end_date_time:: "{{ new_date }}T{{ (new_time | int + 1) | string }}:00+01:00"
+                  end_date_time: "{{ nieuwe_datum }}T{{ (nieuwe_tijd | int + 1) | string }}:00+01:00"
 
-            - alias: "Provide confirmation"
+            - alias: "Bevestiging geven"
               service: tts.cloud_say
               data:
                 entity_id: media_player.assistant
-                message: "The appointment '{{ description }}' has been moved to {{ new_date }} at {{ new_time }} o'clock."
+                message: "De afspraak '{{ beschrijving }}' is verplaatst naar {{ nieuwe_datum }} om {{ nieuwe_tijd }} uur."
 
-        default:
-          - alias: "No appointment found"
-            service: tts.cloud_say
-            data:
-              entity_id: media_player.assistant
-              message: "I could not find an appointment with the description '{{ description }}' on {{ old_date }}."
+      default:
+        - alias: "Geen afspraak gevonden"
+          service: tts.cloud_say
+          data:
+            entity_id: media_player.assistant
+            message: "Ik kon geen afspraak met de beschrijving '{{ beschrijving }}' vinden op {{ oude_datum }}."
