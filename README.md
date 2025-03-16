@@ -129,13 +129,19 @@ if (distance <= 10 && strikes > 0) {
 
 ![Screenshot](https://github.com/user-attachments/assets/e547f99a-372b-408c-bd89-8cc421d4aaff)
 
-### 🚗💨 Vehicle dashboard
+### 🚗 ⛽ Vehicle dashboard
 - Displays the status of your vehicle.
 - Requires **Ultra Vehicle Card** from HACS.
 - sunroof is open.
-
-
+  
 ![Screenshot_20250313-172654](https://github.com/user-attachments/assets/fa2ee55a-ab7f-422f-9ef8-9879aafe8f6f)
+
+
+### 🚗💨 F1 dashboard
+- Schedule of the upcoming race and map of the circuit
+- latest news from F1 on top!
+
+  ![Screenshot_20250316-170636](https://github.com/user-attachments/assets/02a79de1-94a3-44ed-b7da-ce904ec80ac0)
 
 
 ---
