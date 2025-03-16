@@ -139,7 +139,7 @@ if (distance <= 10 && strikes > 0) {
 
 ### 🚗💨 F1 dashboard
 - Schedule of the upcoming race and map of the circuit
-- latest news from F1 on top!
+- latest news from F1 on top! using scrape.
 
   ![Screenshot_20250316-170636](https://github.com/user-attachments/assets/02a79de1-94a3-44ed-b7da-ce904ec80ac0)
 
