@@ -26,6 +26,8 @@ Here are some examples:
 - changes back shadows on "hold", "dnd", "mic-off".
 - Requires **Home Assistant Swipe Navigation** from HACS. If you want to use swiping between dashboards
 ```javascript
+///// to add shadow do next step////
+
 add on row 525
         - filter: drop-shadow(2px 2px 2px black)
 
