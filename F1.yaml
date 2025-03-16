@@ -1,15 +1,18 @@
 type: custom:button-card
 variables:
   vehicleversion: 1.0.2
+  F1_entity: sensor.f1_nieuws
 template:
   - variable_template
   - body_template
+name: Hoofdkaart Titel
 styles:
   grid:
     - grid-template-areas: |
         "title status"
+        "message message"
         "vehicle vehicle"
-    - grid-template-rows: min-content 4fr min-content
+    - grid-template-rows: min-content 2fr min-content
     - grid-template-columns: 1fr 1fr
   custom_fields:
     title:
@@ -21,17 +24,32 @@ styles:
     vehicle:
       - align-self: center
       - font-weight: bold
-      - width: 55%
-      - height: 110%
+      - width: 90%
+      - height: 155%
       - text-shadow: 1px 1px black
       - justify-self: center
-      - transform: scale(100%)
+      - transform: scale(75%)
+    message:
+      - font-size: 22px
+      - font-weight: bold
+      - text-shadow: 1px 1px black
+      - position: relative
+      - padding: 10px
+      - border-radius: 10px
+      - height: 250%
+      - width: 95%
+      - text-align: center
+      - text-wrap: wrap
+      - justify-content: center
+      - align-self: center
+      - padding: 2%
+      - z-index: 1
 custom_fields:
   title:
     card:
       type: custom:button-card
       icon: mdi:clock
-      name: "[[[ return variables.var_current_time ]]]"
+      name: null
       tap_action:
         action: navigate
         navigation_path: clock
@@ -70,3 +88,4 @@ custom_fields:
         unit: metric
         api_key:
           - FCVVGQCF55UR3CZ6EBLVVM7U4
+  message: "[[[ return states[variables.F1_entity].state; ]]]"
