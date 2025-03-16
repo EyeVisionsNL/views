@@ -1,0 +1,8 @@
+install scrape:
+
+https://www.f1news.nl/
+
+select:
+div.uplp-post-title
+index:
+0
