@@ -48,7 +48,7 @@ swipe_nav:
 
 ### 🕒 Clock
 - The transition is now smooth instead of jumping.
-- The clock color changes based on **KNMI weather warnings** (requires KNMI HACS integration).
+- The clock color changes based on **KNMI weather warnings** (requires KNMI HACS integration or other weatherstation that give color codes to weather).
 - You can adjust the movement size if the clock moves outside the screen.
 - If no KNMI integration is available, remove the color-changing code and set a static color.
 
