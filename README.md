@@ -29,7 +29,7 @@ Here are some examples:
 add on row 525
         - filter: drop-shadow(2px 2px 2px black)
 
-
+//// add on the end of the dashboard.yaml for swipe navigation between dashboards////
 
 swipe_nav:
   wrap: true
