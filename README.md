@@ -214,6 +214,7 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 
 ### 🏎️ 🏁 F1 Dashboard
 🏁 Schema van de aankomende race en een kaart van het circuit.
+
 📰 Laatste F1-nieuws bovenaan! (gebruikt scrape voor updates).
 
 ---
