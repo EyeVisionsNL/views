@@ -139,7 +139,7 @@ if (distance <= 10 && strikes > 0) {
 ![Screenshot_20250313-172654](https://github.com/user-attachments/assets/fa2ee55a-ab7f-422f-9ef8-9879aafe8f6f)
 
 
-### 🚗💨 F1 dashboard
+### 🏎️ 🏁 F1 dashboard
 - Schedule of the upcoming race and map of the circuit
 - latest news from F1 on top! using scrape.
 
@@ -211,6 +211,10 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 
 
 ![Screenshot_20250313-172654](https://github.com/user-attachments/assets/0c372a5d-bf21-4ad5-b203-3566ae60d08c)
+
+### 🏎️ 🏁 F1 Dashboard
+🏁 Schema van de aankomende race en een kaart van het circuit.
+📰 Laatste F1-nieuws bovenaan! (gebruikt scrape voor updates).
 
 ---
 
