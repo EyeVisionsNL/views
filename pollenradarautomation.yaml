@@ -1,0 +1,19 @@
+alias: Viewassist - dashboard pollen-radar
+description: ""
+use_blueprint:
+  path: dinki/blueprint-showwebpage.yaml
+  input:
+    command: laat pollenradar zien | hoe is het met de pollen
+    response: >
+      Hier is de pollenradar met de huidige waardes.   Voor gras is de hoogste
+      pollenwaarde {{ states('sensor.hoogste_pollenwaarde_gras') }}, afkomstig
+      van {{ states('sensor.hoogste_pollenbron_gras') }}.   Voor kruiden is de
+      hoogste waarde {{ states('sensor.hoogste_pollenwaarde_kruiden') }}, met
+      als bron {{ states('sensor.hoogste_pollenbron_kruiden') }}.   En voor
+      bomen is de hoogste pollenwaarde {{
+      states('sensor.hoogste_pollenwaarde_bomen') }}, afkomstig van {{
+      states('sensor.hoogste_pollenbron_bomen') }}.   Hou je zakdoek bij de hand
+      als je gevoelig bent, of adem lekker diep in als je nergens last van hebt!
+    view: /dashboard-viewassist/pollen
+    url: "custom_components/chime_tts/mp3s/fanfare.mp3 "
+    hold_mode: true
