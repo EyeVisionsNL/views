@@ -1,6 +1,6 @@
 type: custom:button-card
 variables:
-  musiccardversion: 1.1.2
+  musiccardversion: 1.1.3
   var_musicplayer_device: |-
     [[[
       var assistbid = hass.states[variables.assist_group].attributes.entity_id
@@ -40,25 +40,25 @@ custom_fields:
         navigation_path: clock
       hold_action:
         action: navigate
-        navigation_path: vloerplan
+        navigation_path: whatever
       styles:
         card:
           - background-color: transparent
           - border-width: 0px
           - width: auto
-          - padding: 5px
+          - padding: 0.5em
         grid:
           - grid-template-areas: "\"i n\""
           - grid-template-rows: min-content min-content
-          - grid-template-columns: 90px auto
+          - grid-template-columns: auto auto
         name:
-          - font-size: 8vh
+          - font-size: 3em
           - font-weight: bold
           - color: white
           - text-shadow: 2px 2px black
         icon:
           - filter: drop-shadow(2px 2px 2px black)
-          - width: 12vh
+          - width: 4em
           - color: white
   message:
     card:
@@ -69,11 +69,12 @@ custom_fields:
         entity: "[[[ return variables.var_musicplayer_device ]]]"
       style: |
         ha-card {
-          width: 100vw !important;
-          height: 99vh !important;
+          width: 100% !important;
+          height: 99% !important;
           margin: 0 !important;
           padding: 0 !important;
           box-shadow: none !important;
           --paper-card-background-color: transparent !important;
-          --mdc-icon-size: 1px;
+          --mdc-icon-size: 0.8em; ;
         }
+
