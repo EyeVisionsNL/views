@@ -46,7 +46,7 @@ custom_fields:
           - background-color: transparent
           - border-width: 0px
           - width: auto
-          - padding: 0.5em
+          - padding: 0.1em
         grid:
           - grid-template-areas: "\"i n\""
           - grid-template-rows: min-content min-content
@@ -69,12 +69,11 @@ custom_fields:
         entity: "[[[ return variables.var_musicplayer_device ]]]"
       style: |
         ha-card {
-          width: 100% !important;
-          height: 99% !important;
+          width: 100vw !important;
+          height: 100vh !important;
           margin: 0 !important;
           padding: 0 !important;
           box-shadow: none !important;
           --paper-card-background-color: transparent !important;
-          --mdc-icon-size: 0.8em; ;
+          --mdc-icon-size: 0px;
         }
-
