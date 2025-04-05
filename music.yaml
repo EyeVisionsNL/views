@@ -75,5 +75,4 @@ custom_fields:
           padding: 0 !important;
           box-shadow: none !important;
           --paper-card-background-color: transparent !important;
-          --mdc-icon-size: 0px;
         }
