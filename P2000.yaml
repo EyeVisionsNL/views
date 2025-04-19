@@ -12,7 +12,8 @@ styles:
     - grid-template-areas: |
         "title title"
         "message message"
-        "card card"
+        "assist assist"
+    - grid-template-rows: auto 1fr auto
   card:
     - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
     - background-size: cover
