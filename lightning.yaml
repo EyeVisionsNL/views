@@ -13,6 +13,7 @@ styles:
         "title status" 
         "message message"
         "card assist"
+    - grid-template-rows: auto 1fr auto
   card:
     - background: "[[[ return `center / cover repeat url(${variables.background})` ]]]"
     - background-size: cover
