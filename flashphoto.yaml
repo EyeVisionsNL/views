@@ -1,0 +1,31 @@
+type: custom:button-card
+variables:
+  webpageversion: 1.1.0
+  var_url: >-
+    [[[ try {return
+    hass.states[variables.var_assistsat_entity].attributes.data["url"]} catch {
+    return "https://www.flashphoto.nl/"}]]]
+template:
+  - variable_template
+  - body_template
+styles:
+  card:
+    - background-color: "#00000"
+    - border-width: 0px
+    - border-radius: 0px
+  custom_fields:
+    message:
+      - font-size: "[[[ return variables.var_font_size ]]]"
+      - align-self: center
+      - justify-self: center
+      - height: 100%
+      - width: 100%
+      - position: absolute
+      - justify-content: center
+      - text-align: start
+custom_fields:
+  message:
+    card:
+      type: iframe
+      url: https://www.flashphoto.nl/
+      aspect_ratio: 180%
