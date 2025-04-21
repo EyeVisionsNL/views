@@ -1,0 +1,41 @@
+type: custom:button-card
+variables:
+  background: /local/viewassist/announcebird.jpg
+  infopiccardversion: 1.0.0
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "title status"  
+        "image message"
+        "assist assist"       
+    - grid-template-rows: min-content 4fr min-content
+    - grid-template-columns: 1fr 2fr
+  card:
+    - background: "[[[ return `center / cover no-repeat url(${variables.background})` ]]]"
+    - background-size: cover
+  custom_fields:
+    image:
+      - align-self: center
+      - justify-self: center
+      - object-fit: contain
+      - width: 75%
+    message:
+      - font-size: 45px;
+      - position: relative
+      - padding: 10px
+      - border-radius: 10px
+      - width: 95%
+      - text-align: start
+      - text-wrap: wrap
+      - justify-content: center
+      - align-self: center
+      - padding: 2%
+custom_fields:
+  image:
+    card:
+      type: picture
+      image: /local/viewassist/washing-machine.png
+  message: wasmachine is klaar met het programma! Je kan de was eruit halen.
