@@ -1,0 +1,32 @@
+alias: Flight entry notification
+description: ""
+triggers:
+  - event_type: flightradar24_entry
+    trigger: event
+conditions:
+  - condition: template
+    value_template: >
+      {{ trigger.event.data.callsign in ['LIFELN2', 'ZXP01', 'ZXP02', 'ZXP03',
+      'ZXP04', 'ZXP05', 'ZXP06'] }}
+actions:
+  - data:
+      message: >-
+        Flight entry of {{ trigger.event.data.callsign }} to {{
+        trigger.event.data.airport_destination_city }} [Open
+        FlightRadar](https://www.flightradar24.com/{{
+        trigger.event.data.callsign }})
+      data:
+        url: >-
+          https://fr24.com/{{ trigger.event.data.callsign }}/{{
+          trigger.event.data.id }}
+        clickAction: >-
+          https://fr24.com/{{ trigger.event.data.callsign }}/{{
+          trigger.event.data.id }}
+        image: "{{ trigger.event.data.aircraft_photo_medium }}"
+    action: notify.mobile_app_Oneplus12
+  - action: browser_mod.navigate
+    metadata: {}
+    data:
+      browser_id:
+        - 0041739398d895e9040c07be4dc364d8
+      path: /dashboard-viewassist/flightradar
