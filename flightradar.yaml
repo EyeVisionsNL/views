@@ -1,0 +1,77 @@
+type: custom:button-card
+variables:
+  flightradar: 1.0.0
+  var_font_size: 40px
+template:
+  - variable_template
+  - body_template
+styles:
+  grid:
+    - grid-template-areas: |
+        "message message"
+        "title title"
+        "map map"
+    - grid-template-rows: min-content min-content 1fr
+    - grid-template-columns: 1fr 1fr
+  card:
+    - background: black
+    - background-size: cover
+  custom_fields:
+    message:
+      - font-size: "[[[ return variables.var_font_size ]]]"
+      - position: relative
+      - padding: 10px
+      - border-radius: 10px
+      - max-width: 95%
+      - text-align: start
+      - text-wrap: wrap
+      - align-self: start
+      - justify-self: center
+      - font-weight: bold
+      - text-shadow: 3px 3px black
+    map:
+      - width: 100%
+      - height: 500px
+      - align-self: center
+      - justify-self: center
+custom_fields:
+  title:
+    card:
+      type: custom:button-card
+      icon: mdi:clock
+      name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: p2000
+      styles:
+        card:
+          - background-color: transparent
+          - border-width: 0px
+          - width: auto
+          - padding: 5px
+        grid:
+          - grid-template-areas: "\"i n\""
+          - grid-template-rows: min-content min-content
+          - grid-template-columns: 90px auto
+        name:
+          - font-size: 6vh
+          - font-weight: bold
+          - color: white
+          - text-shadow: 2px 2px black
+        icon:
+          - filter: drop-shadow(2px 2px 2px black)
+          - width: 10vh
+          - color: white
+  message: |
+    [[[ 
+      const val = states['sensor.flightradar24_current_in_area']?.state || "Geen data";
+      return `Vluchten in de buurt: ${val}`;
+    ]]]
+  map: |
+    <iframe 
+      src="https://www.flightradar24.com/simple?lat=LATITUDE&lon=LONGITUDE&z=8&label1=reg&size=small" 
+      style="border:0; width:250%; height:250%;"
+    ></iframe>
