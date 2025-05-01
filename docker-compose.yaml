@@ -2,16 +2,21 @@ version: '3.9'
 
 services:
 
-  whisper:
-    image: rhasspy/wyoming-whisper:latest
-    container_name: whisper
-    command: ["--model", "large-v3", "--language", "nl"]
+  faster-whisper:
+    image: lscr.io/linuxserver/faster-whisper:latest
+    container_name: faster-whisper
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Amsterdam
+      - WHISPER_MODEL=large-v3
+      - WHISPER_LANG=nl
     volumes:
-      - ./whisper-data:/data
-      - ./whisper-cache:/root/.cache/whisper
+      - ./whisper-data:/config
     ports:
       - "10300:10300"
     restart: unless-stopped
+
 
   piper:
     image: rhasspy/wyoming-piper:latest
