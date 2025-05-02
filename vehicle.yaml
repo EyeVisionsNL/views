@@ -9,7 +9,7 @@ styles:
     - grid-template-areas: |
         "title status"
         "vehicle vehicle"
-    - grid-template-rows: min-content 4fr min-content
+    - grid-template-rows: min-content auto min-content
     - grid-template-columns: 1fr 1fr
   custom_fields:
     title:
@@ -21,17 +21,22 @@ styles:
     vehicle:
       - align-self: center
       - font-weight: bold
-      - width: 60%
-      - height: auto
+      - width: 100%
+      - height: 120%
       - text-shadow: 1px 1px black
       - justify-self: center
-      - transform: scale(160%)
 custom_fields:
   title:
     card:
       type: custom:button-card
       icon: mdi:clock
       name: "[[[ return variables.var_current_time ]]]"
+      tap_action:
+        action: navigate
+        navigation_path: clock
+      hold_action:
+        action: navigate
+        navigation_path: floorplan
       styles:
         card:
           - background-color: transparent
@@ -51,7 +56,161 @@ custom_fields:
           - color: white
   vehicle:
     card:
-      title: Skoda Octavia
+      vehicle_image_type: entity
+      status_image_type: none
+      layout_type: single
+      formatted_entities: true
+      show_location: true
+      show_mileage: true
+      show_car_state: false
+      show_info_icons: true
+      sections_order:
+        - title
+        - image
+        - icon_row_qe3h2nh
+        - info
+        - bars
+      bars:
+        - left_title: " Bereik"
+          left_entity: sensor.skoda_octavia_combi_actieradius
+          right_entity: sensor.skoda_octavia_combi_buitentemperatuur
+          bar_color: "var(--primary-color, #3498db)"
+          background_color: "#f20713"
+          border_color: "var(--divider-color, #555555)"
+          left_title_color: "var(--secondary-text-color, #999999)"
+          left_text_color: "var(--primary-text-color, #ffffff)"
+          right_title_color: "var(--secondary-text-color, #999999)"
+          right_text_color: "var(--primary-text-color, #ffffff)"
+          limit_indicator_color: "var(--error-color, #ff0000)"
+          left_title_size: 14
+          left_text_size: 14
+          right_title_size: 14
+          right_text_size: 14
+          percentage_text_size: 14
+          bar_size: regular
+          bar_radius: round
+          bar_style: glossy
+          show_left: true
+          show_right: false
+          show_percentage: true
+          percentage_type: entity
+          percentage_amount_entity: ""
+          percentage_total_entity: ""
+          alignment: center
+          width: "100"
+          use_gradient: false
+          gradient_display_mode: value_based
+          gradient_stops:
+            - id: "1"
+              position: 0
+              color: "#ff0000"
+            - id: "2"
+              position: 100
+              color: "#00ff00"
+          animation_entity: ""
+          animation_state: ""
+          animation_type: none
+          action_animation_entity: ""
+          action_animation_state: ""
+          action_animation: none
+          entity: sensor.skoda_octavia_combi_brandstof_niveau
+          right_condition:
+            type: none
+            entity: ""
+            state: ""
+          limit_entity: sensor.skoda_octavia_combi_actieradius
+          left_condition:
+            type: none
+            entity: ""
+            state: ""
+      icon_rows:
+        - id: qe3h2nh
+          width: "100"
+          alignment: center
+          spacing: none
+          columns: 0
+          icons:
+            - entity: lock.skoda_octavia_combi_deurvergrendeling
+              icon_inactive: mdi:lock
+              icon_active: mdi:lock
+              color_inactive: var(--secondary-text-color)
+              color_active: var(--primary-color)
+              name_color_inactive: var(--primary-text-color)
+              name_color_active: var(--primary-text-color)
+              state_color_inactive: var(--secondary-text-color)
+              state_color_active: var(--primary-text-color)
+              inactive_state: "off"
+              active_state: "on"
+              inactive_template_mode: false
+              active_template_mode: false
+              inactive_template: ""
+              active_template: ""
+              active_state_text: ""
+              inactive_state_text: ""
+              show_state: true
+              show_name: false
+              show_name_active: false
+              show_name_inactive: false
+              show_state_active: true
+              show_state_inactive: true
+              show_units: true
+              show_icon_active: true
+              show_icon_inactive: true
+              name: ""
+              on_click_action: more-info
+              text_position: bottom
+              vertical_alignment: center
+              text_alignment: center
+              icon_size: 24
+              text_size: 14
+              icon_background: none
+              icon_background_color: var(--secondary-background-color)
+              container_background: none
+              container_background_color: var(--secondary-background-color)
+              draggable: true
+              action: ""
+              service_data: {}
+            - entity: binary_sensor.skoda_octavia_combi_ramen
+              icon_inactive: mdi:window-closed
+              icon_active: mdi:window-closed
+              color_inactive: var(--secondary-text-color)
+              color_active: var(--primary-color)
+              name_color_inactive: var(--primary-text-color)
+              name_color_active: var(--primary-text-color)
+              state_color_inactive: var(--secondary-text-color)
+              state_color_active: var(--primary-text-color)
+              inactive_state: "off"
+              active_state: "on"
+              inactive_template_mode: false
+              active_template_mode: false
+              inactive_template: ""
+              active_template: ""
+              active_state_text: ""
+              inactive_state_text: ""
+              show_state: true
+              show_name: false
+              show_name_active: false
+              show_name_inactive: false
+              show_state_active: true
+              show_state_inactive: true
+              show_units: true
+              show_icon_active: true
+              show_icon_inactive: true
+              name: ""
+              on_click_action: more-info
+              text_position: bottom
+              vertical_alignment: center
+              text_alignment: center
+              icon_size: 24
+              text_size: 14
+              icon_background: none
+              icon_background_color: var(--secondary-background-color)
+              container_background: none
+              container_background_color: var(--secondary-background-color)
+              draggable: true
+              action: ""
+              service_data: {}
+          confirmation_mode: false
       image_url: ""
       charging_image_url: ""
       image_url_type: entity
@@ -65,9 +224,6 @@ custom_fields:
       mileage_entity: sensor.skoda_octavia_combi_kilometerstand
       show_level: true
       show_range: true
-      show_location: true
-      show_mileage: true
-      show_car_state: true
       show_charge_limit: true
       icon_grid_entities:
         - row-separator
@@ -109,23 +265,23 @@ custom_fields:
       iconActiveColor: var(--primary-color)
       iconInactiveColor: var(--primary-text-color)
       useFormattedEntities: true
-      mainImageHeight: 200px
+      mainImageHeight: 150px
       chargingImageHeight: 140px
       showTitle: true
       layoutType: single
-      useBarGradient: false
+      useBarGradient: true
       barGradientStops:
         - percentage: 0
           color: "#FF0000"
         - percentage: 100
           color: "#00FF00"
-      cardTitleColor: var(--primary-text-color)
+      cardTitleColor: "#ffffff"
       cardBackgroundColor: "var(--ha-card-background, var(--card-background-color, #fff))"
       barBackgroundColor: "#0cec09"
       barBorderColor: "#f5f5f5"
       barFillColor: "#023ef2"
       limitIndicatorColor: "#ed0202"
-      infoTextColor: var(--secondary-text-color)
+      infoTextColor: "#0264e3"
       show_engine_animation: true
       show_charging_animation: true
       show_charging_status: true
@@ -142,3 +298,19 @@ custom_fields:
       show_fuel_range: true
       custom_labels: {}
       image_entity: image.skoda_octavia_combi_voertuigstatus
+      vehicle_image_width: 100
+      action_image_width: 100
+      vehicle_image_entity: image.skoda_octavia_combi_voertuigstatus
+      title_color: "#0b64f4"
+      location_text_color: "#0af038"
+      grid_options:
+        columns: full
+      show_units: true
+      action_image_priority: newest
+      card_mod:
+        style: |
+          ha-card {
+            max-width: 450px; /* << Hier bepaal je hoe breed de vehicle card mag zijn */
+            width: 100%;
+            margin: auto;
+          }
