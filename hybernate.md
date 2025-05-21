@@ -54,7 +54,7 @@ Dit document beschrijft hoe je een server in slaapstand (hibernate) zet via **Ho
 3. Log in op je server als de juiste gebruiker:
 
    ```bash
-   ssh eyevisions@nothomeassistant
+   ssh youruser@nothomeassistant
    ```
 
 4. Maak op de server (indien nodig) de `.ssh` map aan en stel de juiste rechten in:
@@ -82,7 +82,7 @@ Dit document beschrijft hoe je een server in slaapstand (hibernate) zet via **Ho
 
    ```yaml
    shell_command:
-     hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa eyevisions@192.168.198.35 'sudo systemctl hibernate'"
+     hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa youruser@192.168.198.35 'sudo systemctl hibernate'"
    ```
 
 3. Ga naar **Instellingen > Systeem > Herstarten**.
@@ -98,10 +98,10 @@ Na de herstart kun je het commando testen vanuit Developer Tools of een knop in 
 
 ## 🧠 Opmerkingen
 
-- Zorg dat de gebruiker `eyevisions` **sudo mag uitvoeren zonder wachtwoord** voor het `hibernate`-commando. Voeg eventueel toe aan `/etc/sudoers.d/hibernate`:
+- Zorg dat de gebruiker `youruser` **sudo mag uitvoeren zonder wachtwoord** voor het `hibernate`-commando. Voeg eventueel toe aan `/etc/sudoers.d/hibernate`:
 
   ```bash
-  eyevisions ALL=NOPASSWD: /bin/systemctl hibernate
+  youruser ALL=NOPASSWD: /bin/systemctl hibernate
   ```
 
 - Test eerst of `sudo systemctl hibernate` werkt op de server zelf voordat je dit via Home Assistant probeert.
