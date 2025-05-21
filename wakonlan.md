@@ -1,10 +1,10 @@
 # Wake on LAN via Home Assistant
 
-Dit document beschrijft de stappen om een **Ubuntu Server op afstand te starten via Wake on LAN (WOL)**, gestuurd vanuit **Home Assistant**.
+Dit document beschrijft de stappen om een **server-129 op afstand te starten via Wake on LAN (WOL)**, gestuurd vanuit **Home Assistant**.
 
 ## 🔧 Benodigde Componenten
 
-- **Ubuntu Server**: De pc die op afstand gestart moet worden.
+- **server-129**: De pc die op afstand gestart moet worden.
 - **Home Assistant**: Het automatiseringsplatform dat het commando verzendt.
 - **Lokaal netwerk**: Beide apparaten moeten zich in hetzelfde netwerk bevinden.
 - **PuTTY / Terminal**: Voor het uitvoeren van commando's op de server en Home Assistant.
@@ -13,7 +13,7 @@ Dit document beschrijft de stappen om een **Ubuntu Server op afstand te starten 
 
 ## 📝 Stapsgewijze Procedure
 
-### 1. Ubuntu Server voorbereiden voor Wake on LAN
+### 1. server-129 voorbereiden voor Wake on LAN
 
 #### BIOS/UEFI-instellingen
 
@@ -88,9 +88,9 @@ wake_on_lan:
 
 switch:
   - platform: wake_on_lan
-    mac_address: "50:eb:f6:bb:61:ac"
-    name: "Ubuntu Server"
-    host: "192.168.2.6"
+    mac_address: "52:b7:d3:03:76:c0"
+    name: "server-129"
+    host: "192.168.198.35"
 ```
 
 > ✅ Herstart Home Assistant na het aanpassen van de configuratie.
@@ -103,13 +103,13 @@ Voeg een knop toe aan je dashboard die een WOL-pakket verzendt:
 
 ```yaml
 type: button
-name: Start Ubuntu Server
+name: Start server-129
 icon: mdi:power
 tap_action:
   action: call-service
   service: wake_on_lan.send_magic_packet
   service_data:
-    mac: "50:eb:f6:bb:61:ac"
+    mac: "52:b7:d3:03:76:c0"
     broadcast_address: "192.168.2.255"
 ```
 
@@ -119,7 +119,7 @@ Zorg dat het broadcast-adres overeenkomt met je netwerkconfiguratie.
 
 ## ✅ Resultaat
 
-Na het uitvoeren van deze stappen is de Ubuntu Server met succes op afstand op te starten via Home Assistant. De server reageert betrouwbaar op de knop *"Start Ubuntu Server"* in de gebruikersinterface.
+Na het uitvoeren van deze stappen is de server-129 met succes op afstand op te starten via Home Assistant. De server reageert betrouwbaar op de knop *"Start server-129"* in de gebruikersinterface.
 
 Deze aanpak zorgt voor een geautomatiseerde, energiezuinige oplossing om servers enkel aan te zetten wanneer nodig.
 
