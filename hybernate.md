@@ -4,18 +4,15 @@ Dit document beschrijft de stappen om een server in slaapstand te zetten via een
 Open de Terminal & SSH add-on in Home Assistant.
 Navigeer naar de configuratiemap:
 ```javascript
-Bash
 cd /config
 ```
 Maak een verborgen map voor SSH-sleutels aan en stel de juiste permissies in:
 ```javascript
-Bash
 mkdir -p .ssh
 chmod 700 .ssh
 ```
 Genereer het SSH-sleutelpaar. Druk op Enter voor de standaardlocatie (/config/.ssh/id_rsa) en druk nogmaals op Enter voor een lege wachtwoordzin. Een lege wachtwoordzin is cruciaal voor geautomatiseerde scripts.
 ```javascript
-Bash
 ssh-keygen -t rsa -b 4096 -f /config/.ssh/id_rsa -N ""
 ```
 Dit maakt twee bestanden aan: /config/.ssh/id_rsa (de privé sleutel) en /config/.ssh/id_rsa.pub (de publieke sleutel).
@@ -25,24 +22,20 @@ De publieke sleutel moet op de server worden geplaatst zodat de gebruiker eyevis
 
 Bekijk de inhoud van de zojuist gegenereerde publieke sleutel in de Home Assistant Terminal:
 ```javascript
-Bash
 cat /config/.ssh/id_rsa.pub
 ```
 Kopieer de hele output van dit commando. Dit is je publieke sleutel.
 Log in op je server als gebruiker :
 ```javascript
-Bash
 ssh eyevisions@nothomeassistant
 ```
 Maak op de server een .ssh map aan en stel de juiste permissies in, als deze nog niet bestaan:
 ```javascript
-Bash
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ```
 Voeg de gekopieerde publieke sleutel toe aan het authorized_keys bestand van de gebruiker eyevisions. Vervang PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB door de tekst die je in stap 2 hebt gekopieerd.
 ```javascript
-Bash
 echo "PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB" >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
