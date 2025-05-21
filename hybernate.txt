@@ -16,71 +16,63 @@ Home Assistant heeft een eigen SSH-sleutelpaar nodig om zonder wachtwoord te kun
 
 Open de Terminal & SSH add-on in Home Assistant.
 Navigeer naar de configuratiemap:
-Bash
 
+Bash
 cd /config
-Maak een verborgen map voor SSH-sleutels aan en stel de juiste permissies in:
-Bash
 
+Maak een verborgen map voor SSH-sleutels aan en stel de juiste permissies in:
+
+Bash
 mkdir -p .ssh
 chmod 700 .ssh
-Genereer het SSH-sleutelpaar. Druk op Enter voor de standaardlocatie (/config/.ssh/id_rsa) en druk nogmaals op Enter voor een lege wachtwoordzin. Een lege wachtwoordzin is cruciaal voor geautomatiseerde scripts.
-Bash
 
+Genereer het SSH-sleutelpaar. Druk op Enter voor de standaardlocatie (/config/.ssh/id_rsa) en druk nogmaals op Enter voor een lege wachtwoordzin. Een lege wachtwoordzin is cruciaal voor geautomatiseerde scripts.
+
+Bash
 ssh-keygen -t rsa -b 4096 -f /config/.ssh/id_rsa -N ""
+
 Dit maakt twee bestanden aan: /config/.ssh/id_rsa (de privé sleutel) en /config/.ssh/id_rsa.pub (de publieke sleutel).
+
 Stap 2: Voeg de Publieke Sleutel toe aan je Server
 De publieke sleutel moet op de server worden geplaatst zodat de gebruiker eyevisions zonder wachtwoord kan inloggen vanaf Home Assistant.
 
 Bekijk de inhoud van de zojuist gegenereerde publieke sleutel in de Home Assistant Terminal:
-Bash
 
+Bash
 cat /config/.ssh/id_rsa.pub
+
 Kopieer de hele output van dit commando. Dit is je publieke sleutel.
-Log in op je server (192.168.2.6) als gebruiker eyevisions:
-Bash
+Log in op je server als gebruiker :
 
-ssh eyevisions@192.168.2.6
+Bash
+ssh eyevisions@nothomeassistant
+
 Maak op de server een .ssh map aan en stel de juiste permissies in, als deze nog niet bestaan:
-Bash
 
+Bash
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
+
 Voeg de gekopieerde publieke sleutel toe aan het authorized_keys bestand van de gebruiker eyevisions. Vervang PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB door de tekst die je in stap 2 hebt gekopieerd.
 Bash
 
 echo "PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB" >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
+
 Log uit van de server.
+
 Stap 3: Configureer het shell_command in Home Assistant
 Nu we zeker weten dat de SSH-sleutels correct staan, passen we het shell_command aan om de SSH-verbinding correct te initiëren, zelfs in een niet-interactieve omgeving.
 
 Open je configuration.yaml bestand in Home Assistant (bijv. via de File Editor add-on).
 
-Voeg het volgende shell_command toe of pas het aan:
-
-YAML
+Voeg het volgende shell_command toe aan je configuratie.yaml file:
 
 shell_command:
   hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa eyevisions@192.168.2.6 'sudo systemctl hibernate'"
-Uitleg van de belangrijke onderdelen:
-
-/usr/bin/ssh: Het volledige pad naar het SSH-programma op je Home Assistant-installatie (dit heb je eerder geverifieerd met which ssh).
--o StrictHostKeyChecking=no: Deze optie vertelt SSH dat het de authenticiteit van de externe host niet strikt hoeft te controleren. Dit voorkomt een interactieve vraag ("Are you sure you want to continue connecting (yes/no)?") die anders een return code 255 zou veroorzaken in een geautomatiseerde context.
--o UserKnownHostsFile=/dev/null: Dit voorkomt dat SSH probeert een known_hosts bestand te lezen of te schrijven, wat in geautomatiseerde omgevingen ook tot problemen kan leiden.
--i /config/.ssh/id_rsa: Dit vertelt SSH expliciet welke privé sleutel het moet gebruiken voor de authenticatie.
-eyevisions@192.168.2.6: De gebruikersnaam en het IP-adres van je server.
-'sudo systemctl hibernate': Het commando dat op de externe server moet worden uitgevoerd. De aanhalingstekens zijn belangrijk omdat het een enkele string is die naar de externe server wordt gestuurd.
-Stap 4: Herstart Home Assistant
-Om de wijzigingen in configuration.yaml van kracht te laten worden, moet Home Assistant volledig worden herstart.
 
 Ga in Home Assistant naar Instellingen > Systeem > Herstarten.
 Kies Volledige herstart.
 Stap 5: Test het Commando
 Na de herstart kun je testen of het shell_command nu correct werkt.
 
-Ga in Home Assistant naar Ontwikkelaarstools > Diensten.
-Zoek naar shell_command.hibernate_server.
-Klik op Dienst aanroepen.
-Controleer of je server in slaapstand gaat.
-Als het niet werkt, controleer dan de Home Assistant logboeken (Instellingen > Systeem > Logboeken) op specifieke foutmeldingen na het aanroepen van de dienst.
