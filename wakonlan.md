@@ -1,71 +1,131 @@
-Wake on LAN via Home Assistant
-Dit verslag beschrijft de stapsgewijze procedure die is gevolgd om een Ubuntu Server op afstand te kunnen starten vanuit Home Assistant, specifiek voor het inschakelen van Wake on LAN (WOL).
-Benodigde Componenten
-Ubuntu Server: De doel-pc die op afstand moet worden gestart.
-Home Assistant: Het automatiseringsplatform dat de commando's zal versturen.
-Netwerk: Een lokaal netwerk waarin beide apparaten zich bevinden.
-PuTTY / Terminal: Voor het uitvoeren van commando's op de Ubuntu Server en Home Assistant.
-Stapsgewijze Procedure
-1. Ubuntu Server voorbereiden voor Wake on LAN (WOL)
-Om de server via het netwerk te kunnen starten, moet Wake on LAN ingeschakeld zijn.
-BIOS/UEFI-instellingen:
-De server is opnieuw opgestart en het BIOS/UEFI-menu is geopend (meestal via Del, F2, F12 of Esc).
-In de energiebeheerinstellingen (bijv. "Power Management" of "APM Configuration") is de optie "Wake on LAN" of "Power On By LAN/Ethernet" ingeschakeld.
-"Deep Sleep" of vergelijkbare energiebesparende opties zijn uitgeschakeld om te voorkomen dat de netwerkadapter volledig wordt uitgeschakeld.
-De wijzigingen zijn opgeslagen en de server is opnieuw opgestart.
-Ubuntu OS-instellingen (met ethtool):
-Het ethtool-programma is geïnstalleerd op de Ubuntu Server:
-sudo apt update
-sudo apt install ethtool
+# Wake on LAN via Home Assistant
 
+Dit document beschrijft de stappen om een **Ubuntu Server op afstand te starten via Wake on LAN (WOL)**, gestuurd vanuit **Home Assistant**.
 
-De naam van de Ethernet-interface is geïdentificeerd (bijvoorbeeld enp3s0) met ip a:
-ip a
+## 🔧 Benodigde Componenten
 
+- **Ubuntu Server**: De pc die op afstand gestart moet worden.
+- **Home Assistant**: Het automatiseringsplatform dat het commando verzendt.
+- **Lokaal netwerk**: Beide apparaten moeten zich in hetzelfde netwerk bevinden.
+- **PuTTY / Terminal**: Voor het uitvoeren van commando's op de server en Home Assistant.
 
-De WOL-ondersteuning van de interface is gecontroleerd om te bevestigen dat 'g' (magic packet) wordt ondersteund:
-sudo ethtool enp3s0 | grep Wake-on
+---
 
+## 📝 Stapsgewijze Procedure
 
-WOL is tijdelijk ingeschakeld:
-sudo ethtool -s enp3s0 wol g
+### 1. Ubuntu Server voorbereiden voor Wake on LAN
 
+#### BIOS/UEFI-instellingen
 
-Om WOL permanent te maken na herstarts, is een systemd service aangemaakt en ingeschakeld:
-Bestand /etc/systemd/system/wakeonlan@enp3s0.service is aangemaakt met de volgende inhoud:
-[Unit]
-Description=Enable Wake On LAN for enp3s0
-After=network.target
+1. Start de server opnieuw op en open het BIOS/UEFI-menu (vaak via `Del`, `F2`, `F12` of `Esc`).
+2. Navigeer naar de energiebeheerinstellingen (bijv. *Power Management* of *APM Configuration*).
+3. Schakel de optie **"Wake on LAN"** of **"Power On By LAN/Ethernet"** in.
+4. Schakel opties zoals **"Deep Sleep"** uit, zodat de netwerkadapter actief blijft.
+5. Sla de instellingen op en herstart de server.
 
-[Service]
-Type=oneshot
-ExecStart=/usr/sbin/ethtool -s %i wol g
-RemainAfterExit=yes
+#### Ubuntu OS-instellingen
 
-[Install]
-WantedBy=multi-user.target
+1. Installeer `ethtool`:
 
+   ```bash
+   sudo apt update
+   sudo apt install ethtool
+   ```
 
-De service is ingeschakeld en gestart:
-sudo systemctl enable wakeonlan@enp3s0.service
-sudo systemctl start wakeonlan@enp3s0.service
-sudo systemctl daemon-reload
+2. Zoek de naam van de netwerkinterface (bijv. `enp3s0`):
 
+   ```bash
+   ip a
+   ```
 
-2. Home Assistant configuratie
-De configuration.yaml van Home Assistant is aangepast om de wake_on_lan integratie toe te voegen.
-Voor het starten (Wake on LAN):
-Het MAC-adres (50:eb:f6:bb:61:ac) en IP-adres (192.168.2.6) van de enp3s0 interface zijn gebruikt.
+3. Controleer of WOL wordt ondersteund:
+
+   ```bash
+   sudo ethtool enp3s0 | grep Wake-on
+   ```
+
+4. Activeer WOL tijdelijk:
+
+   ```bash
+   sudo ethtool -s enp3s0 wol g
+   ```
+
+5. Maak WOL permanent via een systemd-service:
+
+   Maak het volgende bestand aan:  
+   **`/etc/systemd/system/wakeonlan@enp3s0.service`**
+
+   ```ini
+   [Unit]
+   Description=Enable Wake On LAN for enp3s0
+   After=network.target
+
+   [Service]
+   Type=oneshot
+   ExecStart=/usr/sbin/ethtool -s %i wol g
+   RemainAfterExit=yes
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+6. Activeer en start de service:
+
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable wakeonlan@enp3s0.service
+   sudo systemctl start wakeonlan@enp3s0.service
+   ```
+
+---
+
+### 2. Home Assistant configureren
+
+Voeg in `configuration.yaml` de integratie toe:
+
+```yaml
 wake_on_lan:
-  mac_address: "50:eb:f6:bb:61:ac"
-  name: "Ubuntu Server"
-  host: "192.168.2.6"
 
+switch:
+  - platform: wake_on_lan
+    mac_address: "50:eb:f6:bb:61:ac"
+    name: "Ubuntu Server"
+    host: "192.168.2.6"
+```
 
-Home Assistant is opnieuw opgestart na de configuratiewijzigingen.
-3. Knop in Home Assistant UI
-Een knop is toegevoegd aan het Home Assistant dashboard:
-"Start Ubuntu Server" knop: Roept de dienst wake_on_lan.send_packet aan met het doel wake_on_lan.ubuntu_server.
-Resultaat
-Na het doorlopen van alle stappen en het oplossen van de geïdentificeerde problemen, is de functionaliteit succesvol getest. De Ubuntu Server kan nu via Wake on LAN worden opgestart via de knop in de Home Assistant gebruikersinterface.
-Deze procedure heeft gezorgd voor een geautomatiseerde en efficiënte controle over de opstartstatus van de Ubuntu Server vanuit Home Assistant.
+> ✅ Herstart Home Assistant na het aanpassen van de configuratie.
+
+---
+
+### 3. Knop in de Home Assistant UI
+
+Voeg een knop toe aan je dashboard die een WOL-pakket verzendt:
+
+```yaml
+type: button
+name: Start Ubuntu Server
+icon: mdi:power
+tap_action:
+  action: call-service
+  service: wake_on_lan.send_magic_packet
+  service_data:
+    mac: "50:eb:f6:bb:61:ac"
+    broadcast_address: "192.168.2.255"
+```
+
+Zorg dat het broadcast-adres overeenkomt met je netwerkconfiguratie.
+
+---
+
+## ✅ Resultaat
+
+Na het uitvoeren van deze stappen is de Ubuntu Server met succes op afstand op te starten via Home Assistant. De server reageert betrouwbaar op de knop *"Start Ubuntu Server"* in de gebruikersinterface.
+
+Deze aanpak zorgt voor een geautomatiseerde, energiezuinige oplossing om servers enkel aan te zetten wanneer nodig.
+
+---
+
+## 📎 Referenties
+
+- [Ubuntu manpage ethtool](https://manpages.ubuntu.com/manpages/jammy/en/man8/ethtool.8.html)
+- [Home Assistant Wake on LAN Docs](https://www.home-assistant.io/integrations/wake_on_lan/)
