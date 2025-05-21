@@ -82,7 +82,7 @@ Dit document beschrijft hoe je een server in slaapstand (hibernate) zet via **Ho
 
    ```yaml
    shell_command:
-     hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa eyevisions@192.168.2.6 'sudo systemctl hibernate'"
+     hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa eyevisions@192.168.198.35 'sudo systemctl hibernate'"
    ```
 
 3. Ga naar **Instellingen > Systeem > Herstarten**.
