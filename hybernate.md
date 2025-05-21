@@ -1,58 +1,114 @@
-Stappenplan: Server in Slaapstand Zetten vanuit Home Assistant
-Dit document beschrijft de stappen om een server in slaapstand te zetten via een shell_command in Home Assistant, inclusief de benodigde SSH-configuratie.
+# Server in Slaapstand Zetten via Home Assistant (Hibernate)
 
-Open de Terminal & SSH add-on in Home Assistant.
-Navigeer naar de configuratiemap:
-```javascript
-cd /config
-```
-Maak een verborgen map voor SSH-sleutels aan en stel de juiste permissies in:
-```javascript
-mkdir -p .ssh
-chmod 700 .ssh
-```
-Genereer het SSH-sleutelpaar. Druk op Enter voor de standaardlocatie (/config/.ssh/id_rsa) en druk nogmaals op Enter voor een lege wachtwoordzin. Een lege wachtwoordzin is cruciaal voor geautomatiseerde scripts.
-```javascript
-ssh-keygen -t rsa -b 4096 -f /config/.ssh/id_rsa -N ""
-```
-Dit maakt twee bestanden aan: /config/.ssh/id_rsa (de privé sleutel) en /config/.ssh/id_rsa.pub (de publieke sleutel).
+Dit document beschrijft hoe je een server in slaapstand (hibernate) zet via **Home Assistant**, met behulp van een `shell_command` en SSH-sleutels.
 
-Stap 2: Voeg de Publieke Sleutel toe aan je Server
-De publieke sleutel moet op de server worden geplaatst zodat de gebruiker eyevisions zonder wachtwoord kan inloggen vanaf Home Assistant.
+---
 
-Bekijk de inhoud van de zojuist gegenereerde publieke sleutel in de Home Assistant Terminal:
-```javascript
-cat /config/.ssh/id_rsa.pub
-```
-Kopieer de hele output van dit commando. Dit is je publieke sleutel.
-Log in op je server als gebruiker :
-```javascript
-ssh eyevisions@nothomeassistant
-```
-Maak op de server een .ssh map aan en stel de juiste permissies in, als deze nog niet bestaan:
-```javascript
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
-```
-Voeg de gekopieerde publieke sleutel toe aan het authorized_keys bestand van de gebruiker eyevisions. Vervang PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB door de tekst die je in stap 2 hebt gekopieerd.
-```javascript
-echo "PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB" >> ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-```
-Log uit van de server.
+## 🔧 Benodigde Voorwaarden
 
-Stap 3: Configureer het shell_command in Home Assistant
-Nu we zeker weten dat de SSH-sleutels correct staan, passen we het shell_command aan om de SSH-verbinding correct te initiëren, zelfs in een niet-interactieve omgeving.
+- **Home Assistant** geïnstalleerd met toegang tot de **Terminal & SSH** add-on
+- **Ubuntu Server** waarop SSH-toegang mogelijk is
+- **Gebruiker met sudo-rechten** op de server
+- **Geen wachtwoordzin** op de SSH-sleutel vereist voor automatisering
 
-Open je configuration.yaml bestand in Home Assistant (bijv. via de File Editor add-on).
+---
 
-Voeg het volgende shell_command toe aan je configuratie.yaml file:
-```javascript
-shell_command:
-  hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa eyevisions@192.168.2.6 'sudo systemctl hibernate'"
-```
-Ga in Home Assistant naar Instellingen > Systeem > Herstarten.
-Kies Volledige herstart.
-Stap 5: Test het Commando
-Na de herstart kun je testen of het shell_command nu correct werkt.
+## 🛠️ Stap 1: SSH-sleutel genereren in Home Assistant
 
+1. Open de **Terminal & SSH** add-on in Home Assistant.
+2. Navigeer naar de configuratiemap:
+
+   ```bash
+   cd /config
+   ```
+
+3. Maak de `.ssh` map aan en stel de juiste rechten in:
+
+   ```bash
+   mkdir -p .ssh
+   chmod 700 .ssh
+   ```
+
+4. Genereer het SSH-sleutelpaar (druk telkens op `Enter` voor de standaardwaarden):
+
+   ```bash
+   ssh-keygen -t rsa -b 4096 -f /config/.ssh/id_rsa -N ""
+   ```
+
+   Hiermee worden twee bestanden aangemaakt:
+   - `/config/.ssh/id_rsa` (privésleutel)
+   - `/config/.ssh/id_rsa.pub` (publieke sleutel)
+
+---
+
+## 📥 Stap 2: Publieke sleutel toevoegen aan je server
+
+1. Bekijk de inhoud van de publieke sleutel:
+
+   ```bash
+   cat /config/.ssh/id_rsa.pub
+   ```
+
+2. **Kopieer** de volledige output van dit commando.
+
+3. Log in op je server als de juiste gebruiker:
+
+   ```bash
+   ssh eyevisions@nothomeassistant
+   ```
+
+4. Maak op de server (indien nodig) de `.ssh` map aan en stel de juiste rechten in:
+
+   ```bash
+   mkdir -p ~/.ssh
+   chmod 700 ~/.ssh
+   ```
+
+5. Voeg de gekopieerde publieke sleutel toe aan `authorized_keys`:
+
+   ```bash
+   echo "PLAK_HIER_DE_INHOUD_VAN_ID_RSA.PUB" >> ~/.ssh/authorized_keys
+   chmod 600 ~/.ssh/authorized_keys
+   ```
+
+6. Log uit van de server.
+
+---
+
+## ⚙️ Stap 3: shell_command instellen in Home Assistant
+
+1. Open je `configuration.yaml` bestand in Home Assistant.
+2. Voeg de volgende configuratie toe:
+
+   ```yaml
+   shell_command:
+     hibernate_server: "/usr/bin/ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /config/.ssh/id_rsa eyevisions@192.168.2.6 'sudo systemctl hibernate'"
+   ```
+
+3. Ga naar **Instellingen > Systeem > Herstarten**.
+4. Kies **Volledige herstart**.
+
+---
+
+## ✅ Stap 4: Test het Commando
+
+Na de herstart kun je het commando testen vanuit Developer Tools of een knop in de UI. Als alles correct is ingesteld, zal de server in slaapstand gaan na het uitvoeren van het `shell_command`.
+
+---
+
+## 🧠 Opmerkingen
+
+- Zorg dat de gebruiker `eyevisions` **sudo mag uitvoeren zonder wachtwoord** voor het `hibernate`-commando. Voeg eventueel toe aan `/etc/sudoers.d/hibernate`:
+
+  ```bash
+  eyevisions ALL=NOPASSWD: /bin/systemctl hibernate
+  ```
+
+- Test eerst of `sudo systemctl hibernate` werkt op de server zelf voordat je dit via Home Assistant probeert.
+
+---
+
+## 📎 Referenties
+
+- [Home Assistant shell_command Docs](https://www.home-assistant.io/integrations/shell_command/)
+- [Ubuntu Hibernate Handleiding](https://wiki.ubuntu.com/PowerManagement/Hibernate)
