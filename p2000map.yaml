@@ -1,6 +1,6 @@
 type: custom:button-card
 variables:
-  mapcard: 1.1.2
+  mapcardversion: 1.1.3
 template:
   - variable_template
   - body_template
@@ -26,6 +26,7 @@ styles:
       - justify-content: center
       - text-align: center
       - transform: scale(130%)
+      - padding: 0px
 custom_fields:
   title:
     card:
@@ -34,10 +35,10 @@ custom_fields:
       name: "[[[ return variables.var_current_time ]]]"
       tap_action:
         action: navigate
-        navigation_path: clock
+        navigation_path: p2000
       hold_action:
         action: navigate
-        navigation_path: vloerplan
+        navigation_path: 112
       styles:
         card:
           - background-color: transparent
@@ -61,10 +62,9 @@ custom_fields:
     card:
       type: map
       entities:
-        - entity: sensor.p2000
-      default_zoom: 11
+        - entity: sensor.p2000_rijnmond_gecorrigeerd
+          icon: mdi:fire-truck
+      default_zoom: 12
       aspect_ratio: "18:9"
       theme_mode: light
-      marker_cluster:
-        max_zoom: 14
-        icon: /local/viewassist/p2000map.png
+
