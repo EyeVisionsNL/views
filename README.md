@@ -190,6 +190,9 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 - Weergave van **P2000-meldingen** uit jouw regio.
 - Helper schakelt tussen **lokale en regionale** sensoren.
 - Speciale **chime-geluiden** voor GRIP-meldingen.
+- schakeld bij lokale meldingen naar map met meer zoom.
+- rtl-sdr dongle tts replacement en sensor yaml config voor vele fouten locatie's
+- nog te doen nieuwe automaisering goed uploaden apart van de oude.
 
 ![Screenshot](https://github.com/user-attachments/assets/c85c5393-a8c5-443f-97a6-04230da67105)
 
