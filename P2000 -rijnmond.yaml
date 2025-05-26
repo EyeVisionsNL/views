@@ -1,74 +1,110 @@
 alias: view-assist - p2000 - rijnmond
 description: ""
 triggers:
-  - entity_id: sensor.p2000
+  - entity_id:
+      - sensor.p2000_rotterdam_rijnmond
     trigger: state
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
 conditions:
-  - condition: not
-    conditions:
-      - condition: state
-        entity_id: sensor.oneplus12_charger_type
-        state: wireless
   - condition: state
     entity_id: input_boolean.p2000
     state: "on"
+  - condition: time
+    after: "07:00:00"
+    before: "23:00:00"
 actions:
   - choose:
       - conditions:
           - condition: template
-            value_template: "{{ 'GRIP' in states('sensor.p2000') }}"
+            value_template: "{{ 'GRIP' in p2000_tts or 'A0' in p2000_tts }}"
         sequence:
           - data:
               chime_path: hail
+              message: "{{ p2000_tts }}"
+              tts_platform: tts.piper
             target:
-              device_id: 0041739398d895e9040c07be4dc364d8
+              device_id: acf85cc68b20c280f8534a53e2446aaf
             action: chime_tts.say
           - data:
-              browser_id: 0041739398d895e9040c07be4dc364d8
               path: /dashboard-viewassist/p2000
             action: browser_mod.navigate
-          - delay: "00:00:10"
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 3
+              milliseconds: 0
+          - condition: template
+            value_template: >-
+              {{ states('sensor.p2000_rijnmond_corrected_lat') |
+              float(default=0) != 0 and
+              states('sensor.p2000_rijnmond_corrected_lon') | float(default=0)
+              != 0 }}
           - data:
-              browser_id: 0041739398d895e9040c07be4dc364d8
               path: /dashboard-viewassist/map2
+              latitude: "{{ states('sensor.p2000_rijnmond_corrected_lat') }}"
+              longitude: "{{ states('sensor.p2000_rijnmond_corrected_lon') }}"
             action: browser_mod.navigate
       - conditions:
           - condition: template
-            value_template: |
-              {{ 'Vlaardingen' in states('sensor.p2000') or
-                 'Schiedam' in states('sensor.p2000') or
-                 'Maasland' in states('sensor.p2000') or
-                 'Maassluis' in states('sensor.p2000') }}
+            value_template: >
+              {{ p2000_tts |
+              regex_search('(?<!\\w)(vlaardingen|vlaard|schiedam|maasland|maassluis)(?!\\w)',
+              ignorecase=True) }}
         sequence:
           - data:
               chime_path: chirp
+              message: "{{ p2000_tts }}"
+              tts_platform: tts.piper
             target:
-              device_id: 0041739398d895e9040c07be4dc364d8
+              device_id: acf85cc68b20c280f8534a53e2446aaf
             action: chime_tts.say
           - data:
-              browser_id:
-                - 0041739398d895e9040c07be4dc364d8
               path: /dashboard-viewassist/p2000
             action: browser_mod.navigate
-          - delay: "00:00:10"
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 3
+              milliseconds: 0
+          - condition: template
+            value_template: >-
+              {{ states('sensor.p2000_rijnmond_corrected_lat') |
+              float(default=0) != 0 and
+              states('sensor.p2000_rijnmond_corrected_lon') | float(default=0)
+              != 0 }}
           - data:
-              browser_id:
-                - 0041739398d895e9040c07be4dc364d8
               path: /dashboard-viewassist/map2
+              latitude: "{{ states('sensor.p2000_rijnmond_corrected_lat') }}"
+              longitude: "{{ states('sensor.p2000_rijnmond_corrected_lon') }}"
             action: browser_mod.navigate
     default:
       - data:
           chime_path: chirp
         target:
-          device_id: 0041739398d895e9040c07be4dc364d8
+          device_id: acf85cc68b20c280f8534a53e2446aaf
         action: chime_tts.say
       - data:
-          browser_id: 0041739398d895e9040c07be4dc364d8
           path: /dashboard-viewassist/p2000
         action: browser_mod.navigate
-      - delay: "00:00:10"
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 3
+          milliseconds: 0
+      - condition: template
+        value_template: >-
+          {{ states('sensor.p2000_rijnmond_corrected_lat') | float(default=0) !=
+          0 and states('sensor.p2000_rijnmond_corrected_lon') | float(default=0)
+          != 0 }}
       - data:
-          browser_id: 0041739398d895e9040c07be4dc364d8
           path: /dashboard-viewassist/map1
+          latitude: "{{ states('sensor.p2000_rijnmond_corrected_lat') }}"
+          longitude: "{{ states('sensor.p2000_rijnmond_corrected_lon') }}"
         action: browser_mod.navigate
-mode: single
+variables:
+  p2000_tts: "{{ trigger.to_state.attributes.tts }}"
+mode: queued
+max: 5
