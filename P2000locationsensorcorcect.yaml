@@ -1,0 +1,70 @@
+  -  sensor:
+      - name: "p2000_rijnmond_corrected_lat"
+        state: >
+          {% set mapurl = state_attr('sensor.p2000_rotterdam_rijnmond', 'mapurl') %}
+          {% if mapurl %}
+            {% set latitude_match = mapurl | regex_findall('mlat=([0-9\\.]*)') %}
+            {% if latitude_match and latitude_match[0] %}
+              {{ latitude_match[0] }}
+            {% else %}
+              {{ state_attr('sensor.p2000_rotterdam_rijnmond', 'latitude') | float(0) }}
+            {% endif %}
+          {% else %}
+            {{ state_attr('sensor.p2000_rotterdam_rijnmond', 'latitude') | float(0) }}
+          {% endif %}
+  -  sensor:
+      - name: "p2000_rijnmond_corrected_lon"
+        state: >
+          {% set mapurl = state_attr('sensor.p2000_rotterdam_rijnmond', 'mapurl') %}
+          {% if mapurl %}
+            {% set longitude_match = mapurl | regex_findall('mlon=([0-9\\.]*)') %}
+            {% if longitude_match and longitude_match[0] %}
+              {{ longitude_match[0] }}
+            {% else %}
+              {{ state_attr('sensor.p2000_rotterdam_rijnmond', 'longitude') | float(0) }}
+            {% endif %}
+          {% else %}
+            {{ state_attr('sensor.p2000_rotterdam_rijnmond', 'longitude') | float(0) }}
+          {% endif %}
+  - sensor:
+        - name: "p2000_rijnmond_gecorrigeerd"
+          state: "{{ states('sensor.p2000_rotterdam_rijnmond').state }}"
+          attributes:
+            latitude: "{{ states('sensor.p2000_rijnmond_corrected_lat') }}"
+            longitude: "{{ states('sensor.p2000_rijnmond_corrected_lon') }}"
+            
+  -  sensor:
+      - name: "p2000_grip_corrected_lat"
+        state: >
+          {% set mapurl = state_attr('sensor.p2000_grip', 'mapurl') %}
+          {% if mapurl %}
+            {% set latitude_match = mapurl | regex_findall('mlat=([0-9\\.]*)') %}
+            {% if latitude_match and latitude_match[0] %}
+              {{ latitude_match[0] }}
+            {% else %}
+              {{ state_attr('sensor.p2000_grip', 'latitude') | float(0) }}
+            {% endif %}
+          {% else %}
+            {{ state_attr('sensor.p2000_grip', 'latitude') | float(0) }}
+          {% endif %}
+          
+  -  sensor:
+      - name: "p2000_grip_corrected_lon"
+        state: >
+          {% set mapurl = state_attr('sensor.p2000_grip', 'mapurl') %}
+          {% if mapurl %}
+            {% set longitude_match = mapurl | regex_findall('mlon=([0-9\\.]*)') %}
+            {% if longitude_match and longitude_match[0] %}
+              {{ longitude_match[0] }}
+            {% else %}
+              {{ state_attr('sensor.p2000_grip', 'longitude') | float(0) }}
+            {% endif %}
+          {% else %}
+            {{ state_attr('sensor.p2000_grip', 'longitude') | float(0) }}
+          {% endif %}
+  - sensor:
+        - name: "p2000_grip_gecorrigeerd"
+          state: "{{ states('sensor.p2000_grip').state }}"
+          attributes:
+            latitude: "{{ states('sensor.p2000_grip_corrected_lat') }}"
+            longitude: "{{ states('sensor.p2000_grip_corrected_lon') }}"
