@@ -1,7 +1,7 @@
 type: custom:button-card
 variables:
   background: /local/viewassist/p2000.png
-  p200-version: 1.0.1
+  infocardversion: 1.0.0
   p2000_entity: sensor.p2000_rotterdam_rijnmond
   var_font_size: 45px
 template:
@@ -53,6 +53,9 @@ custom_fields:
       tap_action:
         action: toggle
         entity: input_boolean.p2000
+      hold_action:
+        action: navigate
+        navigation_path: 112
       styles:
         card:
           - background-color: transparent
@@ -72,4 +75,4 @@ custom_fields:
           - filter: drop-shadow(3px 3px 4px black)
           - width: 18vh
           - color: white
-  message: "[[[ return states[variables.p2000_entity].state; ]]]"
+  message: "[[[ return states[variables.p2000_entity].attributes.tts; ]]]"
