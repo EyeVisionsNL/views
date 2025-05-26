@@ -51,8 +51,9 @@ swipe_nav:
 ### 🕒 Clock
 - The transition is now smooth instead of jumping.
 - The clock color changes based on **KNMI weather warnings** (requires KNMI HACS integration or other weatherstation that give color codes to weather).
-- You can adjust the movement size if the clock moves outside the screen.
+- You can adjust the movement size if the clock moves outside the screen.   var_positions:
 - If no KNMI integration is available, remove the color-changing code and set a static color.
+- it's also your screensaver!
 
 ### ☁️ Weather
 - Added shadows to letters and set them to white.
@@ -166,6 +167,7 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 - **Vloeiende overgang** bij positieverandering.
 - Kleur verandert afhankelijk van **KNMI-waarschuwingen**.
 - Pas de bewegingsgrootte aan als de klok buiten het scherm komt.
+- Het is ook je screensaver.
 
 ![Screenshot](https://github.com/user-attachments/assets/14add1de-846f-4ed1-b691-a08689f39032)
 
@@ -192,7 +194,7 @@ Elke linker bovenhoek bevat nu een **icoon**, net als in de originele weerkaart.
 - Speciale **chime-geluiden** voor GRIP-meldingen.
 - schakeld bij lokale meldingen naar map met meer zoom.
 - rtl-sdr dongle tts replacement en sensor yaml config voor vele fouten locatie's
-- nog te doen nieuwe automaisering goed uploaden apart van de oude.
+- alles is een voorbeeld gebruik je eigen entiteiten.
 
 ![Screenshot](https://github.com/user-attachments/assets/c85c5393-a8c5-443f-97a6-04230da67105)
 
