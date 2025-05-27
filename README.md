@@ -10,7 +10,7 @@
 
 ## 📌 Important: You need the ViewAssist dashboard.yaml for all views from ViewAssist!
 
-🔗 **[ViewAssist Setup Guide](https://dinki.github.io/View-Assist/docs/viewassist-setup)**
+🔗 **[ViewAssist Setup Guide](https://github.com/dinki/view_assist_integration)**
 
 ### Feel free to use parts or pieces of these scripts.
 
@@ -153,7 +153,7 @@ if (distance <= 10 && strikes > 0) {
 
 ## 📌 Belangrijk: Je hebt de dashboard.yaml nodig voor alle views van ViewAssist!
 
-🔗 **[ViewAssist Installatiegids](https://dinki.github.io/View-Assist/docs/viewassist-setup)**
+🔗 **[ViewAssist Installatiegids]([https://dinki.github.io/View-Assist/docs/viewassist-setup](https://github.com/dinki/view_assist_integration))**
 
 ### Voel je vrij om delen van deze scripts te gebruiken.
 
