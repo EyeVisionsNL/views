@@ -150,7 +150,7 @@ tap_action:
 
 ## ❤️ Credits
 
-Met 💡 bedacht en 🛠️ gebouwd door **jou**  
+Met 💡 bedacht en 🛠️ gebouwd door **EyeVisionsNL**  
 Voor iedereen die zijn slimme huis ook écht slim wil maken 🧠🏡
 
 ---
