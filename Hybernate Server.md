@@ -69,7 +69,7 @@ mv ~/.ssh/authorized_keys ~/.ssh/authorized_keys_backup
 Voeg je sleutel toe (vervang onderstaande sleutel door je eigen uit stap 2!):
 
 ```bash
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2chdal0FPbTIhNsLonCWwpJQTinHLlYbaLBgIJK3N2Rmb5/..." > ~/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3C1yc2EAAAADAQABAAACAQC2chdal0FPbTIhNsblablaLonCWwpJQTinHLlYbaLBgIJK3N2Rmb5/..." > ~/.ssh/authorized_keys
 ```
 
 ---
