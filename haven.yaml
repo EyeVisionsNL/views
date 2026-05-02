@@ -1,0 +1,23 @@
+type: custom:button-card
+aspect_ratio: 16/9
+template: null
+styles:
+  card:
+    - padding: 0px
+  grid:
+    - grid-template-areas: "\"i\" \"n\" \"s\" \"l\" \"message\""
+    - grid-template-columns: 1fr
+    - grid-template-rows: 1fr
+  custom_fields:
+    message:
+      - width: 100%
+      - height: 100%
+      - position: absolute
+      - top: 0
+      - left: 0
+custom_fields:
+  message:
+    card:
+      type: iframe
+      url: /local/marine.html
+      aspect_ratio: 100%
